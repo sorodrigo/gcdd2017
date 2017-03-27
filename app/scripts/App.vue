@@ -33,6 +33,7 @@ export default {
   .l-main {
     position: absolute;
     height: calc(100% - #{$header-height});
+    width: 100%;
     margin-top: $header-height;
   }
 </style>
