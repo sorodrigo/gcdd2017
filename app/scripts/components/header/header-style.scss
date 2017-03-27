@@ -1,0 +1,65 @@
+// Import global variables
+@import '../../../styles/settings';
+
+.c-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $theme-color;
+
+  .nav {
+    margin-left: 60px;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+
+      li {
+        position: relative;
+        margin-right: 20px;
+        overflow: hidden;
+
+        a {
+          padding: 20px 0;
+          display: block;
+          color: $white;
+          text-decoration: none;
+        }
+
+        &.-active {
+          pointer-events: none;
+
+          &:after {
+            width: 22px;
+          }
+        }
+
+        &:after {
+          display: block;
+          position: absolute;
+          content: '';
+          width: 0;
+          height: 4px;
+          background-color: $theme-secondary;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          transition: width .15s $ease-out-cubic;
+        }
+
+        &:hover {
+
+          &:after {
+            width: 22px;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

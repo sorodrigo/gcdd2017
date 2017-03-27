@@ -1,0 +1,36 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $font-size-normal;
+  background-color: $main-bg-color;
+}
+
+#app {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: $font-size-xsmall;
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*:before,
+*:after,
+input[type=search] {
+  box-sizing: inherit;
+}

@@ -1,0 +1,31 @@
+// colors
+$white: white;
+$light-blue: rgba(#3187ff, 0.8);
+$light-gray: #d4d4d4;
+
+
+
+// fonts
+$base-font-color: #2F2F2F;
+$base-font-family: Helvetica, Arial, sans-serif;
+
+
+$font-size-large: 28px;
+$font-size-normal: 18px;
+$font-size-small: 16px;
+$font-size-xsmall: 14px;
+
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// layouts
+$footer-height: 15vh;
+
+// app palette
+$main-bg-color: $white;
+$theme-color: $light-blue;
+$theme-secondary: $light-gray;
+
+// transitions
+$ease-out-cubic: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+
