@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <header class="l-header">
-      <router-view name="HeaderComponent"></router-view>
+      <router-view name="header"></router-view>
     </header>
     <main class="l-main">
       <router-view></router-view>
     </main>
     <footer class="l-footer">
-      <router-view></router-view>
+      <router-view name="footer"></router-view>
     </footer>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
   @import '../styles/settings';
 
   .l-header {
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     z-index: 2;
@@ -31,17 +31,9 @@ export default {
   }
 
   .l-main {
-    position: relative;
-  }
-
-  .l-footer {
-    min-height: $footer-height;
-    position: relative;
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    position: absolute;
+    height: calc(100% - #{$header-height});
+    margin-top: $header-height;
   }
 </style>
 

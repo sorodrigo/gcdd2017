@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import HeaderComponent from 'components/header';
 
+import HeaderComponent from 'components/header';
+import ChooseComponent from 'components/choose';
 
 Vue.use(Router);
 
@@ -9,21 +10,38 @@ const routes = [
   {
     path: '/',
     components: {
-      HeaderComponent,
+      header: HeaderComponent,
     },
   },
   {
-    path: '/elegir',
+    path: '/choose',
     components: {
-      HeaderComponent,
+      default: ChooseComponent,
+      header: HeaderComponent,
     }
   },
   {
-    path: '/elegir',
+    path: '/assign',
     components: {
-      HeaderComponent,
+      header: HeaderComponent,
     },
   },
+  {
+    path: '/profile',
+    components: {
+      header: HeaderComponent,
+    },
+  },
+  {
+    path: '/manage',
+    components: {
+      header: HeaderComponent,
+    },
+  },
+  {
+    path: '*',
+    redirect: '/',
+  }
 ];
 
 export default new Router({

@@ -1,17 +1,25 @@
-<div class="c-header">
-  <nav class="nav">
-    <ul>
+<nav class="c-header">
+    <ul class="nav-section">
       <router-link active-class="-active" tag="li" to="/" exact>
         <a>Home</a>
       </router-link>
 
-      <router-link active-class="-active" tag="li" to="/elegir">
-        <a>Playground</a>
+      <router-link active-class="-active" tag="li" to="/choose">
+        <a>Choose</a>
       </router-link>
 
-      <router-link active-class="-active" tag="li" to="/asignar">
-        <a>Examples</a>
+      <router-link active-class="-active" tag="li" to="/assign">
+        <a>Assign</a>
+      </router-link>
+
+      <router-link active-class="-active" tag="li" to="/manage">
+        <a>Manage</a>
       </router-link>
     </ul>
-  </nav>
-</div>
+
+    <ul class="nav-section">
+      <router-link active-class="-active" tag="li" to="/profile">
+        <a>Profile</a>
+      </router-link>
+    </ul>
+</nav>
