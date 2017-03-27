@@ -8,6 +8,7 @@ if (!process.env.NODE_ENV) {
 var opn = require('opn')
 var path = require('path')
 var express = require('express')
+var jsonServer = require('json-server')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = process.env.NODE_ENV === 'testing'
@@ -40,6 +41,9 @@ compiler.plugin('compilation', function (compilation) {
     cb()
   })
 })
+
+// setup json server
+app.use('/api', jsonServer.router('db.json'));
 
 // proxy api requests
 Object.keys(proxyTable).forEach(function (context) {

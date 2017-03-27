@@ -36,6 +36,7 @@ module.exports = {
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'comma-dangle': ['error', 'only-multiline'],
-    'no-unused-expressions': ['error', { 'allowShortCircuit': true }]
+    'no-unused-expressions': ['error', { 'allowShortCircuit': true }],
+    'no-console': ['error', { allow: ['info', 'warn', 'error'] }]
   }
 }

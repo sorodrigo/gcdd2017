@@ -4,7 +4,7 @@ var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
 
 function resolve (dir) {
-  return path.resolve(__dirname, dir)
+  return path.join(__dirname, '..', dir)
 }
 
 module.exports = {
@@ -22,9 +22,9 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue',
-      'app': resolve('../app/scripts'),
-      'styles': resolve('../app/styles'),
-      'components': resolve('../app/scripts/components')
+      'app': resolve('/app/scripts'),
+      'styles': resolve('/app/styles'),
+      'components': resolve('/app/scripts/components')
     }
   },
   module: {
@@ -33,7 +33,7 @@ module.exports = {
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         enforce: 'pre',
-        include: [resolve('..app/scripts'), resolve('..test')],
+        include: [resolve('/app/scripts'), resolve('/test')],
         options: {
           formatter: require('eslint-friendly-formatter')
         }
@@ -46,7 +46,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('..app/scripts'), resolve('..test')]
+        include: [resolve('/app/scripts'), resolve('/test')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
