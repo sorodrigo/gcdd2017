@@ -11,7 +11,8 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "lint": "eslint --ext .js,.vue app test/unit/specs test/e2e/specs"
+    "lint": "eslint --ext .js,.vue app test/unit/specs test/e2e/specs",
+    "postinstall": "NODE_ENV=production npm run build"
   },
   "dependencies": {
     "dotenv": "^4.0.0",
@@ -22,7 +23,8 @@
     "vue": "^2.2.2",
     "vue-router": "^2.2.0",
     "vue-tables-2": "^0.4.60",
-    "vuex": "^2.2.1"
+    "vuex": "^2.2.1",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

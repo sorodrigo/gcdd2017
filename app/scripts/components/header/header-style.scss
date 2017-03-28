@@ -3,62 +3,59 @@
 
 .c-header {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   background-color: $theme-color;
+  padding: 0 62px;
+  flex: 1;
+  justify-content: space-between;
 
-  .nav {
-    margin-left: 60px;
+  .nav-section {
+    display: flex;
+    align-items: center;
+    list-style: none;
 
-    ul {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      list-style: none;
+    li {
+      position: relative;
+      margin-right: 20px;
+      overflow: hidden;
 
-      li {
-        position: relative;
-        margin-right: 20px;
-        overflow: hidden;
+      a {
+        padding: 20px 0;
+        display: block;
+        color: $white;
+        text-decoration: none;
+      }
 
-        a {
-          padding: 20px 0;
-          display: block;
-          color: $white;
-          text-decoration: none;
-        }
-
-        &.-active {
-          pointer-events: none;
-
-          &:after {
-            width: 22px;
-          }
-        }
+      &.-active {
+        pointer-events: none;
 
         &:after {
-          display: block;
-          position: absolute;
-          content: '';
-          width: 0;
-          height: 4px;
-          background-color: $theme-secondary;
-          left: 50%;
-          bottom: 0;
-          transform: translateX(-50%);
-          transition: width .15s $ease-out-cubic;
+          width: 22px;
         }
+      }
 
-        &:hover {
+      &:after {
+        display: block;
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 4px;
+        background-color: $theme-secondary;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        transition: width .15s $ease-out-cubic;
+      }
 
-          &:after {
-            width: 22px;
-          }
+      &:hover {
+
+        &:after {
+          width: 22px;
         }
+      }
 
-        &:last-child {
-          margin-right: 0;
-        }
+      &:last-child {
+        margin-right: 0;
       }
     }
   }
