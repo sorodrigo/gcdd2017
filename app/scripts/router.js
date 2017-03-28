@@ -3,6 +3,7 @@ import Router from 'vue-router';
 
 import HeaderComponent from 'components/header';
 import ChooseComponent from 'components/choose';
+import AssignComponent from 'components/assign';
 
 Vue.use(Router);
 
@@ -23,6 +24,7 @@ const routes = [
   {
     path: '/assign',
     components: {
+      default: AssignComponent,
       header: HeaderComponent,
     },
   },

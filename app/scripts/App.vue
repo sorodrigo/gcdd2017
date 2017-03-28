@@ -19,7 +19,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="scss">
   @import '../styles/settings';
 
   .l-header {
@@ -35,6 +35,17 @@ export default {
     height: calc(100% - #{$header-height});
     width: 100%;
     margin-top: $header-height;
+  }
+
+  .VueTables {
+    margin-top: 10px;
+    font-size: 14px;
+
+    .VueTables__search {
+      > input {
+        margin-left: 10px;
+      }
+    }
   }
 </style>
 
