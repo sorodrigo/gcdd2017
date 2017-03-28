@@ -1,9 +1,9 @@
 import {
-  SET_COURSES,
-  SET_COURSES_ERROR
+  SET_DEGREES,
+  SET_DEGREES_ERROR
 } from '../mutation-types';
 
-const courses = {
+const degrees = {
   // INITIAL STATE
   state: {
     list: [],
@@ -11,28 +11,28 @@ const courses = {
   },
   // MUTATIONS
   mutations: {
-    [SET_COURSES](state, list) {
+    [SET_DEGREES](state, list) {
       state.list = list;
     },
-    [SET_COURSES_ERROR](state, error) {
+    [SET_DEGREES_ERROR](state, error) {
       state.error = error;
     },
   },
   // ACTIONS
   actions: {
-    getCourses({ commit }) {
+    getDegrees({ commit }) {
       return new Promise((resolve, reject) => {
-        fetch('/api/courses')
+        fetch('/api/degrees')
           .then((res) => {
             if (res.status >= 400) throw new Error(res.status);
             return res.json();
           })
           .then((data) => {
-            commit(SET_COURSES, data);
+            commit(SET_DEGREES, data);
             resolve(data);
           })
           .catch((err) => {
-            commit(SET_COURSES_ERROR, err);
+            commit(SET_DEGREES_ERROR, err);
             reject(err);
           });
       });
@@ -42,4 +42,4 @@ const courses = {
   getters: {},
 };
 
-export default courses;
+export default degrees;
