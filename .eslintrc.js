@@ -37,6 +37,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'comma-dangle': ['error', 'only-multiline'],
     'no-unused-expressions': ['error', { 'allowShortCircuit': true }],
-    'no-console': ['error', { allow: ['info', 'warn', 'error'] }]
+    'no-console': ['error', { allow: ['info', 'warn', 'error'] }],
+    'no-param-reassign': ['error', { "props": false }]
   }
 }

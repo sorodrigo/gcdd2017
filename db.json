@@ -1,7 +1,14 @@
 {
+  "me": {
+    "id": 1,
+    "email": "jon.snow@example.com",
+    "password": "winter_is_coming",
+    "professor": null,
+    "is_admin": true
+  },
   "professors": [
     {
-      "idProfessor": 1,
+      "id": 1,
       "email": "james@realmadrid.com",
       "name": "James",
       "last_name": "Rodriguez",
@@ -15,7 +22,7 @@
       "entry_date": null
     },
     {
-      "idProfessor": 2,
+      "id": 2,
       "email": "frank@gmail.com",
       "name": "Frank",
       "last_name": "Abagnale Jr.",
@@ -29,7 +36,7 @@
       "entry_date": null
     },
     {
-      "idProfessor": 3,
+      "id": 3,
       "email": "roger@pinkfloyd.com",
       "name": "Roger",
       "last_name": "Waters",
@@ -43,7 +50,7 @@
       "entry_date": null
     },
     {
-      "idProfessor": 4,
+      "id": 4,
       "email": "marlon@corleone.com",
       "name": "Marlon",
       "last_name": "Brando",
@@ -59,108 +66,73 @@
   ],
   "categories": [
     {
-      "idCategory": 1,
+      "id": 1,
       "title": "CATEDRATICO UNIVERSIDAD",
       "priority": 1
     },
     {
-      "idCategory": 1,
+      "id": 2,
       "title": "TITULAR UNIVERSIDAD",
       "priority": 1
     },
     {
-      "idCategory": 1,
+      "id": 3,
       "title": "CATEDRATICO DE E.U.",
       "priority": 1
     },
     {
-      "idCategory": 1,
+      "id": 4,
       "title": "TITULAR DE E.U.",
       "priority": 1
     },
     {
-      "idCategory": 1,
+      "id": 5,
       "title": "CONTRATADO DOCTOR",
       "priority": 1
     },
     {
-      "idCategory": 1,
+      "id": 6,
       "title": "COLABORADOR",
       "priority": 1
     },
     {
-      "idCategory": 1,
+      "id": 7,
       "title": "TITULAR UNIVERSIDAD INTERINO",
       "priority": 1
     },
     {
-      "idCategory": 1,
+      "id": 8,
       "title": "AYUDANTE DOCTOR",
       "priority": 1
     }
   ],
   "occupations": [
     {
-      "idOccupation": 1,
+      "id": 1,
       "title": "6 + 8",
       "value": 1
     },
     {
-      "idOccupation": 2,
-      "title": "6 + 8",
-      "value": 1
-    },
-    {
-      "idOccupation": 2,
-      "title": "6 + 8",
-      "value": 1
-    },
-    {
-      "idOccupation": 2,
-      "title": "6 + 6",
-      "value": 0.75
-    },
-    {
-      "idOccupation": 2,
-      "title": "6 + 8",
-      "value": 1
-    },
-    {
-      "idOccupation": 2,
-      "title": "6 + 8",
-      "value": 1
-    },
-    {
-      "idOccupation": 2,
-      "title": "6 + 8",
-      "value": 1
-    },
-    {
-      "idOccupation": 2,
-      "title": "6 + 8",
-      "value": 1
-    },
-    {
-      "idOccupation": 2,
+      "id": 2,
       "title": "6 + 6",
       "value": 0.75
     }
   ],
   "charges": [
     {
-      "idCharge": 1,
+      "id": 1,
       "type": "Director De Escuela",
       "workload": 15,
       "hours": 5
     },
     {
-      "idCharge": 2,
+      "id": 2,
       "type": "Secretario de Escuela",
       "workload": 12,
       "hours": 4
     },
     {
-      "idCharge": 3,
+      "id": 3,
       "type": "Director Departamento",
       "workload": 9,
       "hours": 3
@@ -168,43 +140,139 @@
   ],
   "degrees": [
     {
-      "idDegree": 1,
+      "id": 1,
       "name": "Ingeniería Del Software (2009)",
       "year": 2009,
       "estimate": 100,
       "valid": true
     },
     {
-      "idDegree": 2,
+      "id": 2,
       "name": "Ingeniería Del Software (2011)",
       "year": 2011,
       "estimate": 150,
       "valid": true
     },
     {
-      "idDegree": 3,
+      "id": 3,
       "name": "Ingeniería De Computadores (2009)",
       "year": 2009,
       "estimate": 100,
       "valid": true
     },
     {
-      "idDegree": 4,
+      "id": 4,
       "name": "Ingeniería De Computadores (2011)",
       "year": 2011,
       "estimate": 150,
       "valid": true
     },
     {
-      "idDegree": 5,
+      "id": 5,
       "name": "Máster en Ingeniería Web",
       "year": 2009,
       "estimate": 150,
       "valid": true
     }
   ],
+  "courses": [
+    {
+      "id": 1,
+      "grade": 1,
+      "name": "Analisis Matematico",
+      "theory_credits": 5,
+      "practical_credits": 0,
+      "theory_groups": 2,
+      "theory_groups_en": 1,
+      "practical_groups": 0,
+      "practical_groups_en": 0,
+      "student_n": 100,
+      "group_n": 3,
+      "practical_group_n": 0,
+      "degrees": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 2,
+      "grade": 2,
+      "name": "Sistemas Operativos",
+      "theory_credits": 3,
+      "practical_credits": 3,
+      "theory_groups": 2,
+      "theory_groups_en": 0,
+      "practical_groups": 4,
+      "practical_groups_en": 0,
+      "student_n": 100,
+      "group_n": 3,
+      "practical_group_n": 4,
+      "degrees": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "id": 3,
+      "grade": 2,
+      "name": "POOA",
+      "theory_credits": 3,
+      "practical_credits": 3,
+      "theory_groups": 1,
+      "theory_groups_en": 1,
+      "practical_groups": 5,
+      "practical_groups_en": 0,
+      "student_n": 80,
+      "group_n": 3,
+      "practical_group_n": 4,
+      "degrees": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 4,
+      "grade": 3,
+      "name": "Agentes de la Informacion",
+      "theory_credits": 2,
+      "practical_credits": 2,
+      "theory_groups": 2,
+      "theory_groups_en": 0,
+      "practical_groups": 2,
+      "practical_groups_en": 0,
+      "student_n": 60,
+      "group_n": 2,
+      "practical_group_n": 2,
+      "degrees": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 5,
+      "grade": 1,
+      "name": "Opensource Frameworks",
+      "theory_credits": 5,
+      "practical_credits": 1,
+      "theory_groups": 2,
+      "theory_groups_en": 1,
+      "practical_groups": 6,
+      "practical_groups_en": 0,
+      "student_n": 30,
+      "group_n": 3,
+      "practical_group_n": 6,
+      "degrees": [
+        5
+      ]
+    }
+  ],
   "workload": [
     {
+      "id": 1,
       "professor": 1,
       "dissertations": {
         "tfg": 1,
@@ -216,6 +284,7 @@
       "charge": 1
     },
     {
+      "id": 2,
       "professor": 2,
       "dissertations": {
         "tfg": 1,
@@ -227,6 +296,7 @@
       "charge": null
     },
     {
+      "id": 3,
       "professor": 3,
       "dissertations": {
         "tfg": 2,
@@ -238,6 +308,7 @@
       "charge": null
     },
     {
+      "id": 4,
       "professor": 4,
       "dissertations": {
         "tfg": 1,
