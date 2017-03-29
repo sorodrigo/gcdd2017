@@ -1,25 +1,45 @@
 <nav class="c-header">
-    <ul class="nav-section">
-      <router-link active-class="-active" tag="li" to="/" exact>
-        <a>Home</a>
-      </router-link>
+  <ul class="nav-section">
+    <router-link class="nav-link" active-class="-active" tag="li" to="/" exact>
+      <a>Home</a>
+    </router-link>
 
-      <router-link active-class="-active" tag="li" to="/choose">
-        <a>Choose</a>
-      </router-link>
+    <router-link class="nav-link" active-class="-active" tag="li" to="/choose">
+      <a>Choose</a>
+    </router-link>
 
-      <router-link active-class="-active" tag="li" to="/assign">
-        <a>Assign</a>
-      </router-link>
+    <router-link class="nav-link" active-class="-active" tag="li" to="/assign">
+      <a>Assign</a>
+    </router-link>
 
-      <router-link active-class="-active" tag="li" to="/manage">
-        <a>Manage</a>
+    <nav-menu class="nav-link -submenu" title="Manage">
+      <router-link class="nav-link" active-class="-active" tag="li" to="/professors">
+        <a>Professors</a>
       </router-link>
-    </ul>
+      <router-link class="nav-link" active-class="-active" tag="li" to="/courses">
+        <a>Courses</a>
+      </router-link>
+      <router-link class="nav-link" active-class="-active" tag="li" to="/degrees">
+        <a>Degrees</a>
+      </router-link>
+      <router-link class="nav-link" active-class="-active" tag="li" to="/staff">
+        <a>Staff</a>
+      </router-link>
+      <router-link class="nav-link" active-class="-active" tag="li" to="/workload">
+        <a>Degrees</a>
+      </router-link>
+      <router-link class="nav-link" active-class="-active" tag="li" to="/occupations">
+        <a>staff</a>
+      </router-link>
+      <router-link class="nav-link" active-class="-active" tag="li" to="/categories">
+        <a>staff</a>
+      </router-link>
+    </nav-menu>
+  </ul>
 
-    <ul class="nav-section">
-      <router-link active-class="-active" tag="li" to="/profile">
-        <a>Profile</a>
-      </router-link>
-    </ul>
+  <ul class="nav-section">
+    <router-link class="nav-link" active-class="-active" tag="li" to="/profile">
+      <a>Profile</a>
+    </router-link>
+  </ul>
 </nav>

@@ -39,7 +39,11 @@ const professors = {
     },
   },
   // GETTERS
-  getters: {},
+  getters: {
+    getProfessors(state) {
+      return state.list;
+    }
+  },
 };
 
 export default professors;

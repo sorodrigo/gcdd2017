@@ -23,6 +23,7 @@
     "vue-router": "^2.2.0",
     "vue-tables-2": "^0.4.60",
     "vuex": "^2.2.1",
+    "vuex-router-sync": "^4.1.2",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {

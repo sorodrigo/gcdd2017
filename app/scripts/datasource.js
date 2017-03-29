@@ -11,6 +11,12 @@ const datasource = {
     action: 'setDegrees',
     getter: 'getDegrees'
   },
+  professors: {
+    heading: 'Manage Professors',
+    columns: ['id', 'name', 'last_name', 'email'],
+    action: 'setProfessors',
+    getter: 'getProfessors',
+  }
 };
 
 export default datasource;
