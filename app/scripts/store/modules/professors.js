@@ -20,7 +20,7 @@ const professors = {
   },
   // ACTIONS
   actions: {
-    getProfessors({ commit }) {
+    setProfessors({ commit }) {
       return new Promise((resolve, reject) => {
         fetch('/api/professors')
           .then((res) => {
@@ -39,7 +39,11 @@ const professors = {
     },
   },
   // GETTERS
-  getters: {},
+  getters: {
+    getProfessors(state) {
+      return state.list;
+    }
+  },
 };
 
 export default professors;

@@ -1,0 +1,34 @@
+// Import global variables
+@import '../../../styles/settings';
+
+.c-nav-menu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  .nav-menu-title {
+    &.-opened {
+      > a {
+        color: darken($white, 17%) !important;
+      }
+    }
+  }
+
+  .nav-menu-links-wrapper {
+    max-width: 60%;
+    overflow-x: auto;
+  }
+
+  .nav-menu-links {
+    display: inline-flex;
+  }
+
+  .nav-menu-slide-enter, .nav-menu-slide-leave-to {
+    transform: translateX(-100%);
+  }
+
+  .nav-menu-slide-enter-active, .nav-menu-slide-leave-active {
+    transition: all 1s ease;
+  }
+
+}

@@ -118,7 +118,7 @@
       "value": 0.75
     }
   ],
-  "charges": [
+  "staff": [
     {
       "id": 1,
       "type": "Director De Escuela",
@@ -281,7 +281,7 @@
       "innovation_projects": 0,
       "active_six_years": true,
       "internships": 3,
-      "charge": 1
+      "staff": 1
     },
     {
       "id": 2,
@@ -293,7 +293,7 @@
       "innovation_projects": 1,
       "active_six_years": false,
       "internships": 0,
-      "charge": null
+      "staff": null
     },
     {
       "id": 3,
@@ -305,7 +305,7 @@
       "innovation_projects": 2,
       "active_six_years": true,
       "internships": 0,
-      "charge": null
+      "staff": null
     },
     {
       "id": 4,
@@ -317,7 +317,7 @@
       "innovation_projects": 2,
       "active_six_years": false,
       "internships": 4,
-      "charge": 3
+      "staff": 3
     }
   ]
 }
