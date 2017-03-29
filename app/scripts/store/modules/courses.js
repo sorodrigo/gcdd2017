@@ -20,7 +20,7 @@ const courses = {
   },
   // ACTIONS
   actions: {
-    getCourses({ commit }) {
+    setCourses({ commit }) {
       return new Promise((resolve, reject) => {
         fetch('/api/courses')
           .then((res) => {
@@ -39,7 +39,11 @@ const courses = {
     },
   },
   // GETTERS
-  getters: {},
+  getters: {
+    getCourses(state) {
+      return state.list;
+    }
+  },
 };
 
 export default courses;

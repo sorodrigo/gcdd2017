@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
+import datasource from 'datasource';
+
 import HeaderComponent from 'components/header';
-import ChooseComponent from 'components/choose';
-import AssignComponent from 'components/assign';
+import TableComponent from 'components/table';
 
 Vue.use(Router);
 
@@ -11,20 +12,6 @@ const routes = [
   {
     path: '/',
     components: {
-      header: HeaderComponent,
-    },
-  },
-  {
-    path: '/choose',
-    components: {
-      default: ChooseComponent,
-      header: HeaderComponent,
-    }
-  },
-  {
-    path: '/assign',
-    components: {
-      default: AssignComponent,
       header: HeaderComponent,
     },
   },
@@ -39,6 +26,17 @@ const routes = [
     components: {
       header: HeaderComponent,
     },
+  },
+  {
+    path: '/:datasource',
+    beforeEnter: (to, from, next) => ((to.params.datasource in datasource) ? next() : next('/')),
+    components: {
+      default: TableComponent,
+      header: HeaderComponent,
+    },
+    props: {
+      default: route => ({ ...datasource[route.params.datasource] })
+    }
   },
   {
     path: '*',

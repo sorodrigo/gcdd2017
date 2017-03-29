@@ -20,7 +20,7 @@ const professors = {
   },
   // ACTIONS
   actions: {
-    getProfessors({ commit }) {
+    setProfessors({ commit }) {
       return new Promise((resolve, reject) => {
         fetch('/api/professors')
           .then((res) => {

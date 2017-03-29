@@ -1,0 +1,12 @@
+.c-table {
+  .VueTables {
+    margin-top: 10px;
+    font-size: 14px;
+
+    .VueTables__search {
+      > input {
+        margin-left: 10px;
+      }
+    }
+  }
+}

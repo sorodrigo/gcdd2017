@@ -18,12 +18,12 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   @import '../styles/settings';
 
   .l-header {
     position: fixed;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 2;
@@ -31,21 +31,10 @@ export default {
   }
 
   .l-main {
-    position: absolute;
+    position: relative;
     height: calc(100% - #{$header-height});
     width: 100%;
-    margin-top: $header-height;
-  }
-
-  .VueTables {
-    margin-top: 10px;
-    font-size: 14px;
-
-    .VueTables__search {
-      > input {
-        margin-left: 10px;
-      }
-    }
+    top: $header-height;
   }
 </style>
 
