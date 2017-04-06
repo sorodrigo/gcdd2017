@@ -1,22 +1,52 @@
 const datasource = {
   choose: {
     heading: 'Choose Course',
-    columns: ['id', 'name', 'grade', 'theory_credits', 'practical_credits'],
-    action: 'setCourses',
-    getter: 'getCourses',
+    columns: ['name', 'degree', 'grade', 'theory_credits', 'practical_credits', 'actions'],
+    action: ['setCourses', 'setDegrees'],
+    getter: 'getCoursesChoose',
   },
   assign: {
     heading: 'Assign Courses',
-    columns: ['id', 'name', 'year', 'estimate', 'valid'],
+    columns: ['id', 'name', 'year', 'estimate', 'valid', 'actions'],
     action: 'setDegrees',
-    getter: 'getDegrees'
+    getter: 'getDegrees',
   },
   professors: {
     heading: 'Manage Professors',
-    columns: ['id', 'name', 'last_name', 'email'],
+    columns: ['id', 'name', 'last_name', 'email', 'actions'],
     action: 'setProfessors',
     getter: 'getProfessors',
-  }
+  },
+  courses: {
+    heading: 'Manage Courses',
+    columns: ['id', 'name', 'grade', 'theory_credits', 'practical_credits', 'actions'],
+    action: 'setCourses',
+    getter: 'getCourses',
+  },
+  degrees: {
+    heading: 'Manage Degrees',
+    columns: ['id', 'name', 'year', 'estimate', 'valid'],
+    action: 'setCourses',
+    getter: 'getCourses',
+  },
+  staff: {
+    heading: 'Manage Courses',
+    columns: ['id', 'type', 'workload', 'hours'],
+    action: 'setCourses',
+    getter: 'getCourses',
+  },
+  categories: {
+    heading: 'Manage Categories',
+    columns: ['id', 'title', 'priority'],
+    action: 'setCategories',
+    getter: 'getCategories',
+  },
+  occupations: {
+    heading: 'Manage Occupations',
+    columns: ['id', 'title', 'value'],
+    action: 'setCourses',
+    getter: 'getCourses',
+  },
 };
 
 export default datasource;

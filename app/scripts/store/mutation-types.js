@@ -9,3 +9,8 @@ export const SET_COURSES_ERROR = 'professors/SET_COURSES_ERROR';
 // degrees
 export const SET_DEGREES = 'professors/SET_DEGREES';
 export const SET_DEGREES_ERROR = 'professors/SET_DEGREES_ERROR';
+
+// categories
+export const SET_CATEGORIES = 'categories/SET_CATEGORIES';
+export const SET_CATEGORIES_ERROR = 'categories/SET_CATEGORIES_ERROR';
+
