@@ -26,8 +26,8 @@ const datasource = {
   degrees: {
     heading: 'Manage Degrees',
     columns: ['id', 'name', 'year', 'estimate', 'valid'],
-    action: 'setCourses',
-    getter: 'getCourses',
+    action: 'setDegrees',
+    getter: 'getDegrees',
   },
   staff: {
     heading: 'Manage Staff',
@@ -44,8 +44,8 @@ const datasource = {
   occupations: {
     heading: 'Manage Occupations',
     columns: ['id', 'title', 'value'],
-    action: 'setCourses',
-    getter: 'getCourses',
+    action: 'setOccupations',
+    getter: 'getOccupations',
   },
 };
 

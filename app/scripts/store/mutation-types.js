@@ -17,3 +17,7 @@ export const SET_CATEGORIES_ERROR = 'categories/SET_CATEGORIES_ERROR';
 // staff
 export const SET_STAFF = 'staff/SET_STAFF';
 export const SET_STAFF_ERROR = 'staff/SET_STAFF_ERROR';
+
+// occupations
+export const SET_OCCUPATIONS = 'occupations/SET_OCCUPATIONS';
+export const SET_OCCUPATIONS_ERROR = 'occupations/SET_OCCUPATIONS_ERROR';
