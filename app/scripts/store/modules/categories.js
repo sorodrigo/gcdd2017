@@ -40,9 +40,7 @@ const categories = {
   },
   // GETTERS
   getters: {
-    getCategories(state) {
-      return state.list;
-    }
+    getCategories: state => state.list,
   },
 };
 

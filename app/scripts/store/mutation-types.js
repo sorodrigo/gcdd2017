@@ -14,3 +14,6 @@ export const SET_DEGREES_ERROR = 'professors/SET_DEGREES_ERROR';
 export const SET_CATEGORIES = 'categories/SET_CATEGORIES';
 export const SET_CATEGORIES_ERROR = 'categories/SET_CATEGORIES_ERROR';
 
+// staff
+export const SET_STAFF = 'staff/SET_STAFF';
+export const SET_STAFF_ERROR = 'staff/SET_STAFF_ERROR';

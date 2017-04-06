@@ -30,10 +30,10 @@ const datasource = {
     getter: 'getCourses',
   },
   staff: {
-    heading: 'Manage Courses',
+    heading: 'Manage Staff',
     columns: ['id', 'type', 'workload', 'hours'],
-    action: 'setCourses',
-    getter: 'getCourses',
+    action: 'setStaff',
+    getter: 'getStaff',
   },
   categories: {
     heading: 'Manage Categories',
