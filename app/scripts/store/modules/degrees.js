@@ -40,9 +40,7 @@ const degrees = {
   },
   // GETTERS
   getters: {
-    getDegrees(state) {
-      return state.list;
-    }
+    getDegrees: state => state.list,
   },
 };
 

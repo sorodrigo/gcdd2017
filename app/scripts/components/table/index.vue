@@ -12,7 +12,7 @@
         required: true
       },
       action: {
-        type: String,
+        type: [String, Array],
         required: true
       },
       columns: {
@@ -31,7 +31,16 @@
     },
     methods: {
       fetch() {
-        if (!this.tableData.length) this.$store.dispatch(this.action);
+        if (this.tableData.length) return;
+
+        if (Array.isArray(this.action)) {
+          this.action.forEach(action => this.$store.dispatch(action));
+        } else {
+          this.$store.dispatch(this.action);
+        }
+      },
+      edit(row) {
+        console.log(row);
       }
     },
     watch: {

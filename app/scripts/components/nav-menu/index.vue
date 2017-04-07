@@ -21,7 +21,7 @@
     methods: {
       toggle() {
         this.opened = !this.opened;
-      }
+      },
     }
   };
 </script>

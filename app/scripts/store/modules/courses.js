@@ -40,8 +40,16 @@ const courses = {
   },
   // GETTERS
   getters: {
-    getCourses(state) {
-      return state.list;
+    getCourses: state => state.list,
+    getCoursesChoose(state, getters) {
+      const degreesList = getters.getDegrees;
+      const courseList = [];
+      state.list.forEach((course) => {
+        const degrees = degreesList.filter(degree => course.degrees.includes(degree.id));
+        degrees.forEach(degree => courseList.push({ ...course, degree: degree.name }));
+      });
+
+      return courseList;
     }
   },
 };

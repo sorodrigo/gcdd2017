@@ -1,9 +1,9 @@
 import {
-  SET_PROFESSORS,
-  SET_PROFESSORS_ERROR
+  SET_CATEGORIES,
+  SET_CATEGORIES_ERROR
 } from '../mutation-types';
 
-const professors = {
+const categories = {
   // INITIAL STATE
   state: {
     list: [],
@@ -11,28 +11,28 @@ const professors = {
   },
   // MUTATIONS
   mutations: {
-    [SET_PROFESSORS](state, list) {
+    [SET_CATEGORIES](state, list) {
       state.list = list;
     },
-    [SET_PROFESSORS_ERROR](state, error) {
+    [SET_CATEGORIES_ERROR](state, error) {
       state.error = error;
     },
   },
   // ACTIONS
   actions: {
-    setProfessors({ commit }) {
+    setCategories({ commit }) {
       return new Promise((resolve, reject) => {
-        fetch('/api/professors')
+        fetch('/api/categories')
           .then((res) => {
             if (res.status >= 400) throw new Error(res.status);
             return res.json();
           })
           .then((data) => {
-            commit(SET_PROFESSORS, data);
+            commit(SET_CATEGORIES, data);
             resolve(data);
           })
           .catch((err) => {
-            commit(SET_PROFESSORS_ERROR, err);
+            commit(SET_CATEGORIES_ERROR, err);
             reject(err);
           });
       });
@@ -40,8 +40,8 @@ const professors = {
   },
   // GETTERS
   getters: {
-    getProfessors: state => state.list,
+    getCategories: state => state.list,
   },
 };
 
-export default professors;
+export default categories;
