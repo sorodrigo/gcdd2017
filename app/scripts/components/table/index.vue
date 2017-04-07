@@ -12,7 +12,7 @@
         required: true
       },
       action: {
-        type: String,
+        type: [String, Array],
         required: true
       },
       columns: {
