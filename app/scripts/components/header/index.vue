@@ -5,6 +5,12 @@
 
   export default {
     name: 'header-component',
+    props: {
+      expanded: {
+        type: Boolean,
+        default: false,
+      }
+    },
     components: {
       NavMenu,
     },
