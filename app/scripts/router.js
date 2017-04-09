@@ -36,9 +36,6 @@ const routes = [
     },
     props: {
       default: ({ params }) => ({ ...datasource[params.datasource] }),
-      header: ({ params }) => ({
-        expanded: (params.datasource in datasource) && datasource[params.datasource].management
-      }),
     }
   },
   {
