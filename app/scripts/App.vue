@@ -28,6 +28,7 @@ export default {
     right: 0;
     z-index: 2;
     background-color: transparent;
+    height: $header-height;
   }
 
   .l-main {
