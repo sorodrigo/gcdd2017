@@ -4,6 +4,10 @@ import Vuex from 'vuex';
 import professors from './modules/professors';
 import courses from './modules/courses';
 import degrees from './modules/degrees';
+import categories from './modules/categories';
+import staff from './modules/staff';
+import occupations from './modules/occupations';
+
 
 Vue.use(Vuex);
 
@@ -14,6 +18,9 @@ export default new Vuex.Store({
     professors,
     courses,
     degrees,
+    categories,
+    staff,
+    occupations,
   },
   strict: debug,
 });

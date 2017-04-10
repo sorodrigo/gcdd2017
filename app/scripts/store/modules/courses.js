@@ -20,7 +20,7 @@ const courses = {
   },
   // ACTIONS
   actions: {
-    getCourses({ commit }) {
+    setCourses({ commit }) {
       return new Promise((resolve, reject) => {
         fetch('/api/courses')
           .then((res) => {
@@ -39,7 +39,19 @@ const courses = {
     },
   },
   // GETTERS
-  getters: {},
+  getters: {
+    getCourses: state => state.list,
+    getCoursesChoose(state, getters) {
+      const degreesList = getters.getDegrees;
+      const courseList = [];
+      state.list.forEach((course) => {
+        const degrees = degreesList.filter(degree => course.degrees.includes(degree.id));
+        degrees.forEach(degree => courseList.push({ ...course, degree: degree.name }));
+      });
+
+      return courseList;
+    }
+  },
 };
 
 export default courses;

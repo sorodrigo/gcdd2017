@@ -9,3 +9,15 @@ export const SET_COURSES_ERROR = 'professors/SET_COURSES_ERROR';
 // degrees
 export const SET_DEGREES = 'professors/SET_DEGREES';
 export const SET_DEGREES_ERROR = 'professors/SET_DEGREES_ERROR';
+
+// categories
+export const SET_CATEGORIES = 'categories/SET_CATEGORIES';
+export const SET_CATEGORIES_ERROR = 'categories/SET_CATEGORIES_ERROR';
+
+// staff
+export const SET_STAFF = 'staff/SET_STAFF';
+export const SET_STAFF_ERROR = 'staff/SET_STAFF_ERROR';
+
+// occupations
+export const SET_OCCUPATIONS = 'occupations/SET_OCCUPATIONS';
+export const SET_OCCUPATIONS_ERROR = 'occupations/SET_OCCUPATIONS_ERROR';

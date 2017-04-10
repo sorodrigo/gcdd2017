@@ -20,7 +20,7 @@ const degrees = {
   },
   // ACTIONS
   actions: {
-    getDegrees({ commit }) {
+    setDegrees({ commit }) {
       return new Promise((resolve, reject) => {
         fetch('/api/degrees')
           .then((res) => {
@@ -39,7 +39,9 @@ const degrees = {
     },
   },
   // GETTERS
-  getters: {},
+  getters: {
+    getDegrees: state => state.list,
+  },
 };
 
 export default degrees;

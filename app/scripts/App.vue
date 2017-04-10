@@ -6,6 +6,7 @@
     <main class="l-main">
       <router-view></router-view>
     </main>
+    <router-view name="modal"></router-view>
     <footer class="l-footer">
       <router-view name="footer"></router-view>
     </footer>
@@ -18,23 +19,24 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="scss">
   @import '../styles/settings';
 
   .l-header {
     position: fixed;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 2;
     background-color: transparent;
+    height: $header-height;
   }
 
   .l-main {
-    position: absolute;
+    position: relative;
     height: calc(100% - #{$header-height});
     width: 100%;
-    margin-top: $header-height;
+    top: $header-height;
   }
 </style>
 

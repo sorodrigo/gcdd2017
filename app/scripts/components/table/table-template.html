@@ -1,0 +1,13 @@
+<div class="c-table">
+  <section>
+    <h2>{{heading}}</h2>
+    <v-client-table :data="tableData" :columns="columns">
+      <template slot="actions" scope="props">
+        <div>
+          <button class="glyphicon glyphicon-edit" @click="edit(props.row)"></button>
+          <button class="glyphicon glyphicon-remove" href=""></button>
+        </div>
+      </template>
+    </v-client-table>
+  </section>
+</div>

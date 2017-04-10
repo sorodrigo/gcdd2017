@@ -8,22 +8,43 @@
   padding: 0 62px;
   flex: 1;
   justify-content: space-between;
+  height: $header-height;
 
   .nav-section {
     display: flex;
     align-items: center;
     list-style: none;
 
-    li {
+    .nav-link {
       position: relative;
       margin-right: 20px;
-      overflow: hidden;
 
       a {
         padding: 20px 0;
         display: block;
         color: $white;
         text-decoration: none;
+      }
+
+      &.-submenu {
+        > a {
+          margin-right: 20px;
+        }
+
+        &.-active {
+          pointer-events: all;
+        }
+
+        &:hover:after,
+        .nav-link:hover:after {
+          width: 0;
+        }
+
+        &.-opened {
+          > a {
+            color: $theme-secondary;
+          }
+        }
       }
 
       &.-active {
