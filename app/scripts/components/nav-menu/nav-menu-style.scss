@@ -9,18 +9,26 @@
   .nav-menu-title {
     &.-opened {
       > a {
-        color: darken($white, 17%) !important;
+        color: darken($white, 17%);
       }
     }
   }
 
   .nav-menu-links-wrapper {
-    max-width: 60%;
+    display: inline-flex;
+    max-width: 65%;
     overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav-menu-links {
-    display: inline-flex;
+    white-space: nowrap;
+    width: auto;
+
+    > li {
+      display: inline-block;
+    }
   }
 
   .nav-menu-slide-enter, .nav-menu-slide-leave-to {

@@ -1,9 +1,9 @@
-<li :class="['c-nav-menu', { '-opened': opened }]">
+<li :class="['c-nav-menu', { '-opened': open }]">
   <a @click="toggle" class="nav-menu-title">{{title}}</a>
 
     <div class="nav-menu-links-wrapper">
       <transition name="nav-menu-slide">
-        <ul class="nav-menu-links" v-if="opened">
+        <ul class="nav-menu-links" v-if="open">
           <slot></slot>
         </ul>
       </transition>

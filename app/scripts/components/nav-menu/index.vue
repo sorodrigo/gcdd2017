@@ -12,16 +12,10 @@
         type: Boolean,
         default: false
       },
+      toggle: {
+        type: Function,
+        required: true
+      }
     },
-    data() {
-      return {
-        opened: this.open,
-      };
-    },
-    methods: {
-      toggle() {
-        this.opened = !this.opened;
-      },
-    }
   };
 </script>
