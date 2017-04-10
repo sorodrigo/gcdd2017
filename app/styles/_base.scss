@@ -8,7 +8,7 @@ body {
   color: $base-font-color;
   font-family: $base-font-family;
   font-size: $font-size-normal;
-  background-color: $main-bg-color;
+  background-color: $theme-base;
 }
 
 #app {
@@ -29,7 +29,7 @@ h2 {
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: $font-weight-bold;
 }
 

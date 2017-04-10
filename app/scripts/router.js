@@ -4,6 +4,7 @@ import Router from 'vue-router';
 import datasource from 'datasource';
 
 import HeaderComponent from 'components/header';
+import ModalComponent from 'components/modal';
 import TableComponent from 'components/table';
 
 Vue.use(Router);
@@ -13,16 +14,11 @@ const routes = [
     path: '/',
     components: {
       header: HeaderComponent,
+      modal: ModalComponent,
     },
   },
   {
     path: '/profile',
-    components: {
-      header: HeaderComponent,
-    },
-  },
-  {
-    path: '/manage',
     components: {
       header: HeaderComponent,
     },
@@ -35,7 +31,7 @@ const routes = [
       header: HeaderComponent,
     },
     props: {
-      default: ({ params }) => ({ ...datasource[params.datasource] }),
+      default: route => ({ ...datasource[route.params.datasource] }),
     }
   },
   {
