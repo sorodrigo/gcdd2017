@@ -14,6 +14,7 @@ const routes = [
     path: '/',
     components: {
       header: HeaderComponent,
+      modal: ModalComponent,
     },
   },
   {
@@ -23,19 +24,11 @@ const routes = [
     },
   },
   {
-    path: '/manage',
-    components: {
-      header: HeaderComponent,
-      modal: ModalComponent,
-    },
-  },
-  {
     path: '/:datasource',
     beforeEnter: (to, from, next) => ((to.params.datasource in datasource) ? next() : next('/')),
     components: {
       default: TableComponent,
       header: HeaderComponent,
-      modal: ModalComponent,
     },
     props: {
       default: route => ({ ...datasource[route.params.datasource] }),

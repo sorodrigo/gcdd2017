@@ -5,8 +5,8 @@
     </header>
     <main class="l-main">
       <router-view></router-view>
-      <router-view name="modal"></router-view>
     </main>
+    <router-view name="modal"></router-view>
     <footer class="l-footer">
       <router-view name="footer"></router-view>
     </footer>
