@@ -1,6 +1,6 @@
 {
   "name": "gcdd",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "Trabajo de fin de grado encargado de gestionar la carga docente de un departamento de la ETSISI de la UPM. Edit",
   "author": "Rodrigo SM",
   "private": true,
