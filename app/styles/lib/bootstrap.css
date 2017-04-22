@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=3f05a584caa36785b4c4513ba6008a60)
- * Config saved to config.json and https://gist.github.com/3f05a584caa36785b4c4513ba6008a60
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=bebaed62e45b788091d31f4dfc676038)
+ * Config saved to config.json and https://gist.github.com/bebaed62e45b788091d31f4dfc676038
  */
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
@@ -197,7 +197,11 @@ td,
 th {
   padding: 0;
 }
-
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.woff');
+  src: url('../fonts/glyphicons-halflings-regular.woff2') format('woff2');
+}
 .glyphicon {
   position: relative;
   top: 1px;
@@ -1797,4 +1801,45 @@ input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%;
+}
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.hidden {
+  display: none !important;
+}
+.affix {
+  position: fixed;
 }
