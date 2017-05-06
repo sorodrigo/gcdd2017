@@ -29,6 +29,17 @@ const modal = {
     setModal({ commit }, props) {
       commit(SET_MODAL, props);
     },
+    resetModal({ commit }) {
+      commit(SET_MODAL, {
+        open: false,
+        props: null,
+        content: null,
+        footer: true,
+        heading: null,
+        header: true,
+        autoSize: false,
+      });
+    }
   },
 };
 
