@@ -28,15 +28,7 @@
     },
     methods: {
       close() {
-        this.$store.dispatch('setModal', {
-          open: false,
-          props: null,
-          content: null,
-          footer: true,
-          heading: null,
-          header: true,
-          autoSize: false,
-        });
+        this.$store.dispatch('resetModal');
       },
       onKeyup(e) {
         if (e.keyCode === 27) this.close();
