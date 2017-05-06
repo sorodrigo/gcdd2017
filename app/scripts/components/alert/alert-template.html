@@ -1,0 +1,13 @@
+<div class="c-alert">
+  <h3 v-if="title">{{title}}</h3>
+  <p v-if="subtitle">{{subtitle}}</p>
+  <div class="alert-action-container">
+    <button
+      v-for="action in actions"
+      @click="action.callback"
+      :class="['btn', 'btn-' + action.type]"
+    >
+      {{action.name}}
+    </button>
+  </div>
+</div>

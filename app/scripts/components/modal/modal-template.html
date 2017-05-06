@@ -2,21 +2,20 @@
   <div
     :class="['modal-container', {
       '-headless': !header,
-      '-footless': !footer
+      '-footless': !footer,
+      '-autoSize': autoSize
     }]"
     @click.stop
   >
     <div v-if="header" class="modal-header">
       <h3>{{heading}}</h3>
-      <button class="btn modal-close" @click="close">
-        close
-      </button>
+      <button class="modal-close-icon glyphicon glyphicon-remove" @click="close"></button>
     </div>
     <div class="modal-content">
       <component :is="content" v-bind="props"></component>
     </div>
     <div v-if="footer" class="modal-footer">
-      <button class="btn modal-close" @click="close">close</button>
+      <button class="btn btn-warning" @click="close">close</button>
     </div>
   </div>
 </section>

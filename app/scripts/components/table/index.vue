@@ -1,6 +1,8 @@
 <template src="./table-template.html"></template>
 <style lang="scss" src="./table-style.scss"></style>
 <script>
+  import Alert from '../alert';
+
   export default {
     name: 'table-component',
     created() {
@@ -41,6 +43,31 @@
       },
       edit(row) {
         console.log(row);
+      },
+      remove(row) {
+        this.$store.dispatch('setModal', {
+          open: true,
+          header: false,
+          footer: false,
+          autoSize: true,
+          content: Alert,
+          props: {
+            title: `Are you sure you want to delete ${row[this.columns[1]]}?`,
+            subtitle: 'This action cannot be undone.',
+            actions: [
+              {
+                name: 'Cancel',
+                type: 'warning',
+                callback: () => this.$store.dispatch('resetModal')
+              },
+              {
+                name: 'Delete',
+                type: 'danger',
+                callback: () => console.warn(row)
+              }
+            ],
+          },
+        });
       }
     },
     watch: {
