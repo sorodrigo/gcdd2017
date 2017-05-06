@@ -52,8 +52,8 @@
           autoSize: true,
           content: Alert,
           props: {
-            title: `Are you sure you want to delete ${row.name}?`,
-            subtitle: 'This action cannot be undone',
+            title: `Are you sure you want to delete ${row[this.columns[1]]}?`,
+            subtitle: 'This action cannot be undone.',
             actions: [
               {
                 name: 'Cancel',

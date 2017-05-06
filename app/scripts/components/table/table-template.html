@@ -4,7 +4,7 @@
     <v-client-table :data="tableData" :columns="columns">
       <template slot="actions" scope="props">
         <div>
-          <button class="glyphicon glyphicon-edit" @click="edit(props.row)"></button>
+          <a href="/" class="glyphicon glyphicon-edit" @click="edit(props.row)"></a>
           <button class="glyphicon glyphicon-remove" @click="remove(props.row)"></button>
         </div>
       </template>
