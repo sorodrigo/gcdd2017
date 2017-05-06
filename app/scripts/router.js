@@ -13,8 +13,7 @@ const routes = [
   {
     path: '/',
     components: {
-      header: HeaderComponent,
-      modal: ModalComponent,
+      header: HeaderComponent
     },
   },
   {
@@ -29,6 +28,7 @@ const routes = [
     components: {
       default: TableComponent,
       header: HeaderComponent,
+      modal: ModalComponent
     },
     props: {
       default: route => ({ ...datasource[route.params.datasource] }),
