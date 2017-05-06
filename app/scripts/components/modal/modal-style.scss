@@ -29,6 +29,11 @@
         }
       }
     }
+
+    &.-autoSize {
+      height: auto;
+      width: auto;
+    }
   }
 
   .modal-header {

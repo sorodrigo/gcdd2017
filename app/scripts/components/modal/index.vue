@@ -17,6 +17,7 @@
     },
     computed: {
       ...mapState({
+        autoSize: ({ modal }) => modal.autoSize,
         header: ({ modal }) => modal.header,
         heading: ({ modal }) => modal.heading,
         footer: ({ modal }) => modal.footer,
@@ -34,6 +35,7 @@
           footer: true,
           heading: null,
           header: true,
+          autoSize: false,
         });
       },
       onKeyup(e) {
