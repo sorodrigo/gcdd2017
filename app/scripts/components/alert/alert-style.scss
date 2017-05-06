@@ -1,0 +1,22 @@
+@import '../../../styles/settings';
+
+.c-alert {
+  padding: 20px 15px;
+
+  > p {
+    line-height: 1.7;
+    font-size: $font-size-xsmall;
+    color: $dark-gray;
+    text-align: center;
+  }
+  .alert-action-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+
+    > button {
+      padding: 3px 6px;
+      font-size: 13px;
+    }
+  }
+}
