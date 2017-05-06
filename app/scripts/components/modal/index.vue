@@ -8,25 +8,33 @@
     created() {
       window.addEventListener('keyup', this.onKeyup);
     },
+    updated() {
+      const overflow = this.open ? 'hidden' : 'auto';
+      document.querySelector('body').style.overflow = overflow;
+    },
     beforeDestroy() {
       window.removeEventListener('keyup', this.onKeyup);
     },
-    data() {
-      return {
-        header: true,
-        heading: null,
-        footer: true,
-        content: null,
-        props: null,
-        open: true,
-      };
-    },
     computed: {
-      ...mapState(['header', 'heading', 'footer', 'content', 'props', 'open']),
+      ...mapState({
+        header: ({ modal }) => modal.header,
+        heading: ({ modal }) => modal.heading,
+        footer: ({ modal }) => modal.footer,
+        content: ({ modal }) => modal.content,
+        props: ({ modal }) => modal.props,
+        open: ({ modal }) => modal.open,
+      })
     },
     methods: {
       close() {
-        this.open = false;
+        this.$store.dispatch('setModal', {
+          open: false,
+          props: null,
+          content: null,
+          footer: true,
+          heading: null,
+          header: true,
+        });
       },
       onKeyup(e) {
         if (e.keyCode === 27) this.close();

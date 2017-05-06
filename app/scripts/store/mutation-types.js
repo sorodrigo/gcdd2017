@@ -21,3 +21,6 @@ export const SET_STAFF_ERROR = 'staff/SET_STAFF_ERROR';
 // occupations
 export const SET_OCCUPATIONS = 'occupations/SET_OCCUPATIONS';
 export const SET_OCCUPATIONS_ERROR = 'occupations/SET_OCCUPATIONS_ERROR';
+
+// modal
+export const SET_MODAL = 'modal/SET_MODAL';
