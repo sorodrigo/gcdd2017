@@ -24,3 +24,6 @@ export const SET_OCCUPATIONS_ERROR = 'occupations/SET_OCCUPATIONS_ERROR';
 
 // modal
 export const SET_MODAL = 'modal/SET_MODAL';
+
+// form
+export const SET_FORM_MODEL = 'form/SET_FORM_MODEL';

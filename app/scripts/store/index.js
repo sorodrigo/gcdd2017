@@ -8,6 +8,7 @@ import categories from './modules/categories';
 import staff from './modules/staff';
 import occupations from './modules/occupations';
 import modal from './modules/modal';
+import form from './modules/form';
 
 
 Vue.use(Vuex);
@@ -23,6 +24,7 @@ export default new Vuex.Store({
     staff,
     occupations,
     modal,
+    form,
   },
   strict: debug,
 });
