@@ -9,6 +9,10 @@ import TableComponent from 'components/table';
 
 Vue.use(Router);
 
+const handlers = {
+  dataSource: (to, from, next) => ((to.params.datasource in datasource) ? next() : next('/'))
+};
+
 const routes = [
   {
     path: '/',
@@ -24,7 +28,7 @@ const routes = [
   },
   {
     path: '/:datasource',
-    beforeEnter: (to, from, next) => ((to.params.datasource in datasource) ? next() : next('/')),
+    beforeEnter: handlers.dataSource,
     components: {
       default: TableComponent,
       header: HeaderComponent,
@@ -32,7 +36,14 @@ const routes = [
     },
     props: {
       default: route => ({ ...datasource[route.params.datasource] }),
-    }
+    },
+  },
+  {
+    path: '/:datasource/:id',
+    beforeEnter: handlers.dataSource,
+    components: {
+      header: HeaderComponent,
+    },
   },
   {
     path: '*',

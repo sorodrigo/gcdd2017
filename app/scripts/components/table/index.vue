@@ -42,7 +42,7 @@
         }
       },
       edit(row) {
-        console.log(row);
+        return `${this.$route.fullPath}/${row.id}`;
       },
       remove(row) {
         this.$store.dispatch('setModal', {
