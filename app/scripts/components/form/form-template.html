@@ -1,2 +1,18 @@
 <div class="c-form">
+  <section>
+    <h2>{{heading}}</h2>
+    <vue-form-generator
+      class="form-container"
+      :schema="schema"
+      :model="model"
+      @model-updated="onUpdateModel"
+    ></vue-form-generator>
+    <alert
+      :class="['form-alert-container', {
+      '-success': status,
+      '-error': error,
+      }]"
+      :subtitle="(status && 'Updated Successfully') || (error && 'Error: Update Failed!')"
+    ></alert>
+  </section>
 </div>
