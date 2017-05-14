@@ -44,7 +44,7 @@
       edit(row) {
         this.$store.dispatch('setFormModel', row);
         const onAbort = () => this.$store.dispatch('setFormModel', null);
-        this.$router.push(`${this.$route.fullPath}/${row.id.toString()}`, null, onAbort);
+        this.$router.push(`${this.$route.fullPath}/edit/${row.id.toString()}`, null, onAbort);
       },
       remove(row) {
         this.$store.dispatch('setModal', {
