@@ -15,14 +15,14 @@ const datasource = {
     management: true,
     heading: 'Manage Professors',
     columns: ['id', 'name', 'last_name', 'email', 'actions'],
-    action: 'setProfessors',
+    action: ['setProfessors', 'setCategories', 'setOccupations'],
     getter: 'getProfessors',
   },
   courses: {
     management: true,
     heading: 'Manage Courses',
     columns: ['id', 'name', 'grade', 'theory_credits', 'practical_credits', 'actions'],
-    action: 'setCourses',
+    action: ['setCourses', 'setDegrees'],
     getter: 'getCourses',
   },
   degrees: {

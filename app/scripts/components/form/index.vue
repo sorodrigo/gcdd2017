@@ -3,13 +3,16 @@
 <script>
   import 'vue-form-generator/dist/vfg.css';
   import capitalize from 'lodash/capitalize';
+  import cloneDeep from 'lodash/cloneDeep';
+  import VueFormGenerator from 'vue-form-generator';
   import { mapState } from 'vuex';
+
   import Alert from '../alert';
 
   export default {
     name: 'form-component',
     created() {
-      if (Object.keys(this.model).length === 0) this.fetch();
+      if (!this.model) this.fetch();
     },
     props: {
       datasource: {
@@ -28,22 +31,44 @@
     data() {
       return {
         timeout: null,
+        dispatchUpdate: false
       };
     },
     computed: {
       ...mapState({
-        model: ({ form }) => ({ ...form.model }),
+        model: ({ form }) => form.model,
         status: ({ form }) => form.status,
         error: ({ form }) => form.error,
       }),
       schema() {
-        return this.$store.getters.getFormSchema;
+        const schema = cloneDeep(this.$store.getters.getFormSchema);
+        let fields = [];
+        if (schema.fields) {
+          fields = schema.fields.map((field) => {
+            if ('dispatch' in field) {
+              return { ...field, set: this.buildDispatch(field) };
+            }
+            return field;
+          });
+        }
+        return { fields };
       },
       heading() {
         return capitalize(`${this.action} ${this.datasource}`);
       }
     },
     methods: {
+      buildDispatch({ model, dispatch }) {
+        const set = (changes) => {
+          this.dispatchUpdate = true;
+          this.$store.dispatch('updateFormModel', {
+            endpoint: this.datasource,
+            id: this.id,
+            model: { ...this.model, [model]: changes }
+          });
+        };
+        return (m, v) => set(dispatch(m, v));
+      },
       fetch() {
         this.$store.dispatch('getFormModel', {
           endpoint: this.datasource,
@@ -57,11 +82,14 @@
         }, 2000);
       },
       onUpdateModel() {
-        this.throttle(this.$store.dispatch, ['updateFormModel', {
-          endpoint: this.datasource,
-          id: this.id,
-          model: this.model
-        }]);
+        if (!this.dispatchUpdate) {
+          this.throttle(this.$store.dispatch, ['updateFormModel', {
+            endpoint: this.datasource,
+            id: this.id,
+            model: this.model
+          }]);
+        }
+        this.dispatchUpdate = false;
         this.resetSuccess();
       },
       resetSuccess() {
@@ -73,6 +101,7 @@
     },
     components: {
       Alert,
+      'vue-form-generator': VueFormGenerator.component,
     }
   };
 </script>
