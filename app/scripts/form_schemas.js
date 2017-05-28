@@ -5,12 +5,18 @@ const schemas = {
     category: {
       type: 'select',
       multiSelect: false,
-      values: 'getCategories'
+      values: 'getCategories',
+      selectOptions: {
+        name: 'title'
+      }
     },
     occupation: {
       type: 'select',
       multiSelect: false,
-      values: 'getOccupations'
+      values: 'getOccupations',
+      selectOptions: {
+        name: 'title'
+      }
     }
   },
   courses: {
