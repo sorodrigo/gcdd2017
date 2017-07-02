@@ -6,6 +6,7 @@ import datasource from 'datasource';
 import HeaderComponent from 'components/header';
 import ModalComponent from 'components/modal';
 import TableComponent from 'components/table';
+import FormComponent from 'components/form';
 
 Vue.use(Router);
 
@@ -39,11 +40,15 @@ const routes = [
     },
   },
   {
-    path: '/:datasource/:id',
+    path: '/:datasource/:action/:id',
     beforeEnter: handlers.dataSource,
     components: {
       header: HeaderComponent,
+      default: FormComponent
     },
+    props: {
+      default: true,
+    }
   },
   {
     path: '*',

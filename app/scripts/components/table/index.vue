@@ -42,7 +42,12 @@
         }
       },
       edit(row) {
-        return `${this.$route.fullPath}/${row.id}`;
+        this.$store.dispatch('setFormModel', {
+          datasource: this.$route.params.datasource,
+          model: row
+        });
+
+        this.$router.push(`${this.$route.fullPath}/edit/${row.id.toString()}`);
       },
       remove(row) {
         this.$store.dispatch('setModal', {

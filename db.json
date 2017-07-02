@@ -156,9 +156,9 @@
     {
       "id": 3,
       "name": "Ingeniería De Computadores (2009)",
-      "year": 2009,
+      "year": 2010,
       "estimate": 100,
-      "valid": true
+      "valid": false
     },
     {
       "id": 4,
@@ -188,12 +188,13 @@
       "practical_groups_en": 0,
       "student_n": 100,
       "group_n": 3,
-      "practical_group_n": 0,
+      "practical_group_n": 1,
       "degrees": [
         1,
         2,
         3,
-        4
+        4,
+        5
       ]
     },
     {

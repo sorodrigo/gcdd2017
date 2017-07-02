@@ -6,7 +6,7 @@
     props: {
       title: {
         type: String,
-        required: true,
+        required: false,
       },
       subtitle: {
         type: String,
@@ -14,7 +14,7 @@
       },
       actions: {
         type: Array,
-        required: true
+        required: false
       }
     },
   };

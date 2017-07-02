@@ -12,6 +12,7 @@ Vue.config.productionTip = false;
 
 sync(store, router);
 
+// plugins
 Vue.use(ClientTable, {}, false, false);
 
 /* eslint-disable no-new */
