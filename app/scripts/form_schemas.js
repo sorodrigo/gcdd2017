@@ -1,4 +1,5 @@
 import cloneDeep from 'lodash';
+import VueFormGenerator from 'vue-form-generator';
 
 const schemas = {
   professors: {
@@ -17,6 +18,16 @@ const schemas = {
       selectOptions: {
         name: 'title'
       }
+    },
+    register_date: {
+      type: 'input',
+      inputType: 'datetime-local',
+      validator: VueFormGenerator.validators.date
+    },
+    entry_date: {
+      type: 'input',
+      inputType: 'datetime-local',
+      validator: VueFormGenerator.validators.date
     }
   },
   courses: {

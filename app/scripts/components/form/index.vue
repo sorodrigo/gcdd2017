@@ -31,12 +31,15 @@
     data() {
       return {
         timeout: null,
-        dispatchUpdate: false
+        dispatchUpdate: false,
+        formOptions: {
+          validateAfterChanged: true,
+        },
       };
     },
     computed: {
       ...mapState({
-        model: ({ form }) => form.model,
+        model: ({ form }) => cloneDeep(form.model),
         status: ({ form }) => form.status,
         error: ({ form }) => form.error,
       }),
@@ -81,16 +84,18 @@
           callback(...params);
         }, 2000);
       },
-      onUpdateModel() {
-        if (!this.dispatchUpdate) {
-          this.throttle(this.$store.dispatch, ['updateFormModel', {
-            endpoint: this.datasource,
-            id: this.id,
-            model: this.model
-          }]);
+      onValidated(valid) {
+        if (valid) {
+          if (!this.dispatchUpdate) {
+            this.throttle(this.$store.dispatch, ['updateFormModel', {
+              endpoint: this.datasource,
+              id: this.id,
+              model: this.model
+            }]);
+          }
+          this.dispatchUpdate = false;
+          this.resetSuccess();
         }
-        this.dispatchUpdate = false;
-        this.resetSuccess();
       },
       resetSuccess() {
         setTimeout(() => (this.$store.dispatch('setFormStatus', false)), 4500);

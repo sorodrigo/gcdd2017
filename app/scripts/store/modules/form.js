@@ -1,4 +1,5 @@
 import startCase from 'lodash/startCase';
+import VueFormGenerator from 'vue-form-generator';
 import {
   SET_FORM_MODEL,
   SET_FORM_ERROR,
@@ -13,14 +14,7 @@ const getSchemaProps = (field, fieldName) => {
       return {
         type: 'input',
         inputType: 'email',
-      };
-    case (fieldName === 'phone'):
-      return {
-        type: 'cleave',
-        cleaveOptions: {
-          phone: true,
-          phoneRegionCode: 'ES',
-        }
+        validator: VueFormGenerator.validators.email,
       };
     case (fieldName === 'password'):
       return {
@@ -28,12 +22,14 @@ const getSchemaProps = (field, fieldName) => {
         inputType: 'password',
         min: 6,
         required: true,
-        hint: 'Minimum 6 characters'
+        hint: 'Minimum 6 characters',
+        validator: VueFormGenerator.validators.alphaNumeric,
       };
     case (typeof field === 'string'):
       return {
         type: 'input',
         inputType: 'text',
+        validator: VueFormGenerator.validators.string,
       };
     case (typeof field === 'boolean'):
       return {
@@ -43,13 +39,15 @@ const getSchemaProps = (field, fieldName) => {
     case (Number.isInteger(field)): {
       return {
         type: 'input',
-        inputType: 'number'
+        inputType: 'number',
+        validator: VueFormGenerator.validators.integer,
       };
     }
     default:
       return {
         type: 'input',
-        inputType: 'text'
+        inputType: 'text',
+        validator: VueFormGenerator.validators.string,
       };
   }
 };
@@ -58,7 +56,7 @@ const getSchemaValues = (schema, getters) => {
   const props = {};
   Object.keys(schema)
     .forEach((key) => {
-      if (key === 'values') props[key] = getters[schema.values];
+      if (key === 'values' && typeof schema.values === 'string') props[key] = getters[schema.values];
       else props[key] = schema[key];
     });
   return props;
@@ -106,7 +104,11 @@ const form = {
               return res.json();
             })
             .then((data) => {
-              const payload = { datasource: endpoint, model: data };
+              const model = { ...data };
+              Object.keys(data).forEach((key) => {
+                if (key.endsWith('_date')) model[key] = new Date(model[key]);
+              });
+              const payload = { datasource: endpoint, model };
               commit(SET_FORM_MODEL, payload);
               resolve(payload);
             })

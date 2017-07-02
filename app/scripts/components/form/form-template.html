@@ -5,7 +5,8 @@
       class="form-container"
       :schema="schema"
       :model="model"
-      @model-updated="onUpdateModel"
+      :options="formOptions"
+      @validated="onValidated"
     ></vue-form-generator>
     <alert
       :class="['form-alert-container', {
