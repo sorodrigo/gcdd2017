@@ -94,8 +94,8 @@
     "whatwg-fetch": "^2.0.3"
   },
   "engines": {
-    "node": ">= 7.4.0",
-    "npm": ">= 4.0.5"
+    "node": ">= 8.2.1",
+    "npm": ">= 4.6.1"
   },
   "browserslist": [
     "> 1%",
