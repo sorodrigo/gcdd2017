@@ -13,7 +13,7 @@
         type: String,
         required: true
       },
-      action: {
+      actions: {
         type: [String, Array],
         required: true
       },
@@ -43,11 +43,7 @@
       fetch() {
         if (this.tableData.length) return;
 
-        if (Array.isArray(this.action)) {
-          this.action.forEach(action => this.$store.dispatch(action));
-        } else {
-          this.$store.dispatch(this.action);
-        }
+        this.actions.forEach(action => this.$store.dispatch(action.type, action.payload));
       },
       create() {
         const model = Object.assign({}, this.tableData[0]);
