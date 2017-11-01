@@ -78,7 +78,7 @@
     "sinon-chai": "^2.8.0",
     "url-loader": "^0.5.7",
     "vue": "^2.3.3",
-    "vue-form-generator": "sorodrigo/vue-form-generator#feat/select-get-item-name",
+    "vue-form-generator": "^2.0.0",
     "vue-loader": "^11.1.4",
     "vue-router": "^2.2.0",
     "vue-style-loader": "^2.0.0",

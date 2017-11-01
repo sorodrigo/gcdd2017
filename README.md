@@ -1,6 +1,6 @@
 # gcdd
 
-> Trabajo de fin de grado encargado de gestionar la carga docente de un departamento de la ETSISI de la UPM. Edit
+> Trabajo de fin de grado
 
 ## Build Setup
 
