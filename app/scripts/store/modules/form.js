@@ -52,12 +52,14 @@ const getSchemaProps = (field, fieldName) => {
   }
 };
 
-const getSchemaValues = (schema, getters) => {
+const getSchemaValues = (schema, entities) => {
   const props = {};
   Object.keys(schema)
     .forEach((key) => {
-      if (key === 'values' && typeof schema.values === 'string') props[key] = getters[schema.values];
-      else props[key] = schema[key];
+      if (key === 'relation') {
+        const { relation } = schema;
+        props[relation.key] = entities[relation.name];
+      } else props[key] = schema[key];
     });
   return props;
 };
@@ -148,7 +150,7 @@ const form = {
     },
   },
   getters: {
-    getFormSchema({ model, datasource }, getters) {
+    getFormSchema({ model, datasource }, getters, { entity }) {
       if (!model) return {};
       const fields = Object.keys(model).map((key) => {
         const field = model[key];
@@ -157,9 +159,8 @@ const form = {
           model: key,
           readonly: key === 'id'
         };
-
         const schemaProps = (SCHEMAS[datasource] && key in SCHEMAS[datasource])
-          ? getSchemaValues(SCHEMAS[datasource][key], getters)
+          ? getSchemaValues(SCHEMAS[datasource][key], entity.data)
           : getSchemaProps(field, key);
         return { ...schema, ...schemaProps };
       });
