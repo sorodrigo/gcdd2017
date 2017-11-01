@@ -1,20 +1,4 @@
 const datasource = {
-  choose: {
-    heading: 'Choose Course',
-    columns: ['name', 'degree', 'grade', 'theory_credits', 'practical_credits', 'actions'],
-    action: ['setCourses', 'setDegrees'],
-    getter: 'getCoursesChoose',
-    showEdit: false,
-    showDelete: false
-  },
-  assign: {
-    heading: 'Assign Courses',
-    columns: ['id', 'name', 'year', 'estimate', 'valid', 'actions'],
-    action: 'setDegrees',
-    getter: 'getDegrees',
-    showEdit: false,
-    showDelete: false
-  },
   professors: {
     management: true,
     heading: 'Manage Professors',
