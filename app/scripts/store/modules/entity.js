@@ -1,23 +1,25 @@
+import datasource from 'datasource';
+
 import {
-  SET_CURRENT_ENTITY,
-  SET_ENTITY_LIST,
+  SET_ENTITY,
   SET_ENTITY_ERROR,
+  INIT_ENTITIES
 } from '../mutation-types';
+
 
 const staff = {
   // INITIAL STATE
   state: {
     data: {},
-    current: {},
     error: null,
   },
   // MUTATIONS
   mutations: {
-    [SET_CURRENT_ENTITY](state, current) {
-      state.current = current;
+    [INIT_ENTITIES](state, data) {
+      state.data = data;
     },
-    [SET_ENTITY_LIST](state, list, entity) {
-      state.data = { ...state.data, [entity]: { ...state.data[entity], list } };
+    [SET_ENTITY](state, { list, entity }) {
+      state.data = { ...state.data, [entity]: list };
     },
     [SET_ENTITY_ERROR](state, error) {
       state.error = error;
@@ -25,16 +27,21 @@ const staff = {
   },
   // ACTIONS
   actions: {
-    setStaff({ commit }, { entity }) {
+    initEntities({ commit }) {
+      const entities = Object.keys(datasource)
+        .reduce((acc, next) => ({ ...acc, [next]: [] }), {});
+      commit(INIT_ENTITIES, entities);
+    },
+    setEntity({ commit }, entity) {
       return new Promise((resolve, reject) => {
         fetch(`/api/${entity}`)
           .then((res) => {
             if (res.status >= 400) throw new Error(res.status);
             return res.json();
           })
-          .then((data) => {
-            commit(SET_ENTITY_LIST, data);
-            resolve(data);
+          .then((list) => {
+            commit(SET_ENTITY, { list, entity });
+            resolve(list);
           })
           .catch((err) => {
             commit(SET_ENTITY_ERROR, err);
@@ -45,7 +52,7 @@ const staff = {
   },
   // GETTERS
   getters: {
-    getEntity: ({ data, current }) => data[current],
+    getEntity: ({ data, current }, getters, { route }) => data[route.params.datasource],
   },
 };
 

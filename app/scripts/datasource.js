@@ -3,8 +3,21 @@ const datasource = {
     management: true,
     heading: 'Manage Professors',
     columns: ['id', 'name', 'last_name', 'email', 'actions'],
-    action: ['setProfessors', 'setCategories', 'setOccupations'],
-    getter: 'getProfessors',
+    actions: [
+      {
+        type: 'setEntity',
+        payload: 'professors'
+      },
+      {
+        type: 'setEntity',
+        payload: 'categories'
+      },
+      {
+        type: 'setEntity',
+        payload: 'occupations'
+      }
+    ],
+    getter: 'getEntity',
     showEdit: true,
     showDelete: true
   },
@@ -12,8 +25,17 @@ const datasource = {
     management: true,
     heading: 'Manage Courses',
     columns: ['id', 'name', 'grade', 'theory_credits', 'practical_credits', 'actions'],
-    action: ['setCourses', 'setDegrees'],
-    getter: 'getCourses',
+    actions: [
+      {
+        type: 'setEntity',
+        payload: 'courses'
+      },
+      {
+        type: 'setEntity',
+        payload: 'degrees'
+      }
+    ],
+    getter: 'getEntity',
     showEdit: true,
     showDelete: true
   },
@@ -21,8 +43,8 @@ const datasource = {
     management: true,
     heading: 'Manage Degrees',
     columns: ['id', 'name', 'year', 'estimate', 'valid', 'actions'],
-    action: 'setDegrees',
-    getter: 'getDegrees',
+    actions: [{ type: 'setEntity', payload: 'degrees' }],
+    getter: 'getEntity',
     showEdit: true,
     showDelete: true
   },
@@ -30,8 +52,8 @@ const datasource = {
     management: true,
     heading: 'Manage Staff',
     columns: ['id', 'type', 'workload', 'hours', 'actions'],
-    action: 'setStaff',
-    getter: 'getStaff',
+    actions: [{ type: 'setEntity', payload: 'staff' }],
+    getter: 'getEntity',
     showEdit: true,
     showDelete: true
   },
@@ -39,8 +61,8 @@ const datasource = {
     management: true,
     heading: 'Manage Categories',
     columns: ['id', 'title', 'priority', 'actions'],
-    action: 'setCategories',
-    getter: 'getCategories',
+    actions: [{ type: 'setEntity', payload: 'categories' }],
+    getter: 'getEntity',
     showEdit: true,
     showDelete: true
   },
@@ -48,8 +70,8 @@ const datasource = {
     management: true,
     heading: 'Manage Occupations',
     columns: ['id', 'title', 'value', 'actions'],
-    action: 'setOccupations',
-    getter: 'getOccupations',
+    actions: [{ type: 'setEntity', payload: 'occupations' }],
+    getter: 'getEntity',
     showEdit: true,
     showDelete: true
   },

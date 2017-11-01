@@ -16,6 +16,9 @@
 <script>
 export default {
   name: 'app',
+  created() {
+    this.$store.dispatch('initEntities');
+  }
 };
 </script>
 
