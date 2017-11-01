@@ -6,7 +6,10 @@ const schemas = {
     category: {
       type: 'select',
       multiSelect: false,
-      values: 'getCategories',
+      relation: {
+        key: 'values',
+        name: 'categories'
+      },
       selectOptions: {
         name: 'title'
       }
@@ -14,7 +17,10 @@ const schemas = {
     occupation: {
       type: 'select',
       multiSelect: false,
-      values: 'getOccupations',
+      relation: {
+        key: 'values',
+        name: 'occupations'
+      },
       selectOptions: {
         name: 'title'
       }
@@ -33,7 +39,10 @@ const schemas = {
   courses: {
     degrees: {
       type: 'checklist',
-      values: 'getDegrees',
+      relation: {
+        key: 'values',
+        name: 'degrees'
+      },
       dispatch: (model, newVal) => {
         const m = cloneDeep(model);
         m.degrees = [...newVal];
