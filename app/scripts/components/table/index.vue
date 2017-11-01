@@ -25,6 +25,14 @@
         type: String,
         required: true
       },
+      showEdit: {
+        type: Boolean,
+        required: true
+      },
+      showDelete: {
+        type: Boolean,
+        required: true
+      }
     },
     computed: {
       tableData() {
@@ -40,6 +48,18 @@
         } else {
           this.$store.dispatch(this.action);
         }
+      },
+      create() {
+        const model = Object.assign({}, this.tableData[0]);
+        Object.keys(model).forEach((field) => {
+          model[field] = null;
+        });
+        this.$store.dispatch('setFormModel', {
+          datasource: this.$route.params.datasource,
+          model
+        });
+
+        this.$router.push(`${this.$route.fullPath}/new`);
       },
       edit(row) {
         this.$store.dispatch('setFormModel', {

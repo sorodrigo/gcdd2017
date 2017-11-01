@@ -40,7 +40,7 @@ const routes = [
     },
   },
   {
-    path: '/:datasource/:action/:id',
+    path: '/:datasource/:action/:id?',
     beforeEnter: handlers.dataSource,
     components: {
       header: HeaderComponent,
