@@ -1,38 +1,43 @@
 import {
-  SET_STAFF,
-  SET_STAFF_ERROR,
+  SET_CURRENT_ENTITY,
+  SET_ENTITY_LIST,
+  SET_ENTITY_ERROR,
 } from '../mutation-types';
 
 const staff = {
   // INITIAL STATE
   state: {
-    list: [],
+    data: {},
+    current: {},
     error: null,
   },
   // MUTATIONS
   mutations: {
-    [SET_STAFF](state, list) {
-      state.list = list;
+    [SET_CURRENT_ENTITY](state, current) {
+      state.current = current;
     },
-    [SET_STAFF_ERROR](state, error) {
+    [SET_ENTITY_LIST](state, list, entity) {
+      state.data = { ...state.data, [entity]: { ...state.data[entity], list } };
+    },
+    [SET_ENTITY_ERROR](state, error) {
       state.error = error;
     },
   },
   // ACTIONS
   actions: {
-    setStaff({ commit }) {
+    setStaff({ commit }, { entity }) {
       return new Promise((resolve, reject) => {
-        fetch('/api/staff')
+        fetch(`/api/${entity}`)
           .then((res) => {
             if (res.status >= 400) throw new Error(res.status);
             return res.json();
           })
           .then((data) => {
-            commit(SET_STAFF, data);
+            commit(SET_ENTITY_LIST, data);
             resolve(data);
           })
           .catch((err) => {
-            commit(SET_STAFF_ERROR, err);
+            commit(SET_ENTITY_ERROR, err);
             reject(err);
           });
       });
@@ -40,7 +45,7 @@ const staff = {
   },
   // GETTERS
   getters: {
-    getStaff: state => state.list,
+    getEntity: ({ data, current }) => data[current],
   },
 };
 
