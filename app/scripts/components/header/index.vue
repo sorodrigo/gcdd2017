@@ -12,6 +12,7 @@
     data() {
       return {
         expanded: false,
+        pages: Object.keys(datasource)
       };
     },
     methods: {

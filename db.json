@@ -1,11 +1,13 @@
 {
-  "me": {
-    "id": 1,
-    "email": "jon.snow@example.com",
-    "password": "winter_is_coming",
-    "professor": null,
-    "is_admin": true
-  },
+  "me": [
+    {
+      "id": 1,
+      "email": "jon.snow@example.com",
+      "password": "winter_is_coming",
+      "professor": null,
+      "is_admin": true
+    }
+  ],
   "professors": [
     {
       "id": 1,

@@ -75,6 +75,15 @@ const datasource = {
     showEdit: true,
     showDelete: true
   },
+  me: {
+    management: true,
+    heading: 'Manage Me',
+    columns: ['id', 'email', 'password', 'is_admin', 'actions'],
+    actions: [{ type: 'setEntity', payload: 'me' }],
+    getter: 'getEntity',
+    showEdit: true,
+    showDelete: true
+  }
 };
 
 export default datasource;

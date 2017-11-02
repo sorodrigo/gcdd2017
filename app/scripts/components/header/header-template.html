@@ -5,23 +5,14 @@
     </router-link>
 
     <nav-menu class="nav-link -submenu" title="Manage" :open="expanded" :toggle="toggleSubmenu">
-      <router-link class="nav-link" active-class="-active" tag="li" to="/professors">
-        <a>Professors</a>
-      </router-link>
-      <router-link class="nav-link" active-class="-active" tag="li" to="/degrees">
-        <a>Degrees</a>
-      </router-link>
-      <router-link class="nav-link" active-class="-active" tag="li" to="/courses">
-        <a>Courses</a>
-      </router-link>
-      <router-link class="nav-link" active-class="-active" tag="li" to="/staff">
-        <a>Staff</a>
-      </router-link>
-      <router-link class="nav-link" active-class="-active" tag="li" to="/categories">
-        <a>Categories</a>
-      </router-link>
-      <router-link class="nav-link" active-class="-active" tag="li" to="/occupations">
-        <a>Occupations</a>
+      <router-link
+        v-for="page in pages"
+        :key="page"
+        class="nav-link"
+        active-class="-active"
+        tag="li"
+        :to="'/' + page">
+          <a>{{page}}</a>
       </router-link>
     </nav-menu>
   </ul>
