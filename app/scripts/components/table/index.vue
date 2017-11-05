@@ -46,13 +46,21 @@
         this.actions.forEach(action => this.$store.dispatch(action.type, action.payload));
       },
       create() {
-        const model = Object.assign({}, this.tableData[0]);
-        Object.keys(model).forEach((field) => {
-          model[field] = null;
-        });
+        const firstRow = { ...this.tableData[0] };
+        const model = Object.keys(firstRow)
+          .reduce((acc, key) => {
+            if (key === 'id') return acc;
+            const initialValue = {
+              boolean: false,
+              string: '',
+              number: 0,
+              object: null
+            }[typeof firstRow[key]];
+            return { ...acc, [key]: initialValue };
+          }, {});
         this.$store.dispatch('setFormModel', {
-          datasource: this.$route.params.datasource,
-          model
+          model,
+          datasource: this.$route.params.datasource
         });
 
         this.$router.push(`${this.$route.fullPath}/new`);
@@ -63,7 +71,7 @@
           model: row
         });
 
-        this.$router.push(`${this.$route.fullPath}/edit/${row.id.toString()}`);
+        this.$router.push(`${this.$route.fullPath}/edit/${row.id}`);
       },
       remove(row) {
         this.$store.dispatch('setModal', {
@@ -84,7 +92,13 @@
               {
                 name: 'Delete',
                 type: 'danger',
-                callback: () => console.warn(row)
+                callback: () => {
+                  this.$store.dispatch('removeEntityRow', {
+                    id: row.id,
+                    entity: this.$route.params.datasource
+                  });
+                  this.$store.dispatch('resetModal');
+                }
               }
             ],
           },
