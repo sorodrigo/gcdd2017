@@ -14,6 +14,11 @@
     created() {
       if (!this.model) this.fetch();
     },
+    updated() {
+      if (typeof this.model.id !== 'undefined' && this.action === 'new') {
+        this.$router.push(`/${this.datasource}/edit/${this.model.id}`);
+      }
+    },
     props: {
       datasource: {
         type: String,
@@ -25,7 +30,7 @@
       },
       id: {
         type: String,
-        required: true,
+        required: false
       }
     },
     data() {
@@ -57,15 +62,13 @@
           id: this.id,
         });
       },
+      syncFormModel() {
+        const { id, model, action, datasource: endpoint } = this;
+        this.$store.dispatch('requestFormModel', { id, model, action, endpoint });
+        this.resetSuccess();
+      },
       onValidated: debounce(function debouncedOnValidate(valid) {
-        if (valid) {
-          this.$store.dispatch('updateFormModel', {
-            endpoint: this.datasource,
-            id: this.id,
-            model: this.model
-          });
-          this.resetSuccess();
-        }
+        if (valid && this.action === 'edit') this.syncFormModel();
       }, 1500),
       resetSuccess() {
         setTimeout(() => (this.$store.dispatch('setFormStatus', false)), 4500);
