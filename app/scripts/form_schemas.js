@@ -1,4 +1,3 @@
-import cloneDeep from 'lodash';
 import VueFormGenerator from 'vue-form-generator';
 
 const schemas = {
@@ -42,11 +41,6 @@ const schemas = {
       relation: {
         key: 'values',
         name: 'degrees'
-      },
-      dispatch: (model, newVal) => {
-        const m = cloneDeep(model);
-        m.degrees = [...newVal];
-        return m.degrees;
       },
       checklistOptions: {
         value: 'id'

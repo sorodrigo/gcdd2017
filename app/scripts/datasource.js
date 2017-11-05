@@ -5,15 +5,15 @@ const datasource = {
     columns: ['id', 'name', 'last_name', 'email', 'actions'],
     actions: [
       {
-        type: 'setEntity',
+        type: 'fetchEntity',
         payload: 'professors'
       },
       {
-        type: 'setEntity',
+        type: 'fetchEntity',
         payload: 'categories'
       },
       {
-        type: 'setEntity',
+        type: 'fetchEntity',
         payload: 'occupations'
       }
     ],
@@ -27,11 +27,11 @@ const datasource = {
     columns: ['id', 'name', 'grade', 'theory_credits', 'practical_credits', 'actions'],
     actions: [
       {
-        type: 'setEntity',
+        type: 'fetchEntity',
         payload: 'courses'
       },
       {
-        type: 'setEntity',
+        type: 'fetchEntity',
         payload: 'degrees'
       }
     ],
@@ -43,7 +43,7 @@ const datasource = {
     management: true,
     heading: 'Manage Degrees',
     columns: ['id', 'name', 'year', 'estimate', 'valid', 'actions'],
-    actions: [{ type: 'setEntity', payload: 'degrees' }],
+    actions: [{ type: 'fetchEntity', payload: 'degrees' }],
     getter: 'getEntity',
     showEdit: true,
     showDelete: true
@@ -52,7 +52,7 @@ const datasource = {
     management: true,
     heading: 'Manage Staff',
     columns: ['id', 'type', 'workload', 'hours', 'actions'],
-    actions: [{ type: 'setEntity', payload: 'staff' }],
+    actions: [{ type: 'fetchEntity', payload: 'staff' }],
     getter: 'getEntity',
     showEdit: true,
     showDelete: true
@@ -61,7 +61,7 @@ const datasource = {
     management: true,
     heading: 'Manage Categories',
     columns: ['id', 'title', 'priority', 'actions'],
-    actions: [{ type: 'setEntity', payload: 'categories' }],
+    actions: [{ type: 'fetchEntity', payload: 'categories' }],
     getter: 'getEntity',
     showEdit: true,
     showDelete: true
@@ -70,7 +70,7 @@ const datasource = {
     management: true,
     heading: 'Manage Occupations',
     columns: ['id', 'title', 'value', 'actions'],
-    actions: [{ type: 'setEntity', payload: 'occupations' }],
+    actions: [{ type: 'fetchEntity', payload: 'occupations' }],
     getter: 'getEntity',
     showEdit: true,
     showDelete: true
@@ -79,7 +79,7 @@ const datasource = {
     management: true,
     heading: 'Manage Me',
     columns: ['id', 'email', 'password', 'is_admin', 'actions'],
-    actions: [{ type: 'setEntity', payload: 'me' }],
+    actions: [{ type: 'fetchEntity', payload: 'me' }],
     getter: 'getEntity',
     showEdit: true,
     showDelete: true

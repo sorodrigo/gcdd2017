@@ -3,7 +3,8 @@ import datasource from 'datasource';
 import {
   SET_ENTITY,
   SET_ENTITY_ERROR,
-  INIT_ENTITIES
+  INIT_ENTITIES,
+  SET_ENTITY_ROW
 } from '../mutation-types';
 
 
@@ -21,6 +22,11 @@ const staff = {
     [SET_ENTITY](state, { list, entity }) {
       state.data = { ...state.data, [entity]: list };
     },
+    [SET_ENTITY_ROW](state, { entity, row }) {
+      const list = state.data[entity]
+        .map(item => (row.id === item.id ? { ...row } : item));
+      state.data = { ...state.data, [entity]: list };
+    },
     [SET_ENTITY_ERROR](state, error) {
       state.error = error;
     },
@@ -32,7 +38,7 @@ const staff = {
         .reduce((acc, next) => ({ ...acc, [next]: [] }), {});
       commit(INIT_ENTITIES, entities);
     },
-    setEntity({ commit }, entity) {
+    fetchEntity({ commit }, entity) {
       return new Promise((resolve, reject) => {
         fetch(`/api/${entity}`)
           .then((res) => {
@@ -49,6 +55,9 @@ const staff = {
           });
       });
     },
+    setEntityRow({ commit }, { entity, row }) {
+      commit(SET_ENTITY_ROW, { entity, row });
+    }
   },
   // GETTERS
   getters: {
