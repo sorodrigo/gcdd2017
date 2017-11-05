@@ -3,9 +3,9 @@
 <script>
   import 'vue-form-generator/dist/vfg.css';
   import capitalize from 'lodash/capitalize';
-  import cloneDeep from 'lodash/cloneDeep';
   import VueFormGenerator from 'vue-form-generator';
-  import { mapState } from 'vuex';
+  import { mapState, mapGetters } from 'vuex';
+  import debounce from 'lodash/debounce';
 
   import Alert from '../alert';
 
@@ -13,6 +13,11 @@
     name: 'form-component',
     created() {
       if (!this.model) this.fetch();
+    },
+    updated() {
+      if (typeof this.model.id !== 'undefined' && this.action === 'new') {
+        this.$router.push(`/${this.datasource}/edit/${this.model.id}`);
+      }
     },
     props: {
       datasource: {
@@ -25,84 +30,58 @@
       },
       id: {
         type: String,
-        required: true,
+        required: false
       }
     },
     data() {
       return {
         timeout: null,
-        dispatchUpdate: false,
         formOptions: {
+          validateDebounceTime: 500,
           validateAfterChanged: true,
         },
       };
     },
     computed: {
       ...mapState({
-        model: ({ form }) => cloneDeep(form.model),
+        model: ({ form }) => ({ ...form.model }),
         status: ({ form }) => form.status,
         error: ({ form }) => form.error,
       }),
-      schema() {
-        const schema = cloneDeep(this.$store.getters.getFormSchema);
-        let fields = [];
-        if (schema.fields) {
-          fields = schema.fields.map((field) => {
-            if ('dispatch' in field) {
-              return { ...field, set: this.buildDispatch(field) };
-            }
-            return field;
-          });
-        }
-        return { fields };
-      },
+      ...mapGetters({
+        schema: 'getFormSchema'
+      }),
       heading() {
         return capitalize(`${this.action} ${this.datasource}`);
       }
     },
     methods: {
-      buildDispatch({ model, dispatch }) {
-        const set = (changes) => {
-          this.dispatchUpdate = true;
-          this.$store.dispatch('updateFormModel', {
-            endpoint: this.datasource,
-            id: this.id,
-            model: { ...this.model, [model]: changes }
-          });
-        };
-        return (m, v) => set(dispatch(m, v));
-      },
       fetch() {
         this.$store.dispatch('getFormModel', {
           endpoint: this.datasource,
           id: this.id,
         });
       },
-      throttle(callback, params) {
-        clearTimeout(this.timeout);
-        this.timeout = setTimeout(() => {
-          callback(...params);
-        }, 2000);
+      syncFormModel() {
+        const { id, model, action, datasource: endpoint } = this;
+        this.$store.dispatch('requestFormModel', { id, model, action, endpoint });
+        this.resetSuccess();
       },
-      onValidated(valid) {
-        if (valid) {
-          if (!this.dispatchUpdate) {
-            this.throttle(this.$store.dispatch, ['updateFormModel', {
-              endpoint: this.datasource,
-              id: this.id,
-              model: this.model
-            }]);
-          }
-          this.dispatchUpdate = false;
-          this.resetSuccess();
-        }
-      },
+      onValidated: debounce(function debouncedOnValidate(valid) {
+        if (valid && this.action === 'edit') this.syncFormModel();
+      }, 1500),
       resetSuccess() {
         setTimeout(() => (this.$store.dispatch('setFormStatus', false)), 4500);
       }
     },
     watch: {
       $route: 'fetch',
+      model() {
+        this.$store.dispatch('setEntityRow', {
+          entity: this.datasource,
+          row: this.model
+        });
+      }
     },
     components: {
       Alert,

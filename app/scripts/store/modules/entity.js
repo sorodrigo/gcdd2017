@@ -3,7 +3,9 @@ import datasource from 'datasource';
 import {
   SET_ENTITY,
   SET_ENTITY_ERROR,
-  INIT_ENTITIES
+  INIT_ENTITIES,
+  SET_ENTITY_ROW,
+  REMOVE_ENTITY_ROW
 } from '../mutation-types';
 
 
@@ -21,6 +23,16 @@ const staff = {
     [SET_ENTITY](state, { list, entity }) {
       state.data = { ...state.data, [entity]: list };
     },
+    [SET_ENTITY_ROW](state, { entity, row }) {
+      const list = state.data[entity]
+        .filter(item => row.id !== item.id);
+      state.data = { ...state.data, [entity]: [...list, row] };
+    },
+    [REMOVE_ENTITY_ROW](state, { entity, id }) {
+      const list = state.data[entity]
+        .filter(item => id !== item.id);
+      state.data = { ...state.data, [entity]: list };
+    },
     [SET_ENTITY_ERROR](state, error) {
       state.error = error;
     },
@@ -32,7 +44,7 @@ const staff = {
         .reduce((acc, next) => ({ ...acc, [next]: [] }), {});
       commit(INIT_ENTITIES, entities);
     },
-    setEntity({ commit }, entity) {
+    fetchEntity({ commit }, entity) {
       return new Promise((resolve, reject) => {
         fetch(`/api/${entity}`)
           .then((res) => {
@@ -49,6 +61,28 @@ const staff = {
           });
       });
     },
+    setEntityRow({ commit }, { entity, row }) {
+      commit(SET_ENTITY_ROW, { entity, row });
+    },
+    removeEntityRow({ commit }, { id, entity }) {
+      return new Promise((resolve, reject) => {
+        fetch(`/api/${entity}/${id}`, {
+          method: 'DELETE'
+        })
+          .then((res) => {
+            if (res.status >= 400) throw new Error(res.status);
+            return res.text();
+          })
+          .then(() => {
+            commit(REMOVE_ENTITY_ROW, { id, entity });
+            resolve();
+          })
+          .catch((err) => {
+            commit(SET_ENTITY_ERROR, err);
+            reject(err);
+          });
+      });
+    }
   },
   // GETTERS
   getters: {

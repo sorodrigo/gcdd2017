@@ -120,10 +120,15 @@ const form = {
             });
         }));
     },
-    updateFormModel({ commit }, { endpoint, id, model }) {
+    requestFormModel({ commit }, { endpoint, id, model, action }) {
+      const request = {
+        new: { method: 'POST', params: '' },
+        edit: { method: 'PATCH', params: `/${id}` }
+      }[action];
+      const url = `/api/${endpoint}`;
       return new Promise((resolve, reject) => {
-        fetch(`/api/${endpoint}/${id}`, {
-          method: 'PATCH',
+        fetch(url + request.params, {
+          method: request.method,
           headers: {
             'Content-Type': 'application/json'
           },
