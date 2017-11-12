@@ -7,6 +7,7 @@ import HeaderComponent from 'components/header';
 import ModalComponent from 'components/modal';
 import TableComponent from 'components/table';
 import FormComponent from 'components/form';
+import ProfileComponent from 'components/profile';
 
 Vue.use(Router);
 
@@ -24,6 +25,7 @@ const routes = [
   {
     path: '/profile',
     components: {
+      default: ProfileComponent,
       header: HeaderComponent,
     },
   },
