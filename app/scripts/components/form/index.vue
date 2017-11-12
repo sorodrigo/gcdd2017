@@ -16,11 +16,11 @@
     },
     updated() {
       if (typeof this.model.id !== 'undefined' && this.action === 'new') {
-        this.$router.push(`/${this.datasource}/edit/${this.model.id}`);
+        this.$router.push(`/${this.entity}/edit/${this.model.id}`);
       }
     },
     props: {
-      datasource: {
+      entity: {
         type: String,
         required: true,
       },
@@ -52,18 +52,18 @@
         schema: 'getFormSchema'
       }),
       heading() {
-        return capitalize(`${this.action} ${this.datasource}`);
+        return capitalize(`${this.action} ${this.entity}`);
       }
     },
     methods: {
       fetch() {
         this.$store.dispatch('getFormModel', {
-          endpoint: this.datasource,
+          endpoint: this.entity,
           id: this.id,
         });
       },
       syncFormModel() {
-        const { id, model, action, datasource: endpoint } = this;
+        const { id, model, action, entity: endpoint } = this;
         this.$store.dispatch('requestFormModel', { id, model, action, endpoint });
         this.resetSuccess();
       },
@@ -78,7 +78,7 @@
       $route: 'fetch',
       model() {
         this.$store.dispatch('setEntityRow', {
-          entity: this.datasource,
+          entity: this.entity,
           row: this.model
         });
       }

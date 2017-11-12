@@ -25,8 +25,7 @@ module.exports = {
       'vue$': 'vue/dist/vue',
       'app': resolve('/app/scripts'),
       'styles': resolve('/app/styles'),
-      'components': resolve('/app/scripts/components'),
-      'datasource': resolve('/app/scripts/datasource')
+      'components': resolve('/app/scripts/components')
     }
   },
   module: {

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import datasource from 'datasource';
+import datasource from 'app/datasource.schema.json';
 
 import HeaderComponent from 'components/header';
 import ModalComponent from 'components/modal';
@@ -11,7 +11,7 @@ import FormComponent from 'components/form';
 Vue.use(Router);
 
 const handlers = {
-  dataSource: (to, from, next) => ((to.params.datasource in datasource) ? next() : next('/'))
+  entity: (to, from, next) => ((to.params.entity in datasource) ? next() : next('/'))
 };
 
 const routes = [
@@ -28,20 +28,20 @@ const routes = [
     },
   },
   {
-    path: '/:datasource',
-    beforeEnter: handlers.dataSource,
+    path: '/:entity',
+    beforeEnter: handlers.entity,
     components: {
       default: TableComponent,
       header: HeaderComponent,
       modal: ModalComponent
     },
     props: {
-      default: route => ({ ...datasource[route.params.datasource] }),
+      default: route => ({ ...datasource[route.params.entity] }),
     },
   },
   {
-    path: '/:datasource/:action/:id?',
-    beforeEnter: handlers.dataSource,
+    path: '/:entity/:action/:id?',
+    beforeEnter: handlers.entity,
     components: {
       header: HeaderComponent,
       default: FormComponent

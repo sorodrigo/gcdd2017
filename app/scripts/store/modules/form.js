@@ -1,12 +1,12 @@
 import startCase from 'lodash/startCase';
 import VueFormGenerator from 'vue-form-generator';
+import formSchema from 'app/form.schema.json';
+import datasource from 'app/datasource.schema.json';
 import {
   SET_FORM_MODEL,
   SET_FORM_ERROR,
   SET_FORM_STATUS,
 } from '../mutation-types';
-import SCHEMAS from '../../form_schemas';
-import DATASOURCE from '../../datasource';
 
 const getSchemaProps = (field, fieldName) => {
   switch (true) {
@@ -67,15 +67,15 @@ const getSchemaValues = (schema, entities) => {
 const form = {
   // INITIAL STATE
   state: {
-    datasoure: null,
+    entity: null,
     model: null,
     error: null,
     status: false,
   },
   // MUTATIONS
   mutations: {
-    [SET_FORM_MODEL](state, { datasource, model }) {
-      state.datasource = datasource;
+    [SET_FORM_MODEL](state, { entity, model }) {
+      state.entity = entity;
       state.model = model;
     },
     [SET_FORM_ERROR](state, error) {
@@ -91,7 +91,7 @@ const form = {
       commit(SET_FORM_MODEL, payload);
     },
     getFormModel({ commit, dispatch }, { endpoint, id }) {
-      const dependencies = DATASOURCE[endpoint].action;
+      const dependencies = datasource[endpoint].action;
       let dispatches;
       if (Array.isArray(dependencies)) {
         dispatches = dependencies.map(dependency => dispatch(dependency));
@@ -110,7 +110,7 @@ const form = {
               Object.keys(data).forEach((key) => {
                 if (key.endsWith('_date')) model[key] = new Date(model[key]);
               });
-              const payload = { datasource: endpoint, model };
+              const payload = { entity: endpoint, model };
               commit(SET_FORM_MODEL, payload);
               resolve(payload);
             })
@@ -139,7 +139,7 @@ const form = {
             return res.json();
           })
           .then((data) => {
-            const payload = { datasource: endpoint, model: data };
+            const payload = { entity: endpoint, model: data };
             commit(SET_FORM_MODEL, payload);
             commit(SET_FORM_STATUS, true);
             resolve(payload);
@@ -155,7 +155,7 @@ const form = {
     },
   },
   getters: {
-    getFormSchema({ model, datasource }, getters, { entity }) {
+    getFormSchema({ model, entity }, getters, { entities }) {
       if (!model) return {};
       const fields = Object.keys(model).map((key) => {
         const field = model[key];
@@ -164,8 +164,8 @@ const form = {
           model: key,
           readonly: key === 'id'
         };
-        const schemaProps = (SCHEMAS[datasource] && key in SCHEMAS[datasource])
-          ? getSchemaValues(SCHEMAS[datasource][key], entity.data)
+        const schemaProps = (formSchema[entity] && key in formSchema[entity])
+          ? getSchemaValues(formSchema[entity][key], entities.data)
           : getSchemaProps(field, key);
         return { ...schema, ...schemaProps };
       });

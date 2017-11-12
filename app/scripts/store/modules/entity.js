@@ -1,4 +1,4 @@
-import datasource from 'datasource';
+import datasource from 'app/datasource.schema.json';
 
 import {
   SET_ENTITY,
@@ -86,7 +86,7 @@ const staff = {
   },
   // GETTERS
   getters: {
-    getEntity: ({ data, current }, getters, { route }) => data[route.params.datasource],
+    getEntity: ({ data, current }, getters, { route }) => data[route.params.entity],
   },
 };
 

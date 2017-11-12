@@ -2,7 +2,7 @@
 <style lang="scss" src="./header-style.scss"></style>
 <script>
   import NavMenu from 'components/nav-menu';
-  import datasource from 'datasource';
+  import datasource from 'app/datasource.schema.json';
 
   export default {
     name: 'header-component',
@@ -18,8 +18,8 @@
     methods: {
       readParams() {
         const { params } = this.$route;
-        if (params.datasource in datasource) {
-          this.expanded = datasource[params.datasource].management || false;
+        if (params.entity in datasource) {
+          this.expanded = datasource[params.entity].expandedHeader || false;
         }
       },
       toggleSubmenu() {
