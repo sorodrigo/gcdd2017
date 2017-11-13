@@ -44,7 +44,7 @@
     },
     computed: {
       ...mapState({
-        model: ({ form }) => ({ ...form.model }),
+        model: ({ form }) => (form.model && { ...form.model }),
         status: ({ form }) => form.status,
         error: ({ form }) => form.error,
       }),
@@ -60,6 +60,7 @@
         this.$store.dispatch('getFormModel', {
           endpoint: this.entity,
           id: this.id,
+          isReadOnly: (this.action === 'view')
         });
       },
       syncFormModel() {

@@ -5,6 +5,7 @@
     <v-client-table :data="tableData" :columns="columns">
       <template slot="actions" scope="props">
         <div>
+          <a class="glyphicon glyphicon-info-sign" @click="view(props.row)"></a>
           <a v-if="showEdit" class="glyphicon glyphicon-edit" @click="edit(props.row)"></a>
           <a v-if="showDelete" class="glyphicon glyphicon-remove" @click="remove(props.row)"></a>
         </div>

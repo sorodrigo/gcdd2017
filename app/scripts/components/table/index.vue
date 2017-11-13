@@ -45,6 +45,15 @@
 
         this.actions.forEach(action => this.$store.dispatch(action.type, action.payload));
       },
+      view(row) {
+        this.$store.dispatch('setFormModel', {
+          entity: this.$route.params.entity,
+          model: row,
+          isReadOnly: true
+        });
+
+        this.$router.push(`${this.$route.fullPath}/view/${row.id}`);
+      },
       create() {
         const firstRow = { ...this.tableData[0] };
         const model = Object.keys(firstRow)
@@ -60,14 +69,14 @@
           }, {});
         this.$store.dispatch('setFormModel', {
           model,
-          datasource: this.$route.params.datasource
+          entity: this.$route.params.entity
         });
 
         this.$router.push(`${this.$route.fullPath}/new`);
       },
       edit(row) {
         this.$store.dispatch('setFormModel', {
-          datasource: this.$route.params.datasource,
+          entity: this.$route.params.entity,
           model: row
         });
 
@@ -95,7 +104,7 @@
                 callback: () => {
                   this.$store.dispatch('removeEntityRow', {
                     id: row.id,
-                    entity: this.$route.params.datasource
+                    entity: this.$route.params.entity
                   });
                   this.$store.dispatch('resetModal');
                 }

@@ -69,12 +69,14 @@ const form = {
   state: {
     entity: null,
     model: null,
+    isReadOnly: false,
     error: null,
     status: false,
   },
   // MUTATIONS
   mutations: {
-    [SET_FORM_MODEL](state, { entity, model }) {
+    [SET_FORM_MODEL](state, { entity, model, isReadOnly }) {
+      state.isReadOnly = !!isReadOnly;
       state.entity = entity;
       state.model = model;
     },
@@ -90,13 +92,11 @@ const form = {
     setFormModel({ commit }, payload) {
       commit(SET_FORM_MODEL, payload);
     },
-    getFormModel({ commit, dispatch }, { endpoint, id }) {
-      const dependencies = datasource[endpoint].action;
+    getFormModel({ commit, dispatch }, { endpoint, id, isReadOnly }) {
+      const { actions } = datasource[endpoint];
       let dispatches;
-      if (Array.isArray(dependencies)) {
-        dispatches = dependencies.map(dependency => dispatch(dependency));
-      } else {
-        dispatches = dispatch(dependencies);
+      if (actions) {
+        dispatches = actions.map(action => dispatch(action.type, action.payload));
       }
       Promise.all(dispatches)
         .then(() => new Promise((resolve, reject) => {
@@ -110,7 +110,7 @@ const form = {
               Object.keys(data).forEach((key) => {
                 if (key.endsWith('_date')) model[key] = new Date(model[key]);
               });
-              const payload = { entity: endpoint, model };
+              const payload = { entity: endpoint, model, isReadOnly };
               commit(SET_FORM_MODEL, payload);
               resolve(payload);
             })
@@ -155,14 +155,16 @@ const form = {
     },
   },
   getters: {
-    getFormSchema({ model, entity }, getters, { entities }) {
+    getFormSchema({ model, entity, isReadOnly }, getters, { entities }) {
       if (!model) return {};
       const fields = Object.keys(model).map((key) => {
         const field = model[key];
+        const readonly = (key === 'id') || isReadOnly;
         const schema = {
+          readonly,
+          disabled: readonly,
           label: startCase(key),
-          model: key,
-          readonly: key === 'id'
+          model: key
         };
         const schemaProps = (formSchema[entity] && key in formSchema[entity])
           ? getSchemaValues(formSchema[entity][key], entities.data)

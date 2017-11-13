@@ -11,8 +11,15 @@ import ProfileComponent from 'components/profile';
 
 Vue.use(Router);
 
+const entityAllowedActions = ['new', 'edit', 'view'];
+
 const handlers = {
-  entity: (to, from, next) => ((to.params.entity in datasource) ? next() : next('/'))
+  entity: (to, from, next) => {
+    const { entity, action } = to.params;
+    if (!(entity in datasource)) return next('/');
+    if (action && !entityAllowedActions.includes(action)) return next(`/${entity}`);
+    return next();
+  }
 };
 
 const routes = [
