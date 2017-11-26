@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import datasource from 'app/datasource.schema.json';
+import { entities } from 'app/datasource.schema.json';
 
 import HeaderComponent from 'components/header';
 import ModalComponent from 'components/modal';
@@ -16,7 +16,7 @@ const entityAllowedActions = ['new', 'edit', 'view'];
 const handlers = {
   entity: (to, from, next) => {
     const { entity, action } = to.params;
-    if (!(entity in datasource)) return next('/');
+    if (!(entity in entities)) return next('/');
     if (action && !entityAllowedActions.includes(action)) return next(`/${entity}`);
     return next();
   }
@@ -45,7 +45,7 @@ const routes = [
       modal: ModalComponent
     },
     props: {
-      default: route => ({ ...datasource[route.params.entity] }),
+      default: route => ({ ...entities[route.params.entity] }),
     },
   },
   {
