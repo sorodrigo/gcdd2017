@@ -8,6 +8,7 @@ import ModalComponent from 'components/modal';
 import TableComponent from 'components/table';
 import FormComponent from 'components/form';
 import ProfileComponent from 'components/profile';
+import HomeComponent from 'components/home';
 
 Vue.use(Router);
 
@@ -26,6 +27,7 @@ const routes = [
   {
     path: '/',
     components: {
+      default: HomeComponent,
       header: HeaderComponent
     },
   },

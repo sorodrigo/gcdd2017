@@ -1,5 +1,7 @@
 {
-  "home": {},
+  "home": {
+    "resolveContent": "/static/pages/home.md"
+  },
   "entities": {
     "professors": {
       "expandedHeader": true,
