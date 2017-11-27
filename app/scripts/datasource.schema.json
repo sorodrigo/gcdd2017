@@ -4,6 +4,7 @@
   },
   "entities": {
     "professors": {
+      "auth": true,
       "expandedHeader": true,
       "heading": "Manage Professors",
       "columns": ["id", "name", "last_name", "email", "actions"],
@@ -26,6 +27,7 @@
       "showDelete": true
     },
     "courses": {
+      "auth": true,
       "expandedHeader": true,
       "heading": "Manage Courses",
       "columns": ["id", "name", "grade", "theory_credits", "practical_credits", "actions"],
@@ -44,6 +46,7 @@
       "showDelete": true
     },
     "degrees": {
+      "auth": true,
       "expandedHeader": true,
       "heading": "Manage Degrees",
       "columns": ["id", "name", "year", "estimate", "valid", "actions"],
@@ -53,6 +56,7 @@
       "showDelete": true
     },
     "staff": {
+      "auth": true,
       "expandedHeader": true,
       "heading": "Manage Staff",
       "columns": ["id", "type", "workload", "hours", "actions"],
@@ -62,6 +66,7 @@
       "showDelete": true
     },
     "categories": {
+      "auth": true,
       "expandedHeader": true,
       "heading": "Manage Categories",
       "columns": ["id", "title", "priority", "actions"],
@@ -71,6 +76,7 @@
       "showDelete": true
     },
     "occupations": {
+      "auth": true,
       "expandedHeader": true,
       "heading": "Manage Occupations",
       "columns": ["id", "title", "value", "actions"],

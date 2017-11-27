@@ -11,14 +11,23 @@ import ProfileComponent from 'components/profile';
 import HomeComponent from 'components/home';
 import LoginComponent from 'components/login';
 
+import store from './store';
+
 Vue.use(Router);
 
 const entityAllowedActions = ['new', 'edit', 'view'];
 
 const handlers = {
+  isLoggedIn: (to, from, next) => {
+    if (!store.state.authentication.loggedIn) {
+      return next('/');
+    }
+    return next();
+  },
   entity: (to, from, next) => {
     const { entity, action } = to.params;
     if (!(entity in entities)) return next('/');
+    if (entities[entity].auth && !store.state.authentication.loggedIn) return next('/');
     if (action && !entityAllowedActions.includes(action)) return next(`/${entity}`);
     return next();
   }
@@ -41,6 +50,7 @@ const routes = [
   },
   {
     path: '/profile',
+    beforeEnter: handlers.isLoggedIn,
     components: {
       default: ProfileComponent,
       header: HeaderComponent,
