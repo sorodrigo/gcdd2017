@@ -4,7 +4,13 @@
       <a>Home</a>
     </router-link>
 
-    <nav-menu class="nav-link -submenu" title="Manage" :open="expanded" :toggle="toggleSubmenu">
+    <nav-menu
+      v-if="loggedIn"
+      class="nav-link -submenu"
+      title="Manage"
+      :open="expanded"
+      :toggle="toggleSubmenu"
+    >
       <router-link
         v-for="page in pages"
         :key="page"
@@ -18,8 +24,11 @@
   </ul>
 
   <ul class="nav-section">
-    <router-link class="nav-link" active-class="-active" tag="li" to="/profile">
+    <router-link v-if="loggedIn" class="nav-link" active-class="-active" tag="li" to="/profile">
       <a>Profile</a>
+    </router-link>
+    <router-link class="nav-link" active-class="-active" tag="li"  to="/login">
+      <a>Login</a>
     </router-link>
   </ul>
 </nav>

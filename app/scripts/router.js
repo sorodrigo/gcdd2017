@@ -9,6 +9,7 @@ import TableComponent from 'components/table';
 import FormComponent from 'components/form';
 import ProfileComponent from 'components/profile';
 import HomeComponent from 'components/home';
+import LoginComponent from 'components/login';
 
 Vue.use(Router);
 
@@ -29,6 +30,13 @@ const routes = [
     components: {
       default: HomeComponent,
       header: HeaderComponent
+    },
+  },
+  {
+    path: '/login',
+    components: {
+      default: LoginComponent,
+      header: HeaderComponent,
     },
   },
   {
