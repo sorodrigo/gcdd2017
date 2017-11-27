@@ -27,7 +27,7 @@
     <router-link v-if="loggedIn" class="nav-link" active-class="-active" tag="li" to="/profile">
       <a>Profile</a>
     </router-link>
-    <router-link class="nav-link" active-class="-active" tag="li"  to="/login">
+    <router-link v-else class="nav-link" active-class="-active" tag="li"  to="/login">
       <a>Login</a>
     </router-link>
   </ul>

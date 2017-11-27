@@ -80,5 +80,14 @@
       "showDelete": true
     }
   },
-  "auth": {}
+  "auth": {
+    "request": {
+      "url": "/auth",
+      "user": "email",
+      "password": "password"
+    },
+    "response": {
+      "payload": "data"
+    }
+  }
 }

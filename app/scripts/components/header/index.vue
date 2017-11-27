@@ -16,7 +16,8 @@
       };
     },
     computed: mapState({
-      pages: state => Object.keys(state.entities.data)
+      pages: state => Object.keys(state.entities.data),
+      loggedIn: state => state.authentication.loggedIn
     }),
     methods: {
       readParams() {

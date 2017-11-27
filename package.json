@@ -15,6 +15,7 @@
     "postinstall": "NODE_ENV=production npm run build"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "json-server": "^0.9.6",

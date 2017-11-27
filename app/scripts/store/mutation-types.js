@@ -16,3 +16,6 @@ export const SET_FORM_STATUS = 'form/SET_FORM_UPDATED';
 
 // markdown
 export const SET_MARKDOWN_CONTENT = 'markdown/SET_MARKDOWN_CONTENT';
+
+// authentication
+export const SET_AUTH_STATUS = 'authentication/SET_AUTH_STATUS';
