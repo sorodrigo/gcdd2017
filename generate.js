@@ -15,18 +15,14 @@ function copyFiles(options) {
   return Promise.all(commands.map((command) => {
     const source = options[command];
     const destination = destinations[command];
-    // if (source === destination) return Promise.resolve();
+    if (source === destination) return Promise.resolve();
     return new Promise((resolve, reject) => {
-      const prefixPath = s => {
-        const aa = path.join(__dirname, s);
-        console.log(aa);
-        return aa;
-      };
-      ncp(prefixPath(source), prefixPath(destination), { stopOnErr: true }, (err) => {
+      const prefixPath = p => path.join(__dirname, p);
+      return ncp(prefixPath(source), prefixPath(destination), { stopOnErr: true }, (err) => {
         if (err) reject(err);
         resolve();
       });
-    })
+    });
   }));
 }
 
