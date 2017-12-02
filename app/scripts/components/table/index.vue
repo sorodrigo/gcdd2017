@@ -35,8 +35,11 @@
       }
     },
     computed: {
+      fullData() {
+        return this.getter && this.$store.getters[this.getter];
+      },
       tableData() {
-        return this.getter ? this.$store.getters[this.getter] : [];
+        return this.fullData.table || this.fullData.data || [];
       },
     },
     methods: {
@@ -45,17 +48,23 @@
 
         this.actions.forEach(action => this.$store.dispatch(action.type, action.payload));
       },
+      getRow(row) {
+        const trueRow = this.fullData.table
+          ? this.fullData.data.find(r => r.id === row.id)
+          : row;
+        return trueRow;
+      },
       view(row) {
         this.$store.dispatch('setFormModel', {
           entity: this.$route.params.entity,
-          model: row,
+          model: this.getRow(row),
           isReadOnly: true
         });
 
         this.$router.push(`${this.$route.fullPath}/view/${row.id}`);
       },
       create() {
-        const firstRow = { ...this.tableData[0] };
+        const firstRow = { ...this.fullData.data[0] };
         const model = Object.keys(firstRow)
           .reduce((acc, key) => {
             if (key === 'id') return acc;
@@ -77,7 +86,7 @@
       edit(row) {
         this.$store.dispatch('setFormModel', {
           entity: this.$route.params.entity,
-          model: row
+          model: this.getRow(row)
         });
 
         this.$router.push(`${this.$route.fullPath}/edit/${row.id}`);

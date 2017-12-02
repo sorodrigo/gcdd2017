@@ -147,6 +147,7 @@
   ],
   "internships": [
     {
+      "id": 1,
       "company": 1,
       "tutor": 2,
       "student": 1,
@@ -154,6 +155,7 @@
       "end_date": null
     },
     {
+      "id": 2,
       "company": 2,
       "tutor": 3,
       "student": 2,
@@ -161,6 +163,7 @@
       "end_date": null
     },
     {
+      "id": 3,
       "company": 3,
       "tutor": 4,
       "student": 3,
@@ -168,6 +171,7 @@
       "end_date": null
     },
     {
+      "id": 4,
       "company": 3,
       "tutor": 1,
       "student": 4,

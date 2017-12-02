@@ -87,12 +87,12 @@ const staff = {
   },
   // GETTERS
   getters: {
-    getEntity: ({ data, current }, getters, { route }) => data[route.params.entity],
+    getEntity: ({ data }, getters, { route }) => ({ data: data[route.params.entity] }),
     getEntityWithRelations: ({ data }, getters, { route }) => {
       const entity = [...data[route.params.entity]];
       const entityTableSchema = tableSchema[route.params.entity];
       if (entityTableSchema) {
-        return entity.map((row) => {
+        const entityWithRelations = entity.map((row) => {
           const result = { ...row };
           Object.keys(result).forEach((prop) => {
             const { relation } = entityTableSchema[prop] || {};
@@ -104,8 +104,9 @@ const staff = {
           });
           return result;
         });
+        return { data: entity, table: entityWithRelations };
       }
-      return entity;
+      return { data: entity };
     }
   }
 };
