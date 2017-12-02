@@ -2,6 +2,7 @@
 $white: white;
 $light-blue: rgba(#3187ff, 0.8);
 $light-gray: #d4d4d4;
+$super-light-gray: #f0f0f0;
 $dark-gray: #5B5B5B;
 $light-red: rgba(#EE0400, 0.5);
 
@@ -33,4 +34,7 @@ $theme-secondary: $light-gray;
 
 // transitions
 $ease-out-cubic: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+
+// breakpoints
+$breakpoint-m: 880px;
 

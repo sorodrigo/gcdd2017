@@ -93,7 +93,7 @@ const form = {
       commit(SET_FORM_MODEL, payload);
     },
     getFormModel({ commit, dispatch }, { endpoint, id, isReadOnly }) {
-      const { actions } = datasource[endpoint];
+      const { actions } = datasource.entities[endpoint];
       let dispatches;
       if (actions) {
         dispatches = actions.map(action => dispatch(action.type, action.payload));

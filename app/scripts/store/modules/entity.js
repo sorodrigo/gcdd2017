@@ -1,4 +1,4 @@
-import datasource from 'app/datasource.schema.json';
+import { entities } from 'app/datasource.schema.json';
 
 import {
   SET_ENTITY,
@@ -40,9 +40,9 @@ const staff = {
   // ACTIONS
   actions: {
     initEntities({ commit }) {
-      const entities = Object.keys(datasource)
+      const data = Object.keys(entities)
         .reduce((acc, next) => ({ ...acc, [next]: [] }), {});
-      commit(INIT_ENTITIES, entities);
+      commit(INIT_ENTITIES, data);
     },
     fetchEntity({ commit }, entity) {
       return new Promise((resolve, reject) => {
