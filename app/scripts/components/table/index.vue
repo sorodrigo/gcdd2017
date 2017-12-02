@@ -99,7 +99,7 @@
           autoSize: true,
           content: Alert,
           props: {
-            title: `Are you sure you want to delete ${row[this.columns[1]]}?`,
+            title: `Are you sure you want to delete ${this.$route.params.entity} with id ${row.id || ''}?`,
             subtitle: 'This action cannot be undone.',
             actions: [
               {
