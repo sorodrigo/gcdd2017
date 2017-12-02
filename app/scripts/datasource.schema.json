@@ -47,7 +47,7 @@
         { "type": "fetchEntity", "payload": "students" },
         { "type": "fetchEntity", "payload": "degrees" }
       ],
-      "getter": "getEntity",
+      "getter": "getEntityWithRelations",
       "showEdit": true,
       "showDelete": true
     },
@@ -62,7 +62,7 @@
         { "type": "fetchEntity", "payload": "tutors" },
         { "type": "fetchEntity", "payload": "students" }
       ],
-      "getter": "getEntity",
+      "getter": "getEntityWithRelations",
       "showEdit": true,
       "showDelete": true
     }
