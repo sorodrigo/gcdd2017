@@ -3,42 +3,15 @@
     "resolveContent": "/static/pages/home.md"
   },
   "entities": {
-    "professors": {
+    "tutors": {
       "auth": true,
       "expandedHeader": true,
-      "heading": "Manage Professors",
-      "columns": ["id", "name", "last_name", "email", "actions"],
+      "heading": "Gestionar Tutores",
+      "columns": ["id", "name", "last_name", "email", "title", "office", "phone", "actions"],
       "actions": [
         {
           "type": "fetchEntity",
-          "payload": "professors"
-        },
-        {
-          "type": "fetchEntity",
-          "payload": "categories"
-        },
-        {
-          "type": "fetchEntity",
-          "payload": "occupations"
-        }
-      ],
-      "getter": "getEntity",
-      "showEdit": true,
-      "showDelete": true
-    },
-    "courses": {
-      "auth": true,
-      "expandedHeader": true,
-      "heading": "Manage Courses",
-      "columns": ["id", "name", "grade", "theory_credits", "practical_credits", "actions"],
-      "actions": [
-        {
-          "type": "fetchEntity",
-          "payload": "courses"
-        },
-        {
-          "type": "fetchEntity",
-          "payload": "degrees"
+          "payload": "tutors"
         }
       ],
       "getter": "getEntity",
@@ -49,38 +22,46 @@
       "auth": true,
       "expandedHeader": true,
       "heading": "Manage Degrees",
-      "columns": ["id", "name", "year", "estimate", "valid", "actions"],
+      "columns": ["id", "name", "year", "actions"],
       "actions": [{ "type": "fetchEntity", "payload": "degrees" }],
       "getter": "getEntity",
       "showEdit": true,
       "showDelete": true
     },
-    "staff": {
+    "companies": {
       "auth": true,
       "expandedHeader": true,
-      "heading": "Manage Staff",
-      "columns": ["id", "type", "workload", "hours", "actions"],
-      "actions": [{ "type": "fetchEntity", "payload": "staff" }],
+      "heading": "Gestionar Empresas",
+      "columns": ["id", "name", "address", "actions"],
+      "actions": [{ "type": "fetchEntity", "payload": "companies" }],
       "getter": "getEntity",
       "showEdit": true,
       "showDelete": true
     },
-    "categories": {
+    "students": {
       "auth": true,
       "expandedHeader": true,
-      "heading": "Manage Categories",
-      "columns": ["id", "title", "priority", "actions"],
-      "actions": [{ "type": "fetchEntity", "payload": "categories" }],
+      "heading": "Gestionar Estudiantes",
+      "columns": ["id", "name", "last_name", "actions"],
+      "actions": [
+        { "type": "fetchEntity", "payload": "students" },
+        { "type": "fetchEntity", "payload": "degrees" }
+      ],
       "getter": "getEntity",
       "showEdit": true,
       "showDelete": true
     },
-    "occupations": {
+    "internships": {
       "auth": true,
       "expandedHeader": true,
-      "heading": "Manage Occupations",
-      "columns": ["id", "title", "value", "actions"],
-      "actions": [{ "type": "fetchEntity", "payload": "occupations" }],
+      "heading": "Gestionar Prácticas Externas",
+      "columns": ["id", "company", "tutor", "student", "start_date", "end_date", "actions"],
+      "actions": [
+        { "type": "fetchEntity", "payload": "internships" },
+        { "type": "fetchEntity", "payload": "companies" },
+        { "type": "fetchEntity", "payload": "tutors" },
+        { "type": "fetchEntity", "payload": "students" }
+      ],
       "getter": "getEntity",
       "showEdit": true,
       "showDelete": true
@@ -89,7 +70,7 @@
   "auth": {
     "request": {
       "url": "/auth",
-      "user": "email",
+      "user": "username",
       "password": "password"
     },
     "response": {
