@@ -5,6 +5,7 @@ const { ncp } = require('ncp');
 const destinations = {
   datasource: path.join('app', 'scripts', 'datasource.schema.json'),
   form: path.join('app', 'scripts', 'form.schema.json'),
+  table: path.join('app', 'scripts', 'table.schema.json'),
   pages: path.join('static', 'pages'),
   data: path.join('db.json')
 };
@@ -39,6 +40,12 @@ const options = {
       description: 'If you wish to provide special form types, please provide a path to your form schema (optional)',
       type: 'string',
       default: destinations.form,
+      before: value => (console.info(`${value}\n`) || value)
+    },
+    table: {
+      description: 'If you wish to provide entity relation mapping for tables, please provide a path to your table schema (optional)',
+      type: 'string',
+      default: destinations.table,
       before: value => (console.info(`${value}\n`) || value)
     },
     pages: {
