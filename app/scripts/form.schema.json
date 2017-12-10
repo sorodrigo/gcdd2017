@@ -1,0 +1,60 @@
+{
+  "internships": {
+    "company": {
+      "type": "select",
+      "multiSelect": false,
+      "relation": {
+        "key": "values",
+        "name": "companies"
+      },
+      "selectOptions": {
+        "name": "name"
+      }
+    },
+    "tutor": {
+      "type": "select",
+      "multiSelect": false,
+      "relation": {
+        "key": "values",
+        "name": "tutors"
+      },
+      "selectOptions": {
+        "name": "name"
+      }
+    },
+    "student": {
+      "type": "select",
+      "multiSelect": false,
+      "relation": {
+        "key": "values",
+        "name": "students"
+      },
+      "selectOptions": {
+        "name": "name"
+      }
+    },
+    "start_date": {
+      "type": "input",
+      "inputType": "date",
+      "validator": "date"
+    },
+    "end_date": {
+      "type": "input",
+      "inputType": "date",
+      "validator": "date"
+    }
+  },
+  "students": {
+    "degree": {
+      "type": "select",
+      "multiSelect": false,
+      "relation": {
+        "key": "values",
+        "name": "students"
+      },
+      "selectOptions": {
+        "name": "name"
+      }
+    }
+  }
+}

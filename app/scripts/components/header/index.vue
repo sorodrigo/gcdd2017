@@ -1,8 +1,9 @@
 <template src="./header-template.html"></template>
 <style lang="scss" src="./header-style.scss"></style>
 <script>
+  import { mapState } from 'vuex';
+  import { entities } from 'app/datasource.schema.json';
   import NavMenu from 'components/nav-menu';
-  import datasource from 'datasource';
 
   export default {
     name: 'header-component',
@@ -11,20 +12,27 @@
     },
     data() {
       return {
-        expanded: false,
-        pages: Object.keys(datasource)
+        expanded: false
       };
     },
+    computed: mapState({
+      pages: state => Object.keys(state.entities.data),
+      loggedIn: state => state.authentication.loggedIn
+    }),
     methods: {
       readParams() {
         const { params } = this.$route;
-        if (params.datasource in datasource) {
-          this.expanded = datasource[params.datasource].management || false;
+        if (this.pages.includes(params.entity)) {
+          this.expanded = entities[params.entity].expandedHeader || false;
         }
       },
       toggleSubmenu() {
         this.expanded = !this.expanded;
       },
+      logout() {
+        this.$store.dispatch('logout');
+        this.$router.history.replace('/login');
+      }
     },
     watch: {
       $route: 'readParams'

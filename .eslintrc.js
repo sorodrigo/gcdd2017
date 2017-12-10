@@ -39,6 +39,7 @@ module.exports = {
     'no-unused-expressions': ['error', { 'allowShortCircuit': true }],
     'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
     'no-sequences': 0,
-    'no-param-reassign': ['error', { "props": false }]
+    'no-param-reassign': ['error', { "props": false }],
+    'no-plusplus': 0
   }
 }

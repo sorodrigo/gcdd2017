@@ -1,4 +1,5 @@
-import datasource from 'datasource';
+import { entities } from 'app/datasource.schema.json';
+import tableSchema from 'app/table.schema.json';
 
 import {
   SET_ENTITY,
@@ -40,9 +41,9 @@ const staff = {
   // ACTIONS
   actions: {
     initEntities({ commit }) {
-      const entities = Object.keys(datasource)
+      const data = Object.keys(entities)
         .reduce((acc, next) => ({ ...acc, [next]: [] }), {});
-      commit(INIT_ENTITIES, entities);
+      commit(INIT_ENTITIES, data);
     },
     fetchEntity({ commit }, entity) {
       return new Promise((resolve, reject) => {
@@ -86,8 +87,28 @@ const staff = {
   },
   // GETTERS
   getters: {
-    getEntity: ({ data, current }, getters, { route }) => data[route.params.datasource],
-  },
+    getEntity: ({ data }, getters, { route }) => ({ data: data[route.params.entity] }),
+    getEntityWithRelations: ({ data }, getters, { route }) => {
+      const entity = [...data[route.params.entity]];
+      const entityTableSchema = tableSchema[route.params.entity];
+      if (entityTableSchema) {
+        const entityWithRelations = entity.map((row) => {
+          const result = { ...row };
+          Object.keys(result).forEach((prop) => {
+            const { relation } = entityTableSchema[prop] || {};
+            if (relation && data[relation.name] && data[relation.name].length > 0) {
+              const value = data[relation.name].find(r => (r.id === result[prop]));
+              if (value) result[prop] = value[relation.key];
+            }
+            return result[prop];
+          });
+          return result;
+        });
+        return { data: entity, table: entityWithRelations };
+      }
+      return { data: entity };
+    }
+  }
 };
 
 export default staff;

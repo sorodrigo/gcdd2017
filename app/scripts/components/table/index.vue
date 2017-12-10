@@ -35,8 +35,11 @@
       }
     },
     computed: {
+      fullData() {
+        return this.getter && this.$store.getters[this.getter];
+      },
       tableData() {
-        return this.getter ? this.$store.getters[this.getter] : [];
+        return this.fullData.table || this.fullData.data || [];
       },
     },
     methods: {
@@ -45,8 +48,23 @@
 
         this.actions.forEach(action => this.$store.dispatch(action.type, action.payload));
       },
+      getRow(row) {
+        const trueRow = this.fullData.table
+          ? this.fullData.data.find(r => r.id === row.id)
+          : row;
+        return trueRow;
+      },
+      view(row) {
+        this.$store.dispatch('setFormModel', {
+          entity: this.$route.params.entity,
+          model: this.getRow(row),
+          isReadOnly: true
+        });
+
+        this.$router.push(`${this.$route.fullPath}/view/${row.id}`);
+      },
       create() {
-        const firstRow = { ...this.tableData[0] };
+        const firstRow = { ...this.fullData.data[0] };
         const model = Object.keys(firstRow)
           .reduce((acc, key) => {
             if (key === 'id') return acc;
@@ -60,15 +78,15 @@
           }, {});
         this.$store.dispatch('setFormModel', {
           model,
-          datasource: this.$route.params.datasource
+          entity: this.$route.params.entity
         });
 
         this.$router.push(`${this.$route.fullPath}/new`);
       },
       edit(row) {
         this.$store.dispatch('setFormModel', {
-          datasource: this.$route.params.datasource,
-          model: row
+          entity: this.$route.params.entity,
+          model: this.getRow(row)
         });
 
         this.$router.push(`${this.$route.fullPath}/edit/${row.id}`);
@@ -81,7 +99,7 @@
           autoSize: true,
           content: Alert,
           props: {
-            title: `Are you sure you want to delete ${row[this.columns[1]]}?`,
+            title: `Are you sure you want to delete ${this.$route.params.entity} with id ${row.id || ''}?`,
             subtitle: 'This action cannot be undone.',
             actions: [
               {
@@ -95,7 +113,7 @@
                 callback: () => {
                   this.$store.dispatch('removeEntityRow', {
                     id: row.id,
-                    entity: this.$route.params.datasource
+                    entity: this.$route.params.entity
                   });
                   this.$store.dispatch('resetModal');
                 }

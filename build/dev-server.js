@@ -7,6 +7,7 @@ if (!process.env.NODE_ENV) {
 var opn = require('opn')
 var path = require('path')
 var express = require('express')
+var bodyParser = require('body-parser')
 var jsonServer = require('json-server')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
@@ -41,8 +42,23 @@ compiler.plugin('compilation', function (compilation) {
   })
 })
 
+var db = require('../db.json');
+
+app.use(bodyParser.json({ type: 'application/json' }));
+
 // setup json server
 app.use('/api', jsonServer.router('db.json'));
+
+app.post('/auth', (req, res) => {
+  const email = req.body.email;
+  const password = req.body.password;
+  const user = db.users.find(u => (u.email === email && u.password === password));
+  if (user) {
+    res.json({ data: user });
+  } else {
+    res.status(401).json(req.body);
+  }
+});
 
 // proxy api requests
 Object.keys(proxyTable).forEach(function (context) {

@@ -1,0 +1,27 @@
+@import '../../../styles/settings';
+
+.c-home {
+  height: 100%;
+  padding-top: $l-margin;
+
+  .home-section {
+    padding-bottom: 0;
+    height: 100%;
+  }
+
+  .home-dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid $super-light-gray;
+    height: 100%;
+
+    .home-dashboard-container {
+      display: block;
+      width: 50%;
+      height: 50%;
+      text-align: center;
+    }
+  }
+}

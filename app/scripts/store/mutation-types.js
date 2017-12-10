@@ -13,3 +13,9 @@ export const SET_MODAL = 'modal/SET_MODAL';
 export const SET_FORM_MODEL = 'form/SET_FORM_MODEL';
 export const SET_FORM_ERROR = 'form/SET_FORM_ERROR';
 export const SET_FORM_STATUS = 'form/SET_FORM_UPDATED';
+
+// markdown
+export const SET_MARKDOWN_CONTENT = 'markdown/SET_MARKDOWN_CONTENT';
+
+// authentication
+export const SET_AUTH_STATUS = 'authentication/SET_AUTH_STATUS';
