@@ -15,6 +15,7 @@
             id="username"
             name="username"
             placeholder="User"
+            @keyup.enter="onSubmit"
           >
         </div>
 
@@ -28,6 +29,7 @@
             id="password"
             name="password"
             placeholder="Password"
+            @keyup.enter="onSubmit"
           >
         </div>
         <button type="button" @click="onSubmit">

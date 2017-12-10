@@ -16,6 +16,12 @@ const authentication = {
   },
   // ACTIONS
   actions: {
+    checkAuth({ commit }) {
+      const authStatus = localStorage.getItem('auth');
+      if (authStatus) {
+        commit(SET_AUTH_STATUS, JSON.parse(authStatus));
+      }
+    },
     authenticate({ commit }, { username, password }) {
       return new Promise((resolve, reject) => {
         fetch(auth.request.url, {
@@ -34,6 +40,7 @@ const authentication = {
           })
           .then((res) => {
             const payload = res[auth.response.payload];
+            localStorage.setItem('auth', JSON.stringify({ payload, loggedIn: true }));
             commit(SET_AUTH_STATUS, { payload, loggedIn: true });
             resolve(payload);
           })
@@ -43,6 +50,10 @@ const authentication = {
             reject(err);
           });
       });
+    },
+    logout({ commit }) {
+      localStorage.removeItem('auth');
+      commit(SET_AUTH_STATUS, { payload: null, loggedIn: false });
     }
   },
 };

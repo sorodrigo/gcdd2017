@@ -30,5 +30,8 @@
     <router-link v-else class="nav-link" active-class="-active" tag="li"  to="/login">
       <a>Login</a>
     </router-link>
+    <li v-if="loggedIn" class="nav-link">
+      <a @click="logout">Logout</a>
+    </li>
   </ul>
 </nav>

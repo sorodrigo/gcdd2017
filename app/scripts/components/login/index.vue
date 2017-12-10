@@ -5,6 +5,9 @@
 
   export default {
     name: 'login-component',
+    created() {
+      if (this.loggedIn) this.$router.replace('/profile');
+    },
     data() {
       return {
         username: '',
@@ -13,7 +16,8 @@
     },
     computed: {
       ...mapState({
-        loggedIn: state => state.authentication.loggedIn
+        loggedIn: state => state.authentication.loggedIn,
+        userDetails: state => state.authentication.payload
       })
     },
     methods: {

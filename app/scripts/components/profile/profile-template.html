@@ -1,9 +1,11 @@
 <div class="c-profile">
   <section>
-    <h2>Profile</h2>
-    <h4>Name:</h4>
-    <p>{{name}}</p>
-    <h4>Email:</h4>
-    <p>{{email}}</p>
+    <h2 class="title">Profile</h2>
+    <div class="profile-details-container">
+      <div class="profile-details" v-for="(value, key) in details">
+        <h4 class="details-key">{{key}}</h4>
+        <p class="details-value">{{value}}</p>
+      </div>
+    </div>
   </section>
 </div>

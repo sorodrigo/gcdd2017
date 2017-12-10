@@ -29,6 +29,10 @@
       toggleSubmenu() {
         this.expanded = !this.expanded;
       },
+      logout() {
+        this.$store.dispatch('logout');
+        this.$router.history.replace('/login');
+      }
     },
     watch: {
       $route: 'readParams'

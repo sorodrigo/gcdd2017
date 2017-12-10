@@ -13,6 +13,8 @@ import LoginComponent from 'components/login';
 
 import store from './store';
 
+store.dispatch('checkAuth');
+
 Vue.use(Router);
 
 const entityAllowedActions = ['new', 'edit', 'view'];
