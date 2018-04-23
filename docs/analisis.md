@@ -13,3 +13,17 @@ Esta separación en capas nos permite desacoplar el dónde y cómo se almacenan 
 Para el desarrollo de la aplicación _front-end_ se ha utilizado la arquitectura Flux. Como se ha mencionado en capítulos anteriores, esta arquitectura permite estructurar la aplicación desde el punto de vista de la información, busca mantener un flujo de datos unidireccional y actualizaciones de datos uniformes entre todas las vistas.
 
 Para este proyecto eso significa poder definir una estructura de la información que se encargue de leer y manipular entidades con las cuales construir vistas de manera dinámica. Mantener uniformes las actualizaciones a las entidades en todas las vistas, nos permite replicar el comportamiento de una aplicación que continuamente está enviando y recibiendo datos desde una base de datos, sin que este sea necesariamente el caso.
+
+## Funcionalidades
+
+### Esquema de entidades de datos
+El punto de partida del proyecto son los datos. Estos datos deben de estar estructurados en entidades y almacenados en una base de datos.
+
+### Esquema entidad-aplicación
+Se debe especificar como se debe tratar cada entidad dentro de la aplicación.
+
+### Esquema de consulta de datos
+Se debe definir como se representan los datos de cada entidad dentro de la tabla de consultas. Además se debe definir como representar una relación entre entidades a la hora de consultar los datos.
+
+### Esquema de edición de datos
+Se debe definir el tipo de datos de cada entidad y como editarlos en el caso de que estos no se editen de manera trivial.
