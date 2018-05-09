@@ -1,7 +1,7 @@
 # Summary
 
 * [Index](README.md)
-* [Intro](chapter1.md)
+* [Intro](intro.md)
 * [Objetivos](objetivos.md)
 * [Marco Teórico](marco-teorico.md)
   * [MVC](marco-teorico/mvc.md)
@@ -17,7 +17,7 @@
 * [Implementación](implementacion.md)
 * [Pruebas](pruebas.md)
 * [Manual de Uso](manual-de-uso.md)
-* Conclusiones
+* [Conclusiones](conclusiones.md)
 * [Citas](citas.md)
 * [Bibliografía](bibliografia.md)
 

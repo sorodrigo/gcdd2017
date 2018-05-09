@@ -10,11 +10,19 @@ Por defecto la aplicación esta pensada para trabajar con una fuente de datos lo
 
 Esta separación en capas nos permite desacoplar el dónde y cómo se almacenan los datos de la aplicación que los gestiona. De esta forma, la aplicación puede gestionar datos que vengan de cualquier servidor que exponga una API REST. Para poder utilizar la aplicación con otro servidor, basta con cambiar el archivo de configuración. 
 
-Para el desarrollo de la aplicación _front-end_ se ha utilizado la arquitectura Flux. Como se ha mencionado en capítulos anteriores, esta arquitectura permite estructurar la aplicación desde el punto de vista de la información, busca mantener un flujo de datos unidireccional y actualizaciones de datos uniformes entre todas las vistas.
+Para el desarrollo de la aplicación _front-end_ se ha utilizado una arquitectura de desarrollo orientado a componentes. Esta metodología basa el desarrollo de interfaces en construir pequeños pedazos de código que cumplan una tarea especifica. La modularidad no tiene nada de nuevo, sin embargo el desarrollo orientado a componentes implica un cambio en la forma de diseñar y desarrollar aplicaciones.
 
-Para este proyecto eso significa poder definir una estructura de la información que se encargue de leer y manipular entidades con las cuales construir vistas de manera dinámica. Mantener uniformes las actualizaciones a las entidades en todas las vistas, nos permite replicar el comportamiento de una aplicación que continuamente está enviando y recibiendo datos desde una base de datos, sin que este sea necesariamente el caso.
+## Desarrollo orientado a componentes
+Cuando hablamos de componentes nos referimos a una porción de código que se dedica exclusivamente a pintar un tipo de interfaz con una tarea específica. 
+La interfaces se desarrollan de "abajo a arriba", empezando con componentes y terminando a nivel de páginas y pantallas. Un componente puede tener datos de entrada y estado local, y solamente tiene una salida, la interfaz. A su vez un componente puede estar conformado por otros componentes.
 
-## Funcionalidades
+Los principales beneficios son:
+  1. **Reutilización.** El tener la interfaz de la aplicación dividida en pequeños pedazos de código, facilita la reutilización y aumenta la velocidad de desarrollo.
+  2. **Desacomplamiento.** El desarrollo de un componente no depende del estado de la aplicación. Esto simplifica el problema a resolver y permite no depender de la aplicación actual al desarrollar futuras interfaces.
+  3.  **Desarrollo en Paralelo.** Trabajar en un componente a la vez, permite compartir tareas con varias personas de una forma que no es posible cuando se trabaja por pantallas.
+
+
+## Esquemas de configuración
 
 ### Esquema de entidades de datos
 El punto de partida del proyecto son los datos. Estos datos deben de estar estructurados en entidades y almacenados en una base de datos.
