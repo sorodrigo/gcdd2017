@@ -12,6 +12,7 @@
   * [Aplicación Frontend](tecnologia-usada/aplicacion-frontend.md)
   * [Aplicación Backend](tecnologia-usada/aplicacion-backend.md)
   * [Herramienta de Linea de Comando \(CLI\)](tecnologia-usada/herramienta-de-linea-de-comando-cli.md)
+* [Requisitos](requisitos.md)
 * [Análisis](analisis.md)
 * [Diseño](diseno.md)
 * [Implementación](implementacion.md)

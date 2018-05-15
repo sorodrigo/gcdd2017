@@ -4,7 +4,7 @@ La arquitectura del proyecto está dividida en las siguientes capas:
   - Base de Datos. Almacena los datos del sistema.
   - Servidor. Recibe peticiones REST, y actualiza la base de datos.
   - Configuración. Describe la estructura de la base de datos, y la forma de comunicarse entre servidor y cliente.
-  - Aplicación de cliente. Recibe la estructura de la base de datos de la configuración y se comunica con el servidor para leer y modificar la base de datos. 
+  - Aplicación de cliente. Recibe la estructura de la base de datos de la configuración, y se comunica con el servidor para leer y modificar la base de datos. 
 
 Por defecto la aplicación esta pensada para trabajar con una fuente de datos local desde un fichero en formato `.json`. Este fichero toma el rol de base de datos y un pequeño servidor web expone una API REST para que el cliente (_front-end_) pueda pedir y actualizar los datos mediante HTTP.
 
@@ -13,8 +13,8 @@ Esta separación en capas nos permite desacoplar el dónde y cómo se almacenan 
 Para el desarrollo de la aplicación _front-end_ se ha utilizado una arquitectura de desarrollo orientado a componentes. Esta metodología basa el desarrollo de interfaces en construir pequeños pedazos de código que cumplan una tarea especifica. La modularidad no tiene nada de nuevo, sin embargo el desarrollo orientado a componentes implica un cambio en la forma de diseñar y desarrollar aplicaciones.
 
 ## Desarrollo orientado a componentes
-Cuando hablamos de componentes nos referimos a una porción de código que se dedica exclusivamente a pintar un tipo de interfaz con una tarea específica. 
-La interfaces se desarrollan de "abajo a arriba", empezando con componentes y terminando a nivel de páginas y pantallas. Un componente puede tener datos de entrada y estado local, y solamente tiene una salida, la interfaz. A su vez un componente puede estar conformado por otros componentes.
+Cuando hablamos de componentes nos referimos a una porción de código que se dedica exclusivamente a mostrar por pantalla un tipo de interfaz con una tarea específica. 
+Las interfaces se desarrollan de "abajo a arriba", empezando con componentes y terminando a nivel de páginas y pantallas. Un componente puede tener datos de entrada y estado local, y solamente tiene una salida, la interfaz. A su vez un componente puede estar conformado por otros componentes.
 
 Los principales beneficios son:
   1. **Reutilización.** El tener la interfaz de la aplicación dividida en pequeños pedazos de código, facilita la reutilización y aumenta la velocidad de desarrollo.
