@@ -1,37 +1,37 @@
 <nav class="c-header">
-  <ul class="nav-section">
-    <router-link class="nav-link" active-class="-active" tag="li" to="/" exact>
-      <a>Home</a>
-    </router-link>
-
-    <nav-menu
-      v-if="loggedIn"
-      class="nav-link -submenu"
-      title="Manage"
-      :open="expanded"
-      :toggle="toggleSubmenu"
-    >
-      <router-link
-        v-for="page in pages"
-        :key="page"
-        class="nav-link"
-        active-class="-active"
-        tag="li"
-        :to="'/' + page">
-          <a>{{page}}</a>
+  <div class="nav-section-container">
+    <ul class="nav-section">
+      <router-link class="nav-link" active-class="-active" tag="li" to="/" exact>
+        <a>Home</a>
       </router-link>
-    </nav-menu>
-  </ul>
-
-  <ul class="nav-section">
-    <router-link v-if="loggedIn" class="nav-link" active-class="-active" tag="li" to="/profile">
-      <a>Profile</a>
+      <li :class="['nav-link', { '-submenu-opened': expanded }]">
+        <a @click="toggleSubmenu">Manage</a>
+      </li>
+    </ul>
+    <ul class="nav-section">
+      <router-link v-if="loggedIn" class="nav-link" active-class="-active" tag="li" to="/profile">
+        <a>Profile</a>
+      </router-link>
+      <router-link v-else class="nav-link" active-class="-active" tag="li"  to="/login">
+        <a>Login</a>
+      </router-link>
+      <li v-if="loggedIn" class="nav-link">
+        <a @click="logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+  <nav-menu
+    v-if="loggedIn"
+    :open="expanded"
+  >
+    <router-link
+      v-for="page in pages"
+      :key="page"
+      class="nav-link -submenu"
+      active-class="-active"
+      tag="li"
+      :to="'/' + page">
+      <a>{{page}}</a>
     </router-link>
-    <router-link v-else class="nav-link" active-class="-active" tag="li"  to="/login">
-      <a>Login</a>
-    </router-link>
-    <li v-if="loggedIn" class="nav-link">
-      <a @click="logout">Logout</a>
-    </li>
-  </ul>
+  </nav-menu>
 </nav>

@@ -73,6 +73,9 @@
       }, 1500),
       resetSuccess() {
         setTimeout(() => (this.$store.dispatch('setFormStatus', false)), 4500);
+      },
+      goBack() {
+        this.$router.back();
       }
     },
     watch: {

@@ -4,17 +4,9 @@
   export default {
     name: 'nav-menu-component',
     props: {
-      title: {
-        type: String,
-        required: true,
-      },
       open: {
         type: Boolean,
         default: false
-      },
-      toggle: {
-        type: Function,
-        required: true
       }
     },
   };
