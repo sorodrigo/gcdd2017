@@ -4,7 +4,10 @@
       <router-link class="nav-link" active-class="-active" tag="li" to="/" exact>
         <a>Home</a>
       </router-link>
-      <li :class="['nav-link', { '-submenu-opened': expanded }]">
+      <li
+        v-if="loggedIn"
+        :class="['nav-link', { '-submenu-opened': expanded }]"
+      >
         <a @click="toggleSubmenu">Manage</a>
       </li>
     </ul>
