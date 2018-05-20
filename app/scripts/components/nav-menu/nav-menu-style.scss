@@ -2,16 +2,16 @@
 @import '../../../styles/settings';
 
 .c-nav-menu {
-  display: flex;
+  display: none;
   align-items: center;
   cursor: pointer;
+  background-color: lighten($theme-color, 7%);
+  height: 32px;
+  width: 100%;
+  padding: 0 $l-margin;
 
-  .nav-menu-title {
-    &.-opened {
-      > a {
-        color: darken($white, 17%);
-      }
-    }
+  &.-opened {
+    display: flex;
   }
 
   .nav-menu-links-wrapper {
