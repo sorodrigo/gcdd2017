@@ -160,15 +160,16 @@ const form = {
       const fields = Object.keys(model).map((key) => {
         const field = model[key];
         const readonly = (key === 'id') || isReadOnly;
+        const schemaValues = (formSchema[entity] && key in formSchema[entity])
+          && getSchemaValues(formSchema[entity][key], entities.data);
         const schema = {
-          readonly,
-          disabled: readonly,
           label: startCase(key),
           model: key
         };
-        const schemaProps = (formSchema[entity] && key in formSchema[entity])
-          ? getSchemaValues(formSchema[entity][key], entities.data)
-          : getSchemaProps(field, key);
+        if (readonly) {
+          return { ...schema, ...(schemaValues || {}), type: 'label' };
+        }
+        const schemaProps = schemaValues || getSchemaProps(field, key);
         return { ...schema, ...schemaProps };
       });
 
