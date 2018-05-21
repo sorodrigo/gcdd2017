@@ -1,7 +1,9 @@
 <div class="c-form">
   <section>
-    <h2>{{heading}}</h2>
-    <button @click="goBack()">Back</button>
+    <div class="form-header">
+      <h2>{{heading}}</h2>
+      <button @click="goBack()">Back</button>
+    </div>
     <vue-form-generator
       class="form-container"
       :schema="schema"
