@@ -151,15 +151,15 @@
       "company": 1,
       "tutor": 2,
       "student": 1,
-      "start_date": null,
-      "end_date": null
+      "start_date": 82800000,
+      "end_date": 1292400000
     },
     {
       "id": 2,
       "company": 2,
       "tutor": 3,
       "student": 2,
-      "start_date": null,
+      "start_date": 1525816800000,
       "end_date": null
     },
     {

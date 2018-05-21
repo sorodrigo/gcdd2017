@@ -1,3 +1,4 @@
+import moment from 'moment';
 import startCase from 'lodash/startCase';
 import VueFormGenerator from 'vue-form-generator';
 import formSchema from 'app/form.schema.json';
@@ -167,7 +168,10 @@ const form = {
           model: key
         };
         if (readonly) {
-          return { ...schema, ...(schemaValues || {}), type: 'label' };
+          const decoratedSchemaValues = (schemaValues || {}).inputType === 'date'
+            ? { ...schemaValues, get: m => moment({ ...m }[schemaValues.model]).format('MMM Do YY') }
+            : schemaValues;
+          return { ...schema, ...decoratedSchemaValues, type: 'label' };
         }
         const schemaProps = schemaValues || getSchemaProps(field, key);
         return { ...schema, ...schemaProps };
