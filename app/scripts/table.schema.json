@@ -1,6 +1,8 @@
 {
   "students": {
-    "degree": { "key": "name", "name": "degrees" }
+    "degree": {
+      "relation": { "key": "name", "name": "degrees" }
+    }
   },
   "internships": {
     "company": {
