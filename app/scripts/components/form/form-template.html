@@ -2,7 +2,12 @@
   <section>
     <div class="form-header">
       <h2>{{heading}}</h2>
-      <button @click="goBack()">Back</button>
+      <button
+        class="btn btn-primary"
+        @click="goBack()"
+      >
+        Back
+      </button>
     </div>
     <vue-form-generator
       class="form-container"
