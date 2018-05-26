@@ -11,6 +11,12 @@
     },
     "tutor": {
       "relation": { "key": "name", "name": "tutors" }
+    },
+    "start_date": {
+      "format": ["es-ES", null, true]
+    },
+    "end_date": {
+      "format": ["", null, true]
     }
   }
 }
