@@ -24,13 +24,13 @@
     },
     "student": {
       "type": "radios",
-      "multiSelect": false,
       "relation": {
         "key": "values",
         "name": "students"
       },
       "radiosOptions": {
-        "value": "name"
+        "name": "name",
+        "value": "id"
       }
     },
     "start_date": {
