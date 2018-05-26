@@ -26,14 +26,14 @@ La aplicación esta orientada a usuarios con ordenador, pero al usar un diseño 
 | ------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | RF.01   |El sistema deberá mostrar una página de inicio, generada a partir de un archivo de configuración.                                                                              |
 | RF.02   |El sistema debe tener la opción de proteger el contenido mediante un formulario de inicio de sesión.                                                                           |
-| RF.03   |En caso de hacer inicio de sesión el sistema debe de mostrar una página con la información del usuario.                                                                        |
+| RF.03   |En caso de hacer inicio de sesión, el sistema debe de mostrar una página con la información del usuario.                                                                       |
 | RF.04   |El sistema deberá mostrar un menú para acceder a cada modelo de datos.                                                                                                         |
 | RF.05   |Cada entidad de datos debe una página de consulta de datos.                                                                                                                    |
 | RF.05.1 |La página de consulta de datos debe incluir una tabla donde se muestren los datos.                                                                                             |
 | RF.05.2 |La tabla de consulta de cada entidad debe de soportar búsqueda de texto y ordenación de datos.                                                                                 |
 | RF.06   |Cada entidad de datos debe tener una página de creación de datos.                                                                                                              |
-| RF.06.1 |La página de creación de datos debe de mostrar un formulario con campos que correspondan a las propiedades de la entidad.                                                      |
+| RF.06.1 |La página de creación de datos debe de mostrar un formulario con campos que correspondan a cada una de las propiedades de la entidad.                                          |
 | RF.06.2 |Los campos del formulario deberán corresponder al tipo de datos de cada propiedad.                                                                                             |
-| RF.06.3 |El usuario debe de ser capaz de definir un tipo de campo que corresponde a una propiedad, mediante un esquema de configuración.                                                |
+| RF.06.3 |El usuario debe de ser capaz de definir mediante un esquema de configuración el tipo de datos de cada campo del formulario.                                                    |
 | RF.06.4 |Los campos del formulario deben de poder ser de tipo: texto, numérico, correo, contraseña, selección multiple (checkbox), selección única (select, radio) y selección de fecha.|
 | RF.06.5 |Se debe poder representar en los campos del formulario las relaciones de propiedades entre distintas entidades.                                                                |

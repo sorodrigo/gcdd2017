@@ -1,4 +1,5 @@
 import startCase from 'lodash/startCase';
+import isDate from 'lodash/isDate';
 import VueFormGenerator from 'vue-form-generator';
 import formSchema from 'app/form.schema.json';
 import datasource from 'app/datasource.schema.json';
@@ -127,12 +128,14 @@ const form = {
       }[action];
       const url = `/api/${endpoint}`;
       return new Promise((resolve, reject) => {
+        const sanitizeModel = m => Object.entries(m).reduce((acc, [key, value]) =>
+          ({ ...acc, [key]: isDate(value) ? value.getTime() : value }), {});
         fetch(url + request.params, {
           method: request.method,
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(model)
+          body: JSON.stringify(sanitizeModel(model))
         })
           .then((res) => {
             if (res.status >= 400) throw new Error(res.status);
@@ -168,7 +171,8 @@ const form = {
         };
         if (readonly) {
           const dateFormatter = (m) => {
-            const date = { ...m }[key];
+            const value = { ...m }[key];
+            const date = (value && isDate(value)) ? value : new Date(value);
             return date ? date.toLocaleDateString() : date;
           };
           const decoratedSchemaValues = (schemaValues || {}).inputType === 'date'
