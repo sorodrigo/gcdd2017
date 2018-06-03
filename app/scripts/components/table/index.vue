@@ -28,6 +28,10 @@
         type: String,
         required: true
       },
+      showCreate: {
+        type: [Boolean, Object],
+        default: true
+      },
       showView: {
         type: [Boolean, Object],
         default: true
