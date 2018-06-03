@@ -2,6 +2,7 @@
 <style lang="scss" src="./table-style.scss"></style>
 <script>
   import Alert from '../alert';
+  import tableSchema from '../../table.schema.json';
 
   export default {
     name: 'table-component',
@@ -39,7 +40,30 @@
         return this.getter && this.$store.getters[this.getter];
       },
       tableData() {
-        return this.fullData.table || this.fullData.data || [];
+        const tableData = this.fullData.table && this.fullData.table.map((row) => {
+          let newRow = {};
+          Object.entries(row).forEach(([key, value]) => {
+            const config = tableSchema[this.$route.params.entity][key];
+            if (config && config.format && value) {
+              // can't be null only undefined
+              const locale = config.format[0] || undefined;
+              const options = config.format[1] || undefined;
+              const isDate = !!config.format[2];
+              let formattedValue = value.toLocaleString(locale, options);
+              if (isDate) {
+                formattedValue = (new Date(value)).toLocaleDateString(locale, options);
+              }
+              newRow = {
+                ...newRow,
+                [key]: formattedValue
+              };
+            } else {
+              newRow = { ...newRow, [key]: value };
+            }
+          });
+          return newRow;
+        });
+        return tableData || this.fullData.data || [];
       },
     },
     methods: {
