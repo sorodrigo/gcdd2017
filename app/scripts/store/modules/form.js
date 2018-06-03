@@ -171,7 +171,8 @@ const form = {
         };
         if (readonly) {
           const dateFormatter = (m) => {
-            const date = { ...m }[key];
+            const value = { ...m }[key];
+            const date = (value && isDate(value)) ? value : new Date(value);
             return date ? date.toLocaleDateString() : date;
           };
           const decoratedSchemaValues = (schemaValues || {}).inputType === 'date'
