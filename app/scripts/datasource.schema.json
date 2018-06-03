@@ -15,8 +15,9 @@
         }
       ],
       "getter": "getEntity",
-      "showEdit": true,
-      "showDelete": true
+      "showCreate": { "path": "is_admin", "value": true },
+      "showEdit": { "path": "is_admin", "value": true },
+      "showDelete": { "path": "is_admin", "value": true }
     },
     "degrees": {
       "auth": true,
@@ -25,7 +26,8 @@
       "columns": ["id", "name", "year", "actions"],
       "actions": [{ "type": "fetchEntity", "payload": "degrees" }],
       "getter": "getEntity",
-      "showEdit": true,
+      "showCreate": { "path": "is_admin", "value": true },
+      "showEdit": { "path": "is_admin", "value": true },
       "showDelete": { "path": "is_admin", "value": true }
     },
     "companies": {
@@ -35,7 +37,8 @@
       "columns": ["id", "name", "address", "actions"],
       "actions": [{ "type": "fetchEntity", "payload": "companies" }],
       "getter": "getEntity",
-      "showEdit": true,
+      "showCreate": { "path": "is_admin", "value": true },
+      "showEdit": { "path": "is_admin", "value": true },
       "showDelete": { "path": "is_admin", "value": true }
     },
     "students": {
@@ -48,7 +51,8 @@
         { "type": "fetchEntity", "payload": "degrees" }
       ],
       "getter": "getEntityWithRelations",
-      "showEdit": true,
+      "showCreate": { "path": "is_admin", "value": true },
+      "showEdit": { "path": "is_admin", "value": true },
       "showDelete": { "path": "is_admin", "value": true }
     },
     "internships": {
@@ -63,7 +67,7 @@
         { "type": "fetchEntity", "payload": "students" }
       ],
       "getter": "getEntityWithRelations",
-      "showEdit": true,
+      "showEdit": { "path": "is_admin", "value": true },
       "showDelete": { "path": "is_admin", "value": true }
     }
   },

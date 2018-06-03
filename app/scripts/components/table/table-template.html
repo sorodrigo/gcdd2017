@@ -2,6 +2,7 @@
   <section>
     <h2>{{heading}}</h2>
     <button
+      v-if="canPerform(showCreate)"
       class="btn btn-primary"
       @click="create()"
     >
