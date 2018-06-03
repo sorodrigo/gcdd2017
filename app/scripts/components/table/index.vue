@@ -1,6 +1,8 @@
 <template src="./table-template.html"></template>
 <style lang="scss" src="./table-style.scss"></style>
 <script>
+  import { mapState } from 'vuex';
+  import get from 'lodash/get';
   import Alert from '../alert';
   import tableSchema from '../../table.schema.json';
 
@@ -26,16 +28,23 @@
         type: String,
         required: true
       },
+      showView: {
+        type: [Boolean, Object],
+        default: true
+      },
       showEdit: {
-        type: Boolean,
+        type: [Boolean, Object],
         required: true
       },
       showDelete: {
-        type: Boolean,
+        type: [Boolean, Object],
         required: true
       }
     },
     computed: {
+      ...mapState({
+        user: state => (state.authentication.payload)
+      }),
       fullData() {
         return this.getter && this.$store.getters[this.getter];
       },
@@ -77,6 +86,10 @@
           ? this.fullData.data.find(r => r.id === row.id)
           : row;
         return trueRow;
+      },
+      canPerform(action) {
+        if (typeof action === 'boolean') return action;
+        return get(this.user, action.path) === action.value;
       },
       view(row) {
         this.$store.dispatch('setFormModel', {
