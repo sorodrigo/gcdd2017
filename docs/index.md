@@ -6,7 +6,7 @@
 - [ ] Tecnología Usada
 - [x] Requisitos
 - [x] Análisis
-  - [ ] Casos De Uso
+  - [x] Casos De Uso
   - [ ] Modelo de datos / Comparación con esquema de datos
 - [x] Diseño
   - [ ] Diagrama de clases / componentes

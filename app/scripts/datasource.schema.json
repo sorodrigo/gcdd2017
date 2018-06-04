@@ -1,4 +1,5 @@
 {
+  "appName": "Aplicación de TFG",
   "home": {
     "resolveContent": "/static/pages/home.md"
   },
@@ -22,7 +23,7 @@
     "degrees": {
       "auth": true,
       "expandedHeader": true,
-      "heading": "Manage Degrees",
+      "heading": "Gestionar Grados",
       "columns": ["id", "name", "year", "actions"],
       "actions": [{ "type": "fetchEntity", "payload": "degrees" }],
       "getter": "getEntity",

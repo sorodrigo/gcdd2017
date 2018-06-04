@@ -1,4 +1,5 @@
 {
+  "appName": "Aplicación de TFG",
   "home": {
     "resolveContent": "/static/pages/home.md"
   },
@@ -15,18 +16,20 @@
         }
       ],
       "getter": "getEntity",
-      "showEdit": true,
-      "showDelete": true
+      "showCreate": { "path": "is_admin", "value": true },
+      "showEdit": { "path": "is_admin", "value": true },
+      "showDelete": { "path": "is_admin", "value": true }
     },
     "degrees": {
       "auth": true,
       "expandedHeader": true,
-      "heading": "Manage Degrees",
+      "heading": "Gestionar Grados",
       "columns": ["id", "name", "year", "actions"],
       "actions": [{ "type": "fetchEntity", "payload": "degrees" }],
       "getter": "getEntity",
-      "showEdit": true,
-      "showDelete": true
+      "showCreate": { "path": "is_admin", "value": true },
+      "showEdit": { "path": "is_admin", "value": true },
+      "showDelete": { "path": "is_admin", "value": true }
     },
     "companies": {
       "auth": true,
@@ -35,24 +38,26 @@
       "columns": ["id", "name", "address", "actions"],
       "actions": [{ "type": "fetchEntity", "payload": "companies" }],
       "getter": "getEntity",
-      "showEdit": true,
-      "showDelete": true
+      "showCreate": { "path": "is_admin", "value": true },
+      "showEdit": { "path": "is_admin", "value": true },
+      "showDelete": { "path": "is_admin", "value": true }
     },
     "students": {
       "auth": true,
       "expandedHeader": true,
       "heading": "Gestionar Estudiantes",
-      "columns": ["id", "name", "last_name", "actions"],
+      "columns": ["id", "name", "last_name", "degree", "actions"],
       "actions": [
         { "type": "fetchEntity", "payload": "students" },
         { "type": "fetchEntity", "payload": "degrees" }
       ],
       "getter": "getEntityWithRelations",
-      "showEdit": true,
-      "showDelete": true
+      "showCreate": { "path": "is_admin", "value": true },
+      "showEdit": { "path": "is_admin", "value": true },
+      "showDelete": { "path": "is_admin", "value": true }
     },
     "internships": {
-      "auth": true,
+      "auth": false,
       "expandedHeader": true,
       "heading": "Gestionar Prácticas Externas",
       "columns": ["id", "company", "tutor", "student", "start_date", "end_date", "actions"],
@@ -63,8 +68,9 @@
         { "type": "fetchEntity", "payload": "students" }
       ],
       "getter": "getEntityWithRelations",
-      "showEdit": true,
-      "showDelete": true
+      "showCreate": { "path": "is_admin", "value": true },
+      "showEdit": { "path": "is_admin", "value": true },
+      "showDelete": { "path": "is_admin", "value": true }
     }
   },
   "auth": {

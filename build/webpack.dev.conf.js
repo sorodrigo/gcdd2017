@@ -1,3 +1,4 @@
+var path = require('path');
 var utils = require('./utils')
 var webpack = require('webpack')
 var config = require('../config')
@@ -5,6 +6,7 @@ var merge = require('webpack-merge')
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+var datasource = require(path.join(__dirname, '..', 'app', 'scripts', 'datasource.schema.json'))
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
@@ -26,6 +28,7 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.NoEmitOnErrorsPlugin(),
     // https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
+      appName: datasource.appName,
       filename: 'index.html',
       template: 'app/index.html',
       inject: true

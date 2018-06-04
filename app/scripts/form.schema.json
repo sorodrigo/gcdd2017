@@ -50,7 +50,7 @@
       "multiSelect": false,
       "relation": {
         "key": "values",
-        "name": "students"
+        "name": "degrees"
       },
       "selectOptions": {
         "name": "name"
