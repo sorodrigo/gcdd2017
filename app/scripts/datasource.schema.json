@@ -56,7 +56,7 @@
       "showDelete": { "path": "is_admin", "value": true }
     },
     "internships": {
-      "auth": true,
+      "auth": false,
       "expandedHeader": true,
       "heading": "Gestionar Prácticas Externas",
       "columns": ["id", "company", "tutor", "student", "start_date", "end_date", "actions"],
@@ -67,6 +67,7 @@
         { "type": "fetchEntity", "payload": "students" }
       ],
       "getter": "getEntityWithRelations",
+      "showCreate": { "path": "is_admin", "value": true },
       "showEdit": { "path": "is_admin", "value": true },
       "showDelete": { "path": "is_admin", "value": true }
     }

@@ -4,7 +4,7 @@
 - [x] Objetivos
 - [x] Marco Teórico
 - [ ] Tecnología Usada
-- [ ] Requisitos
+- [x] Requisitos
 - [x] Análisis
   - [ ] Casos De Uso
   - [ ] Modelo de datos / Comparación con esquema de datos

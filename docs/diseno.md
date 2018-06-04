@@ -10,7 +10,9 @@ La aplicación contiene un _store_ donde se establece la estructura de la inform
 
 En Vue, los componentes estan formados por 3 partes:
 1. **Script.** El script es un objeto Javascript, que mantiene los datos, los métodos y los observadores del componente. Los datos representan el estado local, los métodos son las acciones que realiza dependiendo de un determinado evento, y los observadores se encargan de realizar acciones cuando los datos cambian.
+
 2. **Plantilla.** Es un DSL que suele representarse en un formato similar al HTML. Es la parte de la vista que describe como se ve una interfaz a partir de un estado. Contiene ciertas herramientas que facilitan la representación de la información.
+
 3. **Estilo.** Describe la apariencia de la plantilla, suele representarse en CSS o lenguaje de preprocesamiento de CSS. Se encarga de colocar los elementos de la plantilla y de estilarlos ya sea estableciendo un color, tamaño de fuente, etc.
 
 ## Programación reactiva
