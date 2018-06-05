@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import capitalize from 'lodash/capitalize';
 
-import { entities, appName } from 'app/datasource.schema.json';
+import { entities, app } from 'app/datasource.schema.json';
 
 import HeaderComponent from 'components/header';
 import ModalComponent from 'components/modal';
@@ -99,7 +99,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   const { entity, action, id } = to.params;
-  let title = appName;
+  let title = app.name;
   if (to.path !== '/') {
     if (entity) {
       title += ` – ${capitalize(entity)}`;

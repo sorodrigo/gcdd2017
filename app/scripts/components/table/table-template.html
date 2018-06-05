@@ -8,7 +8,7 @@
     >
       New
     </button>
-    <v-client-table :data="tableData" :columns="columns">
+    <v-client-table :data="tableData" :columns="tableColumns">
       <template slot="actions" slot-scope="props">
         <div>
           <a v-if="canPerform(showView)" class="glyphicon glyphicon-info-sign" @click="view(props.row)"></a>

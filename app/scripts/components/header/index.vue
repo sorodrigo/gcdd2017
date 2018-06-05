@@ -23,7 +23,7 @@
       readParams() {
         const { params } = this.$route;
         if (this.pages.includes(params.entity)) {
-          this.expanded = entities[params.entity].expandedHeader || false;
+          this.expanded = typeof entities[params.entity] !== 'undefined';
         }
       },
       toggleSubmenu() {

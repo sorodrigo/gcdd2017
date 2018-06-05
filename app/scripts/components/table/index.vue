@@ -16,15 +16,15 @@
         type: String,
         required: true
       },
-      actions: {
-        type: [String, Array],
+      prefetch: {
+        type: Array,
         required: true
       },
       columns: {
         type: Array,
         required: true
       },
-      getter: {
+      mapRelations: {
         type: String,
         required: true
       },
@@ -50,7 +50,8 @@
         user: state => (state.authentication.payload)
       }),
       fullData() {
-        return this.getter && this.$store.getters[this.getter];
+        const getter = this.mapRelations ? 'getEntityWithRelations' : 'getEntity';
+        return this.$store.getters[getter];
       },
       tableData() {
         const tableData = this.fullData.table && this.fullData.table.map((row) => {
@@ -78,12 +79,15 @@
         });
         return tableData || this.fullData.data || [];
       },
+      tableColumns() {
+        return [...this.columns, 'actions'];
+      }
     },
     methods: {
       fetch() {
         if (this.tableData.length) return;
 
-        this.actions.forEach(action => this.$store.dispatch(action.type, action.payload));
+        this.prefetch.forEach(dependency => this.$store.dispatch('fetchEntity', dependency));
       },
       getRow(row) {
         const trueRow = this.fullData.table
