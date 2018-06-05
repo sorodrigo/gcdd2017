@@ -96,7 +96,7 @@ const form = {
       const { prefetch } = datasource.entities[endpoint];
       let dispatches;
       if (prefetch) {
-        dispatches = prefetch.map(dependency => dispatch('fetchEntity', dependency));
+        dispatches = [endpoint, ...prefetch].map(dependency => dispatch('fetchEntity', dependency));
       }
       Promise.all(dispatches)
         .then(() => new Promise((resolve, reject) => {

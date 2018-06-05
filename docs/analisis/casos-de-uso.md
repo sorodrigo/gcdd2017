@@ -1,4 +1,4 @@
-
+# Casos de Uso
 ![Diagrama de casos de uso](../assets/c_uso.png)
 
 ## Explicación

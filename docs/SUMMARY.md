@@ -15,6 +15,7 @@
 * [Requisitos](requisitos.md)
 * [Análisis](analisis.md)
   * [Modelo de Datos](analisis/modelo-de-datos.md)
+  * [Comparación con esquema de datos](analisis/comparacion-esquema-datos.md)
   * [Casos de Uso](analisis/casos-de-uso.md)
 * [Diseño](diseno.md)
 * [Implementación](implementacion.md)

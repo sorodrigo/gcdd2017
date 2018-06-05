@@ -38,7 +38,7 @@
       "auth": true,
       "heading": "Manage Staff",
       "columns": ["id", "type", "workload", "hours"],
-      "prefetch": ["staff"],
+      "prefetch": null,
       "mapRelations": false,
       "showEdit": true,
       "showDelete": true
@@ -47,7 +47,7 @@
       "auth": true,
       "heading": "Manage Categories",
       "columns": ["id", "title", "priority"],
-      "prefetch": ["categories"],
+      "prefetch": null,
       "mapRelations": false,
       "showEdit": true,
       "showDelete": true
@@ -56,7 +56,7 @@
       "auth": true,
       "heading": "Manage Occupations",
       "columns": ["id", "title", "value"],
-      "prefetch": ["occupations"],
+      "prefetch": null,
       "mapRelations": false,
       "showEdit": true,
       "showDelete": true

@@ -3,15 +3,18 @@
 - [x] Intro
 - [x] Objetivos
 - [x] Marco Teórico
+  - [x] MVC
+  - [x] MVP
+  - [x] MVVM
+  - [x] Flux
 - [ ] Tecnología Usada
 - [x] Requisitos
 - [x] Análisis
   - [x] Modelo de datos
   - [x] Casos De Uso
-  - [ ] Comparación con esquema de datos
+  - [x] Comparación con esquema de datos
 - [x] Diseño
   - [ ] Diagrama de clases / componentes
-  - [ ] Diagrama de secuencia
 - [ ] Implementación
   - [ ] Esquemas explicación
 - [ ] Pruebas

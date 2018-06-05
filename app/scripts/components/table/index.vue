@@ -17,15 +17,14 @@
         required: true
       },
       prefetch: {
-        type: Array,
-        required: true
+        type: Array
       },
       columns: {
         type: Array,
         required: true
       },
       mapRelations: {
-        type: String,
+        type: Boolean,
         required: true
       },
       showCreate: {
@@ -85,9 +84,9 @@
     },
     methods: {
       fetch() {
-        if (this.tableData.length) return;
-
-        this.prefetch.forEach(dependency => this.$store.dispatch('fetchEntity', dependency));
+        if (this.tableData.length || !this.prefetch) return;
+        const { entity } = this.$route.params;
+        [entity, ...this.prefetch].forEach(dependency => this.$store.dispatch('fetchEntity', dependency));
       },
       getRow(row) {
         const trueRow = this.fullData.table
