@@ -1,5 +1,5 @@
 
-![Diagrama de casos de uso](assets/c_uso.png)
+![Diagrama de casos de uso](../assets/c_uso.png)
 
 ## Explicación
 Al entrar el usuario en la aplicación existen dos posibilidades, que el usuario no haya iniciado sesión o que el usuario ya ha visitado la aplicación previamente y su sesión esté activa.

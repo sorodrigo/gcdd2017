@@ -14,6 +14,8 @@
   * [Herramienta de Linea de Comando \(CLI\)](tecnologia-usada/herramienta-de-linea-de-comando-cli.md)
 * [Requisitos](requisitos.md)
 * [Análisis](analisis.md)
+  * [Modelo de Datos](analisis/modelo-de-datos.md)
+  * [Casos de Uso](analisis/casos-de-uso)
 * [Diseño](diseno.md)
 * [Implementación](implementacion.md)
 * [Pruebas](pruebas.md)
