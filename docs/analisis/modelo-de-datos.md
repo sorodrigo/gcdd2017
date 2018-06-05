@@ -1,3 +1,4 @@
+# Modelo de Datos
 ![Modelo Entidad-Relación](../assets/mer.png)
 
 ## Explicación
@@ -11,13 +12,13 @@ Una Entidad de Datos puede tener cero o el número que sea necesario de entradas
 
 Entrada de Datos esta formada por el atributo: `id` que representa un identificador único.
 
-Usuario esta formado por los atributos: `id`, `username` que representa la propiedad a usar como nombre de usuario en la petición al servidor de autenticación, `password` representa la propiedad a usar como contraseña en la petición al servidor de autenticación, `payload` representa la ubicación dentro de la respuesta del servidor de autenticación donde se encuentran los datos de usuario y `url` la dirección web donde la aplicación debe de autenticarse.
+Usuario esta formado por los atributos: `id`, `user` que representa la propiedad a usar como nombre de usuario en la petición al servidor de autenticación, `password` representa la propiedad a usar como contraseña en la petición al servidor de autenticación, `payload` representa la ubicación dentro de la respuesta del servidor de autenticación donde se encuentran los datos de usuario y `url` la dirección web donde la aplicación debe de autenticarse.
 
 Un ejemplo práctico de la tabla de Usuario podría ser:
 
-| username | password | payload   | url                         |
-| -------- | -------- | --------- | --------------------------- |
-| email    | pass     | data.user | http://api.example.com/auth |
+| user  | password | payload   | url                         |
+| ----- | -------- | --------- | --------------------------- |
+| email | pass     | data.user | http://api.example.com/auth |
 
 La petición al servidor:
 ```bash
