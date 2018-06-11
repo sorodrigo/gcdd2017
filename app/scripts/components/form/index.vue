@@ -35,7 +35,6 @@
     },
     data() {
       return {
-        timeout: null,
         formOptions: {
           validateDebounceTime: 500,
           validateAfterChanged: true,

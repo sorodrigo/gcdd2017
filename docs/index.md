@@ -14,11 +14,14 @@
   - [x] Casos De Uso
   - [x] Comparación con esquema de datos
 - [x] Diseño
-  - [ ] Diagrama de clases / componentes
-- [ ] Implementación
-  - [ ] Esquemas explicación
-- [ ] Pruebas
-- [ ] Manual de Uso
+  - [x] Diagrama de clases
+  - [ ] Explicación diagrama de clases
+  - [ ] Diagrama de componentes
+  - [ ] Explicacion diagrama de componentes
+- [ ] Manual de Usuario
+  - [ ] Uso
+  - [ ] Configuración
+    - [ ] Esquemas explicación
 - [ ] Conclusiones
 - [ ] Citas
 - [x] Bibliogafía
