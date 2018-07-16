@@ -1,87 +1,63 @@
 {
-  "home": {
-    "resolveContent": "/static/pages/home.md"
+  "app": {
+    "name": "Aplicación de TFG",
+    "home": {
+      "content": null,
+      "resolveContent": "/static/pages/home.md"
+    }
   },
   "entities": {
     "professors": {
       "auth": true,
-      "expandedHeader": true,
       "heading": "Manage Professors",
-      "columns": ["id", "name", "last_name", "email", "actions"],
-      "actions": [
-        {
-          "type": "fetchEntity",
-          "payload": "professors"
-        },
-        {
-          "type": "fetchEntity",
-          "payload": "categories"
-        },
-        {
-          "type": "fetchEntity",
-          "payload": "occupations"
-        }
-      ],
-      "getter": "getEntity",
+      "columns": ["id", "name", "last_name", "email"],
+      "actions": ["professors", "categories", "occupations"],
+      "mapRelations": false,
       "showEdit": true,
       "showDelete": true
     },
     "courses": {
       "auth": true,
-      "expandedHeader": true,
       "heading": "Manage Courses",
-      "columns": ["id", "name", "grade", "theory_credits", "practical_credits", "actions"],
-      "actions": [
-        {
-          "type": "fetchEntity",
-          "payload": "courses"
-        },
-        {
-          "type": "fetchEntity",
-          "payload": "degrees"
-        }
-      ],
-      "getter": "getEntity",
+      "columns": ["id", "name", "grade", "theory_credits", "practical_credits"],
+      "actions": ["courses", "degrees"],
+      "mapRelations": false,
       "showEdit": true,
       "showDelete": true
     },
     "degrees": {
       "auth": true,
-      "expandedHeader": true,
       "heading": "Manage Degrees",
-      "columns": ["id", "name", "year", "estimate", "valid", "actions"],
-      "actions": [{ "type": "fetchEntity", "payload": "degrees" }],
-      "getter": "getEntity",
+      "columns": ["id", "name", "year", "estimate", "valid"],
+      "actions": ["degrees"],
+      "mapRelations": false,
       "showEdit": true,
       "showDelete": true
     },
     "staff": {
       "auth": true,
-      "expandedHeader": true,
       "heading": "Manage Staff",
-      "columns": ["id", "type", "workload", "hours", "actions"],
-      "actions": [{ "type": "fetchEntity", "payload": "staff" }],
-      "getter": "getEntity",
+      "columns": ["id", "type", "workload", "hours"],
+      "prefetch": null,
+      "mapRelations": false,
       "showEdit": true,
       "showDelete": true
     },
     "categories": {
       "auth": true,
-      "expandedHeader": true,
       "heading": "Manage Categories",
-      "columns": ["id", "title", "priority", "actions"],
-      "actions": [{ "type": "fetchEntity", "payload": "categories" }],
-      "getter": "getEntity",
+      "columns": ["id", "title", "priority"],
+      "prefetch": null,
+      "mapRelations": false,
       "showEdit": true,
       "showDelete": true
     },
     "occupations": {
       "auth": true,
-      "expandedHeader": true,
       "heading": "Manage Occupations",
-      "columns": ["id", "title", "value", "actions"],
-      "actions": [{ "type": "fetchEntity", "payload": "occupations" }],
-      "getter": "getEntity",
+      "columns": ["id", "title", "value"],
+      "prefetch": null,
+      "mapRelations": false,
       "showEdit": true,
       "showDelete": true
     }

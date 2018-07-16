@@ -35,7 +35,6 @@
     },
     data() {
       return {
-        timeout: null,
         formOptions: {
           validateDebounceTime: 500,
           validateAfterChanged: true,
@@ -75,6 +74,9 @@
         setTimeout(() => (this.$store.dispatch('setFormStatus', false)), 4500);
       },
       goBack() {
+        const path = this.$router.currentRoute.path;
+        this.$router.replace(`/${this.entity}`);
+        this.$router.push(path);
         this.$router.back();
       }
     },

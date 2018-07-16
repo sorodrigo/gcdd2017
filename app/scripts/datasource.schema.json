@@ -1,72 +1,58 @@
 {
-  "home": {
-    "resolveContent": "/static/pages/home.md"
+  "app": {
+    "name": "Aplicación de TFG",
+    "home": {
+      "content": null,
+      "resolveContent": "/static/pages/home.md"
+    }
   },
   "entities": {
     "tutors": {
       "auth": true,
-      "expandedHeader": true,
       "heading": "Gestionar Tutores",
-      "columns": ["id", "name", "last_name", "email", "title", "office", "phone", "actions"],
-      "actions": [
-        {
-          "type": "fetchEntity",
-          "payload": "tutors"
-        }
-      ],
-      "getter": "getEntity",
+      "columns": ["id", "name", "last_name", "email", "title", "office", "phone"],
+      "prefetch": null,
+      "mapRelations": false,
       "showCreate": { "path": "is_admin", "value": true },
       "showEdit": { "path": "is_admin", "value": true },
       "showDelete": { "path": "is_admin", "value": true }
     },
     "degrees": {
       "auth": true,
-      "expandedHeader": true,
-      "heading": "Manage Degrees",
-      "columns": ["id", "name", "year", "actions"],
-      "actions": [{ "type": "fetchEntity", "payload": "degrees" }],
-      "getter": "getEntity",
+      "heading": "Gestionar Grados",
+      "columns": ["id", "name", "year"],
+      "prefetch": null,
+      "mapRelations": false,
       "showCreate": { "path": "is_admin", "value": true },
       "showEdit": { "path": "is_admin", "value": true },
       "showDelete": { "path": "is_admin", "value": true }
     },
     "companies": {
       "auth": true,
-      "expandedHeader": true,
       "heading": "Gestionar Empresas",
-      "columns": ["id", "name", "address", "actions"],
-      "actions": [{ "type": "fetchEntity", "payload": "companies" }],
-      "getter": "getEntity",
+      "columns": ["id", "name", "address"],
+      "prefetch": null,
+      "mapRelations": false,
       "showCreate": { "path": "is_admin", "value": true },
       "showEdit": { "path": "is_admin", "value": true },
       "showDelete": { "path": "is_admin", "value": true }
     },
     "students": {
       "auth": true,
-      "expandedHeader": true,
       "heading": "Gestionar Estudiantes",
-      "columns": ["id", "name", "last_name", "degree", "actions"],
-      "actions": [
-        { "type": "fetchEntity", "payload": "students" },
-        { "type": "fetchEntity", "payload": "degrees" }
-      ],
-      "getter": "getEntityWithRelations",
+      "columns": ["id", "name", "last_name", "degree"],
+      "prefetch": ["degrees"],
+      "mapRelations": true,
       "showCreate": { "path": "is_admin", "value": true },
       "showEdit": { "path": "is_admin", "value": true },
       "showDelete": { "path": "is_admin", "value": true }
     },
     "internships": {
       "auth": false,
-      "expandedHeader": true,
       "heading": "Gestionar Prácticas Externas",
-      "columns": ["id", "company", "tutor", "student", "start_date", "end_date", "actions"],
-      "actions": [
-        { "type": "fetchEntity", "payload": "internships" },
-        { "type": "fetchEntity", "payload": "companies" },
-        { "type": "fetchEntity", "payload": "tutors" },
-        { "type": "fetchEntity", "payload": "students" }
-      ],
-      "getter": "getEntityWithRelations",
+      "columns": ["id", "company", "tutor", "student", "start_date", "end_date"],
+      "prefetch": ["companies", "tutors", "students"],
+      "mapRelations": true,
       "showCreate": { "path": "is_admin", "value": true },
       "showEdit": { "path": "is_admin", "value": true },
       "showDelete": { "path": "is_admin", "value": true }

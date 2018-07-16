@@ -1,6 +1,5 @@
 import startCase from 'lodash/startCase';
 import isDate from 'lodash/isDate';
-import VueFormGenerator from 'vue-form-generator';
 import formSchema from 'app/form.schema.json';
 import datasource from 'app/datasource.schema.json';
 import {
@@ -15,7 +14,7 @@ const getSchemaProps = (field, fieldName) => {
       return {
         type: 'input',
         inputType: 'email',
-        validator: VueFormGenerator.validators.email,
+        validator: 'email',
       };
     case (fieldName === 'password'):
       return {
@@ -24,13 +23,13 @@ const getSchemaProps = (field, fieldName) => {
         min: 6,
         required: true,
         hint: 'Minimum 6 characters',
-        validator: VueFormGenerator.validators.alphaNumeric,
+        validator: 'alphaNumeric',
       };
     case (typeof field === 'string'):
       return {
         type: 'input',
         inputType: 'text',
-        validator: VueFormGenerator.validators.string,
+        validator: 'string',
       };
     case (typeof field === 'boolean'):
       return {
@@ -41,14 +40,14 @@ const getSchemaProps = (field, fieldName) => {
       return {
         type: 'input',
         inputType: 'number',
-        validator: VueFormGenerator.validators.integer,
+        validator: 'integer',
       };
     }
     default:
       return {
         type: 'input',
         inputType: 'text',
-        validator: VueFormGenerator.validators.string,
+        validator: 'string',
       };
   }
 };
@@ -94,10 +93,10 @@ const form = {
       commit(SET_FORM_MODEL, payload);
     },
     getFormModel({ commit, dispatch }, { endpoint, id, isReadOnly }) {
-      const { actions } = datasource.entities[endpoint];
+      const { prefetch } = datasource.entities[endpoint];
       let dispatches;
-      if (actions) {
-        dispatches = actions.map(action => dispatch(action.type, action.payload));
+      if (prefetch) {
+        dispatches = [endpoint, ...prefetch].map(dependency => dispatch('fetchEntity', dependency));
       }
       Promise.all(dispatches)
         .then(() => new Promise((resolve, reject) => {

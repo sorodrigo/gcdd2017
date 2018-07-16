@@ -8,6 +8,8 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
+var datasource = require(path.join(__dirname, '..', 'app', 'scripts', 'datasource.schema.json'))
+
 
 var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
@@ -52,6 +54,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
+      appName: datasource.app.name,
       filename: process.env.NODE_ENV === 'testing'
         ? 'index.html'
         : config.build.index,

@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import capitalize from 'lodash/capitalize';
 
-import { entities } from 'app/datasource.schema.json';
+import { entities, app } from 'app/datasource.schema.json';
 
 import HeaderComponent from 'components/header';
 import ModalComponent from 'components/modal';
@@ -87,11 +88,31 @@ const routes = [
   }
 ];
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) return savedPosition;
     return { x: 0, y: 0 };
-  },
+  }
 });
+
+router.beforeEach((to, from, next) => {
+  const { entity, action, id } = to.params;
+  let title = app.name;
+  if (to.path !== '/') {
+    if (entity) {
+      title += ` – ${capitalize(entity)}`;
+
+      if (action) title += ` – ${capitalize(action)}`;
+      if (id) title += ` – ${id}`;
+    } else {
+      const subtitle = to.path.substring(1);
+      title += ` – ${capitalize(subtitle)}`;
+    }
+  }
+  document.title = title;
+  next();
+});
+
+export default router;
