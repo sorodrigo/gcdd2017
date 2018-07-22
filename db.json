@@ -33,7 +33,7 @@
       "last_name": "Smith",
       "title": "Researcher",
       "office": 2020,
-      "phone": null
+      "phone": 624444461
     },
     {
       "id": 2,
@@ -42,7 +42,7 @@
       "last_name": "Waters",
       "title": "Rockstar",
       "office": 3003,
-      "phone": null
+      "phone": 624555461
     },
     {
       "id": 3,
@@ -53,7 +53,7 @@
       "occupation": 1,
       "title": "Godfather",
       "office": 4004,
-      "phone": null
+      "phone": 624538461
     },
     {
       "id": 4,
@@ -62,7 +62,7 @@
       "last_name": "Doe",
       "title": "Academic",
       "office": 1001,
-      "phone": null
+      "phone": 622394567
     }
   ],
   "degrees": [
@@ -115,32 +115,32 @@
       "company": 1,
       "tutor": 2,
       "student": 1,
-      "start_date": 82800000,
-      "end_date": 1292400000
+      "start_date": 1519858800000,
+      "end_date": 1535752800000
     },
     {
       "id": 2,
       "company": 2,
       "tutor": 3,
       "student": 2,
-      "start_date": 1525816800000,
-      "end_date": null
+      "start_date": 1522533600000,
+      "end_date": 1530396000000
     },
     {
       "id": 3,
       "company": 3,
       "tutor": 4,
       "student": 3,
-      "start_date": null,
-      "end_date": null
+      "start_date": 1525125600000,
+      "end_date": 1541026800000
     },
     {
       "id": 4,
       "company": 3,
       "tutor": 1,
       "student": 4,
-      "start_date": null,
-      "end_date": null
+      "start_date": 1325372400000,
+      "end_date": 1341093600000
     }
   ]
 }
