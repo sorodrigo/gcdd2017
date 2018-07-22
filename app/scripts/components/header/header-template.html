@@ -5,7 +5,7 @@
         <a>Home</a>
       </router-link>
       <li
-        v-if="loggedIn"
+        v-if="loggedIn || !hasAuth"
         :class="['nav-link', { '-submenu-opened': expanded }]"
       >
         <a @click="toggleSubmenu">Manage</a>
@@ -15,7 +15,7 @@
       <router-link v-if="loggedIn" class="nav-link" active-class="-active" tag="li" to="/profile">
         <a>Profile</a>
       </router-link>
-      <router-link v-else class="nav-link" active-class="-active" tag="li"  to="/login">
+      <router-link v-else-if="hasAuth" class="nav-link" active-class="-active" tag="li"  to="/login">
         <a>Login</a>
       </router-link>
       <li v-if="loggedIn" class="nav-link">
@@ -24,7 +24,7 @@
     </ul>
   </div>
   <nav-menu
-    v-if="loggedIn"
+    v-if="loggedIn || !hasAuth"
     :open="expanded"
   >
     <router-link

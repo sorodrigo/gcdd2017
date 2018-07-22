@@ -2,7 +2,7 @@
 <style lang="scss" src="./header-style.scss"></style>
 <script>
   import { mapState } from 'vuex';
-  import { entities } from 'app/datasource.schema.json';
+  import { entities, auth } from 'app/datasource.schema.json';
   import NavMenu from 'components/nav-menu';
 
   export default {
@@ -12,7 +12,8 @@
     },
     data() {
       return {
-        expanded: false
+        expanded: false,
+        hasAuth: !!auth
       };
     },
     computed: mapState({
