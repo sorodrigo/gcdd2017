@@ -1,40 +1,4 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "username": "admin",
-      "password": "admin123",
-      "is_admin": true
-    },
-    {
-      "id": 2,
-      "username": "leo",
-      "password": "leo123",
-      "is_admin": false,
-      "student": 1
-    },
-    {
-      "id": 3,
-      "username": "cristiano",
-      "password": "cristiano123",
-      "is_admin": false,
-      "student": 2
-    },
-    {
-      "id": 4,
-      "username": "neymar",
-      "password": "neymar123",
-      "is_admin": false,
-      "student": 3
-    },
-    {
-      "id": 5,
-      "username": "griezmann",
-      "password": "griezmann123",
-      "is_admin": false,
-      "student": 4
-    }
-  ],
   "students": [
     {
       "id": 1,

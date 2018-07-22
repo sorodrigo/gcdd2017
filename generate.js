@@ -1,6 +1,6 @@
 const prompt = require('prompt');
 const path = require('path');
-const { ncp } = require('ncp');
+const { copy } = require('fs-extra');
 
 const destinations = {
   datasource: path.join('app', 'scripts', 'datasource.schema.json'),
@@ -17,13 +17,8 @@ function copyFiles(options) {
     const source = options[command];
     const destination = destinations[command];
     if (source === destination) return Promise.resolve();
-    return new Promise((resolve, reject) => {
-      const prefixPath = p => path.join(__dirname, p);
-      return ncp(prefixPath(source), prefixPath(destination), { stopOnErr: true }, (err) => {
-        if (err) reject(err);
-        resolve();
-      });
-    });
+    const prefixPath = p => path.join(__dirname, p);
+    return copy(source, prefixPath(destination));
   }));
 }
 
@@ -34,6 +29,12 @@ const options = {
       description: 'Please provide a path to your datasource schema',
       type: 'string',
       default: destinations.datasource,
+      before: value => (console.info(`${value}\n`) || value)
+    },
+    data: {
+      description: 'If you wish to maintain your application data locally, please provide a path to your json data.',
+      type: 'string',
+      default: destinations.data,
       before: value => (console.info(`${value}\n`) || value)
     },
     form: {
@@ -52,12 +53,6 @@ const options = {
       description: 'Please provide a path to your static pages data.',
       type: 'string',
       default: destinations.pages,
-      before: value => (console.info(`${value}\n`) || value)
-    },
-    data: {
-      description: 'If you wish to maintain your application data locally, please provide a path to your json data.',
-      type: 'string',
-      default: destinations.data,
       before: value => (console.info(`${value}\n`) || value)
     }
   }

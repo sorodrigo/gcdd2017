@@ -1,71 +1,30 @@
 {
   "app": {
-    "name": "Aplicación de TFG",
+    "name": "Gestión de datos de prácticas externas universitarias",
     "home": {
-      "content": null,
-      "resolveContent": "/static/pages/home.md"
+      "content": "# Gestión de datos de prácticas externas universitarias \n \n Plataforma digital para la gestión de las prácticas en empresa de los alumnos de la UPM."
     }
   },
   "entities": {
     "tutors": {
-      "auth": true,
       "heading": "Gestionar Tutores",
-      "columns": ["id", "name", "last_name", "email", "title", "office", "phone"],
-      "prefetch": null,
-      "mapRelations": false,
-      "showCreate": { "path": "is_admin", "value": true },
-      "showEdit": { "path": "is_admin", "value": true },
-      "showDelete": { "path": "is_admin", "value": true }
+      "columns": ["id", "name", "last_name", "email", "title", "office", "phone"]
     },
     "degrees": {
-      "auth": true,
       "heading": "Gestionar Grados",
-      "columns": ["id", "name", "year"],
-      "prefetch": null,
-      "mapRelations": false,
-      "showCreate": { "path": "is_admin", "value": true },
-      "showEdit": { "path": "is_admin", "value": true },
-      "showDelete": { "path": "is_admin", "value": true }
+      "columns": ["id", "name", "year"]
     },
     "companies": {
-      "auth": true,
       "heading": "Gestionar Empresas",
-      "columns": ["id", "name", "address"],
-      "prefetch": null,
-      "mapRelations": false,
-      "showCreate": { "path": "is_admin", "value": true },
-      "showEdit": { "path": "is_admin", "value": true },
-      "showDelete": { "path": "is_admin", "value": true }
+      "columns": ["id", "name", "address"]
     },
     "students": {
-      "auth": true,
       "heading": "Gestionar Estudiantes",
-      "columns": ["id", "name", "last_name", "degree"],
-      "prefetch": ["degrees"],
-      "mapRelations": true,
-      "showCreate": { "path": "is_admin", "value": true },
-      "showEdit": { "path": "is_admin", "value": true },
-      "showDelete": { "path": "is_admin", "value": true }
+      "columns": ["id", "name", "last_name", "degree"]
     },
     "internships": {
-      "auth": false,
       "heading": "Gestionar Prácticas Externas",
-      "columns": ["id", "company", "tutor", "student", "start_date", "end_date"],
-      "prefetch": ["companies", "tutors", "students"],
-      "mapRelations": true,
-      "showCreate": { "path": "is_admin", "value": true },
-      "showEdit": { "path": "is_admin", "value": true },
-      "showDelete": { "path": "is_admin", "value": true }
-    }
-  },
-  "auth": {
-    "request": {
-      "url": "/auth",
-      "user": "username",
-      "password": "password"
-    },
-    "response": {
-      "payload": "data"
+      "columns": ["id", "company", "tutor", "student", "start_date", "end_date"]
     }
   }
 }
