@@ -20,11 +20,15 @@
     },
     "students": {
       "heading": "Gestionar Estudiantes",
-      "columns": ["id", "name", "last_name", "degree"]
+      "columns": ["id", "name", "last_name", "degree"],
+      "mapRelations": true,
+      "prefetch": ["degrees"]
     },
     "internships": {
       "heading": "Gestionar Prácticas Externas",
-      "columns": ["id", "company", "tutor", "student", "start_date", "end_date"]
+      "columns": ["id", "company", "tutor", "student", "start_date", "end_date"],
+      "mapRelations": true,
+      "prefetch": ["companies", "tutors", "students"]
     }
   }
 }

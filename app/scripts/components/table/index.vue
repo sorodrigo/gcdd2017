@@ -18,7 +18,7 @@
       },
       prefetch: {
         type: Array,
-        default: []
+        default: () => []
       },
       columns: {
         type: Array,

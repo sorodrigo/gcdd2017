@@ -46,7 +46,7 @@ Ahora debemos configurar las entidades de datos, en total tenemos 5: Tutores, Es
 }
 ```
 
-Con estos datos ya podemos empezar a utilizar el sistema, el único paso pendiente es copiar los datos y el esquema de datos dentro del sistema. Para esto utilizaremos la herramienta de línea de comando. Debemos ejecutar el siguiente comando desde la raíz de proyecto `npm generate` y después solo hace falta seguir las instrucciones.
+Con estos datos ya podemos empezar a utilizar el sistema, el único paso pendiente es copiar los datos y el esquema de datos dentro del sistema. Para esto utilizaremos la herramienta de línea de comando. Debemos ejecutar el siguiente comando desde la raíz de proyecto `npm run generate` y después solo hace falta seguir las instrucciones.
 
 Como solamente estamos interesados en copiar el esquema de datos y los datos de las entidades, ignoramos las ultimas tres preguntas.
 
