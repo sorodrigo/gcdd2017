@@ -6,7 +6,9 @@
 La aplicación contiene 5 clases que actúan como controladores, 1 clase que actúa como modelo y 1 clase que actúa como mediador entre la aplicación y los controladores.
 
 ### Mediador
-La clase que actúa como mediador es: Router. Esta clase tiene como función decidir que controladores y por lo tanto que vistas deben de mostrarse en la aplicación en todo momento. Además de esto el mediador se encarga de la gestión de permisos dentro de la aplicación, controla que mensajes se transmiten a que controladores. Finalmente, añade a la aplicación eventos de transición entre vistas.
+_El Mediador promueve bajo acoplamiento asegurándose de que en vez de que los módulos hagan referencia entre ellos de forma explicita, su interacción sea gestionada mediante un punto central. También se puede usar de muchas otras formas como por ejemplo para gestionar permisos; un Mediador puede controlar a que eventos en un sistema se puede suscribir y cuales pueden ser despachados.[4]_
+
+La clase que actúa como mediador es: Router. Esta clase tiene como función decidir que controladores y por lo tanto que vistas deben de mostrarse en la aplicación en todo momento. Además de eso, añade a la aplicación eventos de transición entre vistas.
  
 ### Controladores
 Las clases que actúan como controladores son: Home, Profile, Login, Form, Table. Esta última contiene a su vez otras 2 clases que también actúan como controladores: Modal y Alert.
