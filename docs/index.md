@@ -7,7 +7,7 @@
   - [x] MVP
   - [x] MVVM
   - [x] Flux
-- [ ] Tecnología Usada
+- [x] Tecnología Usada
 - [x] Requisitos
 - [x] Análisis
   - [x] Modelo de datos
@@ -15,13 +15,13 @@
   - [x] Comparación con esquema de datos
 - [x] Diseño
   - [x] Diagrama de clases
-  - [ ] Explicación diagrama de clases
-  - [ ] Diagrama de componentes
-  - [ ] Explicacion diagrama de componentes
+  - [x] Explicación diagrama de clases
+  - [x] Diagrama de componentes
+  - [x] Explicacion diagrama de componentes
 - [ ] Manual de Usuario
   - [ ] Uso
   - [ ] Configuración
     - [ ] Esquemas explicación
 - [ ] Conclusiones
-- [ ] Citas
+- [x] Citas
 - [x] Bibliogafía
