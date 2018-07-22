@@ -19,9 +19,12 @@
   - [x] Diagrama de componentes
   - [x] Explicacion diagrama de componentes
 - [ ] Manual de Usuario
-  - [ ] Uso
-  - [ ] Configuración
-    - [ ] Esquemas explicación
+  - [ ] Configuración básica
+    - [ ] Esquemas
+    - [ ] Uso básico
+  - [ ] Configuración avanzada
+    - [ ] Esquemas
+    - [ ] Uso avanzado
 - [ ] Conclusiones
 - [x] Citas
 - [x] Bibliogafía

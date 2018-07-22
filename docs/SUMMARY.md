@@ -17,7 +17,7 @@
 * [Diseño](diseno.md)
 * [Implementación](implementacion.md)
 * [Pruebas](pruebas.md)
-* [Manual de Uso](manual-de-uso.md)
+* [Manual de Usuario](manual-de-usuario.md)
 * [Conclusiones](conclusiones.md)
 * [Citas](citas.md)
 * [Bibliografía](bibliografia.md)
