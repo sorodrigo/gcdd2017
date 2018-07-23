@@ -27,8 +27,6 @@ En las arquitecturas _MV*_ no existen restricciones respecto a la dirección en 
 
 Flux obliga a mantener un flujo de datos unidireccional y por lo tanto elimina la posibilidad de que un componente actualicé los datos en una manera que rompa el sistema. De manera que sin importar el tipo de datos, cuando estos entran o se actualizan fluyen desde el _store_ hacia los componentes, y de estos a sus componentes hijos, bajando por el árbol de componentes hasta llegar al final.
 
-(_Diagrama de flujo de datos_)
-
 Manteniendo un flujo unidireccional de datos el problema de entender de donde proviene un cambio de estado se simplifica. Esto es porque siempre se debe originar desde _store_, haciendo el flujo de datos predecible.
 
 #### Comunicación entre componentes

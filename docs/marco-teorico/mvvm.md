@@ -18,7 +18,3 @@ La vista-modelo también expone métodos para:
     - Actualizar el estado de la vista.
     - Actualizar el modelo a través de acciones en la vista.
     - Despachar eventos en la vista.
-
-Ejemplo de vista (contacto)
-
-Ejemplo de vista-modelo (contacto)

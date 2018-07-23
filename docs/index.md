@@ -25,6 +25,6 @@
   - [x] Configuración avanzada
     - [x] Esquemas
     - [x] Uso avanzado
-- [ ] Conclusiones
+- [x] Conclusiones
 - [x] Citas
 - [x] Bibliogafía
