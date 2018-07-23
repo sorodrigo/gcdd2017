@@ -8,27 +8,57 @@
   "entities": {
     "tutors": {
       "heading": "Gestionar Tutores",
-      "columns": ["id", "name", "last_name", "email", "title", "office", "phone"]
+      "columns": ["id", "name", "last_name", "email", "title", "office", "phone"],
+      "auth": true,
+      "showCreate": { "path": "role", "value": "tutor" },
+      "showEdit": { "path": "role", "value": "tutor" },
+      "showDelete": { "path": "role", "value": "tutor" }
     },
     "degrees": {
       "heading": "Gestionar Grados",
-      "columns": ["id", "name", "year"]
+      "columns": ["id", "name", "year"],
+      "auth": true,
+      "showCreate": { "path": "role", "value": "tutor" },
+      "showEdit": { "path": "role", "value": "tutor" },
+      "showDelete": { "path": "role", "value": "tutor" }
     },
     "companies": {
       "heading": "Gestionar Empresas",
-      "columns": ["id", "name", "address"]
+      "columns": ["id", "name", "address"],
+      "auth": true,
+      "showCreate": { "path": "role", "value": "company" },
+      "showEdit": { "path": "role", "value": "company" },
+      "showDelete": { "path": "role", "value": "company" }
     },
     "students": {
       "heading": "Gestionar Estudiantes",
       "columns": ["id", "name", "last_name", "degree"],
       "mapRelations": true,
-      "prefetch": ["degrees"]
+      "prefetch": ["degrees"],
+      "auth": true,
+      "showCreate": { "path": "role", "value": "students" },
+      "showEdit": { "path": "role", "value": "students" },
+      "showDelete": { "path": "role", "value": "students" }
     },
     "internships": {
       "heading": "Gestionar Prácticas Externas",
       "columns": ["id", "company", "tutor", "student", "start_date", "end_date"],
       "mapRelations": true,
-      "prefetch": ["companies", "tutors", "students"]
+      "prefetch": ["companies", "tutors", "students"],
+      "auth": false,
+      "showCreate": { "path": "role", "value": "tutor" },
+      "showEdit": { "path": "role", "value": "tutor" },
+      "showDelete": { "path": "role", "value": "tutor" }
+    }
+  },
+  "auth": {
+    "request": {
+      "url": "/auth",
+      "user": "username",
+      "password": "password"
+    },
+    "response": {
+      "payload": "data"
     }
   }
 }

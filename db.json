@@ -1,4 +1,24 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "username": "tutor1",
+      "password": "password_tutor",
+      "role": "tutor"
+    },
+    {
+      "id": 2,
+      "username": "student1",
+      "password": "password_student",
+      "role": "student"
+    },
+    {
+      "id": 3,
+      "username": "company1",
+      "password": "password_company",
+      "role": "company"
+    }
+  ],
   "students": [
     {
       "id": 1,
