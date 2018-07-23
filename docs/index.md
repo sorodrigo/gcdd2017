@@ -17,14 +17,14 @@
   - [x] Diagrama de clases
   - [x] Explicación diagrama de clases
   - [x] Diagrama de componentes
-  - [x] Explicacion diagrama de componentes
-- [ ] Manual de Usuario
-  - [ ] Configuración básica
-    - [ ] Esquemas
-    - [ ] Uso básico
-  - [ ] Configuración avanzada
-    - [ ] Esquemas
-    - [ ] Uso avanzado
+  - [x] Explicación diagrama de componentes
+- [x] Manual de Usuario
+  - [x] Configuración básica
+    - [x] Esquemas
+    - [x] Uso básico
+  - [x] Configuración avanzada
+    - [x] Esquemas
+    - [x] Uso avanzado
 - [ ] Conclusiones
 - [x] Citas
 - [x] Bibliogafía
