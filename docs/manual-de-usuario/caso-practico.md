@@ -13,12 +13,12 @@ Como caso práctico hemos elegido el ejemplo mencionado previamente en la secci�
 **Estudiantes**
 ![Tabla de datos - tutores](../assets/manual_csv/students.png)
 
-Además de estos datos también se mantiene un archivo con la relación de prácticas externas entre estudiantes, compañias y tutores. En este se registran las prácticas externas con su fecha de inicio y de finalización.
+Además de estos datos también se mantiene un archivo con la relación de prácticas externas entre estudiantes, compañías y tutores. En este se registran las prácticas externas con su fecha de inicio y de finalización.
 
 **Prácticas externas**
 ![Tabla de datos - tutores](../assets/manual_csv/internships.png)
 
-Como se puede apreciar, el mantenimiento de estos datos es totalmente manual y muy costoso. El departamento está buscando forma de automatizar este proceso en la mayor medida posible. Para esto eligen utilizar el sistema de gestión de datos definido en este proyecto.
+Como se puede apreciar, el mantenimiento de estos datos es totalmente manual y muy costoso. El departamento está buscando alguna forma de automatizar este proceso en la mayor medida de lo posible. Para esto eligen utilizar el sistema de gestión de datos definido en este proyecto.
 
 El primer paso es convertir los datos a `.json`. Este paso es trivial ya que existen muchas herramientas en linea que convierten `.csv` a `.json`. Los datos después de la conversion son los siguientes*:
 

@@ -37,10 +37,10 @@ La respuesta del servidor:
 }
 ```
 
-Acción esta formada por atributo  `tipo`, que en la práctica puede ser: crear, ver, editar o eliminar. Acción tiene una relación triple con Entidad de Datos y Usuario. Esta se puede definir como: _Usuario_ lleva a cabo _acción_ en _entidad de datos_. Dicha relación tiene un atributo `rol` con el objetivo de determinar que usuario puede llevar acabo una acción en una entidad de datos.
+Acción esta formada por un atributo `tipo`, que en la práctica puede ser: crear, ver, editar o eliminar. Acción tiene una relación triple con Entidad de Datos y Usuario. Esta se puede definir como: _Usuario_ lleva a cabo _acción_ en _entidad de datos_. Dicha relación tiene un atributo `rol` con el objetivo de determinar que usuario puede llevar acabo una acción en una entidad de datos.
 
-Una acción puede ser llevada ser llevada a cabo por cero o cualquier número de usuarios; un usuario puede llevar a cabo cero hasta el número de acciones soportadas (en este caso 4).
+Una acción puede ser llevada a cabo por cero o cualquier número de usuarios; un usuario puede llevar a cabo cero hasta el número de acciones soportadas (en este caso 4).
 
 Una acción puede ser llevada a cabo en cero o hasta en el número máximo entidades existentes; una entidad de datos puede soportar desde 0 hasta el número máximo de acciones definidas (en este caso 4).
 
-Un usuario puede  llevar a cabo acciones en cero o en el número máximo de entidades existentes; una entidad puede soportar acciones de cero hasta el número máximo de usuarios existentes.
+Un usuario puede llevar a cabo acciones en cero o en el número máximo de entidades existentes; una entidad puede soportar acciones de cero hasta el número máximo de usuarios existentes.

@@ -59,7 +59,7 @@ En este esquema describiremos la forma de hacer el mapeo de relaciones por cada 
 ```
 Dentro de cada entidad añadimos un objeto por cada propiedad que representa una relación, y dentro de esta propiedad añadimos una propiedad `relation` que contiene una clave (`key`) que corresponde al valor y un nombre (`name`) que corresponde a la entidad con la que esta relacionada.
 
-Después de estos cambios volvemos a ejecutar el script `npm run generate`, solo que esta vez añadimos nuestro nuevo esquema en la cuarta pregunta.
+Después de estos cambios volvemos a ejecutar el script `npm run generate`, solo que esta vez añadiremos nuestro nuevo esquema en la cuarta pregunta.
 Al ejecutar la aplicación veremos que donde había claves foráneas ahora hay nombres, ahora es más comprehensible. Pero en la tabla de prácticas externas aún hay dos columnas sin sentido: fecha de inicio y fecha de finalización.
 
 Las fechas en el sistema se manejan en formato UNIX, este formato no es muy amigable de cara al usuario. Para solucionar este problema podemos añadir la opción `format` al esquema de tabla.
@@ -80,7 +80,7 @@ Las fechas en el sistema se manejan en formato UNIX, este formato no es muy amig
   }
 }
 ```
-La opción de `format` recibe una lista que contiene 3 argumentos. Los dos argumentos coinciden con los métodos de javascript `toLocaleString` y `toLocaleDateString`. El primero representa el idioma de localización, el segundo un objeto de opciones y el tercero es un valor booleano que determina si el valor representa una fecha o no.
+La opción de `format` recibe una lista que contiene 3 argumentos. Los primeros dos argumentos coinciden con los de los métodos de javascript `toLocaleString` y `toLocaleDateString`. El primero representa el idioma de localización, el segundo un objeto de opciones. El tercer argumento es un valor booleano que determina si el valor representa una fecha o no.
 
 Al hacer estos cambios, podemos ver que las fechas y las relaciones se muestran de manera correcta.
 
@@ -88,9 +88,9 @@ Al hacer estos cambios, podemos ver que las fechas y las relaciones se muestran 
 
 ### Esquema de formulario
 
-Con este nuevo esquema podemos controlar la presentación de los datos en la tabla de consulta de datos. Pero que hay del formulario donde se crean y editan los datos?
+Con este nuevo esquema podemos controlar la presentación de los datos en la tabla de consulta de datos. ¿Pero qué hay del formulario donde se crean y editan los datos?
 
-Este formulario, deduce el tipo de campo de datos dependiendo del tipo de datos de cada propiedad. Sin embargo, hay casos en los queremos utilizar un campo de datos complejo. Estos campos no se pueden deducir, por lo que tenemos que especificarlos en algun lado.
+Este formulario, deduce el tipo del campo de datos dependiendo del tipo de datos de cada propiedad. Sin embargo, hay casos en los queremos utilizar un campo de datos complejo. Estos campos no se pueden deducir, por lo que tenemos que especificarlos en algún lado.
 Para esto crearemos un nuevo archivo llamado `esquema_de_formulario.json`.
 
 Llamamos campos de datos complejos a todo campo dentro del formulario que contenga más de un valor a la vez, y/o que de cara al usuario muestre un valor (etiqueta), mientras que internamente para la aplicación se use otro (valor).

@@ -7,7 +7,7 @@ La arquitectura de una aplicación web ha ido evolucionando con el tiempo. Al pr
 
 Estas aplicaciones implementaban una arquitectura cliente-servidor, donde el servidor se encargaba del modelo, la lógica de negocio y las vistas. Y el cliente únicamente se encargaba de hacer peticiones y actualizar las vistas.
 
-Con el tiempo, el lenguaje utilizado para desarrollar aplicaciones web (Javascript) fue evolucionando, permitiendo hacer cosas mucho más interesantes y a la vez complejas. Esto dió origen a las aplicaciones web del lado del cliente, también conocidas como aplicaciones front-end.
+Con el tiempo, el lenguaje utilizado para desarrollar aplicaciones web (Javascript) fue evolucionando, permitiendo hacer cosas mucho más interesantes y a la vez complejas. Esto dio origen a las aplicaciones web del lado del cliente, también conocidas como aplicaciones front-end.
 
 Al incrementar la complejidad y el tamaño de las aplicaciones front-end, nació la necesidad de diseñar la arquitectura de dichas aplicaciones.
 

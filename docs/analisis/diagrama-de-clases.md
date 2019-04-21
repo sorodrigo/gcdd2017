@@ -12,7 +12,7 @@ La clase que actúa como mediador es: Router. Esta clase tiene como función dec
  
 ### Controladores
 Las clases que actúan como controladores son: Home, Profile, Login, Form, Table. Esta última contiene a su vez otras 2 clases que también actúan como controladores: Modal y Alert.
-La función de este tipo de clases es recibir eventos desde la vista y hacer las transformaciones necesarias y despachar un evento a modelo para que este se actualice. Además también se suscribe a los cambios del modelo y actualiza la vista.
+La función de este tipo de clases es recibir eventos desde la vista, hacer las transformaciones necesarias y despachar un evento al modelo para que este se actualice. Además también se subscribe a los cambios del modelo y actualiza la vista.
 
 ### Modelo
 El modelo se encarga de la petición, validación y gestión de los datos de la aplicación. El modelo esta subdividido en 5 módulos: MarkdownModule, ModalModule, EntityModule, FormModule y AuthenticationModule.

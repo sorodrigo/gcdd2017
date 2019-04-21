@@ -1,7 +1,7 @@
 # Requisitos
 
 ## Análisis de requisitos
-Para el análisis de requisitos se partió desde la idea de hacer un sistema de gestión de datos de las prácticas externas para un departamento de la universidad. Identificar las necesidades básicas que dicho producto tenía que cumplir sirvió como base para escribir los requisitos de un sistema que pudiera gestionar datos para este y otros casos similares.
+Para el análisis de requisitos se partió de la idea de hacer un sistema de gestión de datos de las prácticas externas para un departamento de la universidad. Identificar las necesidades básicas que dicho producto tenía que cumplir sirvió como base para escribir los requisitos de un sistema que pudiera gestionar datos para este y otros casos similares.
 
 En este análisis se hablará de el usuario haciendo referencia a cualquier persona que llegue a utilizar el sistema.
 
@@ -41,7 +41,7 @@ La aplicación esta orientada a usuarios con ordenador, pero al usar un diseño 
 | RF.08    | Si una entidad soporta la acción de ver, cada fila de la tabla de consulta debe tener una página de detalle donde se muestren todos los datos de esta fila, incluyendo aquellos que no aparecen como columna de la tabla.     |
 | RF.09    | Además de poder interactuar con las filas de la tabla, el usuario podrá crear nuevas entradas de datos.                                                                                                                       |
 | RF.09.1  | El usuario podrá definir mediante el archivo de configuración si una pagina de entidad soporta la creación de datos. Como en el resto de las acciones, se podrá limitar la creación de datos a usuarios con un rol específico.|
-| RF.09.2  | El rol de usuario se definirá de igual que en la acciones de la tabla (ver, editar, eliminar).                                                                                                                                |
+| RF.09.2  | El rol de usuario se definirá de igual manera que en las acciones de la tabla (ver, editar, eliminar).                                                                                                                        |
 | RF.09.3  | Si una entidad soporta la acción de crear, se debe mostrar una página de creación de datos que incluya un formulario con campos que correspondan a cada una de las propiedades de la entidad.                                 |
 | RF.09.4  | Los campos del formulario deberán corresponder al tipo de datos de cada propiedad.                                                                                                                                            |
 | RF.09.5  | El usuario debe de ser capaz de definir mediante un esquema de configuración el tipo de datos de cada campo del formulario.                                                                                                   |

@@ -14,6 +14,7 @@
   * [Modelo de Datos](analisis/modelo-de-datos.md)
   * [Comparación con esquema de datos](analisis/comparacion-esquema-datos.md)
   * [Casos de Uso](analisis/casos-de-uso.md)
+  * [Diagrama de Componentes](analisis/diagrama-de-componentes.md)
 * [Diseño](diseno.md)
 * [Manual de Usuario](manual-de-usuario.md)
   * [Caso Práctico](manual-de-usuario/caso-practico.md)

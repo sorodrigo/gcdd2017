@@ -1,4 +1,4 @@
-# Arquitectura
+ # Arquitectura
 
 La arquitectura del proyecto está dividida en las siguientes capas:
   - Base de Datos. Almacena los datos del sistema.
@@ -19,7 +19,7 @@ Las interfaces se desarrollan de "abajo a arriba", empezando con componentes y t
 Los principales beneficios son:
   1. **Reutilización.** El tener la interfaz de la aplicación dividida en pequeños pedazos de código, facilita la reutilización y aumenta la velocidad de desarrollo.
   2. **Desacomplamiento.** El desarrollo de un componente no depende del estado de la aplicación. Esto simplifica el problema a resolver y permite no depender de la aplicación actual al desarrollar futuras interfaces.
-  3.  **Desarrollo en Paralelo.** Trabajar en un componente a la vez, permite compartir tareas con varias personas de una forma que no es posible cuando se trabaja por pantallas.
+  3.  **Desarrollo en Paralelo.** Trabajar en un componente varias personas a la vez, permite compartir tareas de una forma que no es posible cuando se trabaja por pantallas.
 
 
 ## Esquemas de configuración

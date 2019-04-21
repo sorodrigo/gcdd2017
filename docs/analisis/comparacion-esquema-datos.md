@@ -22,7 +22,7 @@ A continuación tenemos la representación de la entidad App dentro del esquema.
 
 - La propiedad `home.content` contiene el contenido a mostrar en la página de inicio en formato markdown.
 
-- La propiedad `home.resolveContent` contiene una dirección web de donde descargará el contenido de la página de inicio en formato markdown. No es necesario declar ambas, en este caso se hace a modo de ejemplo.
+- La propiedad `home.resolveContent` contiene una dirección web de donde descargará el contenido de la página de inicio en formato markdown. No es necesario declarar ambas, en este caso se hace a modo de ejemplo.
 ```json
 // propiedades (App) - datasource.schema.json
 {
@@ -38,19 +38,19 @@ A continuación tenemos la representación de la entidad App dentro del esquema.
 }
 ```
 
-Dentro de la propiedad `entities` se encuentran definidas cada una de las entidades de datos. Podemos observar que se usa la propiedad `nombre` como clave para distinguirlas.
+Dentro de la propiedad `entities` se encuentran definidas cada una de las entidades de datos. Podemos observar que se usa el nombre como clave para distinguirlas.
 Dentro de cada entidad encontramos las siguientes propiedades:
-- La propiedad `auth` distingue entre las entidades que estan protegidas por autenticación y las que no.
+- La propiedad `auth` distingue entre las entidades que están protegidas por autenticación y las que no.
 
 - La propiedad `heading` contiene el texto a mostrar dentro de cada página de entidad.
 
-- La propiedad `columns` contiene las columnas de datos a mostrar en la tabla de datos.
+- La propiedad `columns` contiene las columnas de datos a mostrar en la tabla de consulta de datos.
 
 - La propiedad `prefetch` contiene los nombres de las entidades que contienen los datos necesarios para mostrar una página de entidad. Es decir, representa las relaciones entre entidades de datos.
 
-- La propiedad `mapRelations` determina si mostrar los datos de las relaciones como claves foráneas o como valores. En caso de ser verdadero, se debe de proporcionar el valor equivalente en el esquema de configuracion de la tabla de datos (_table.schema.json_).
+- La propiedad `mapRelations` determina si mostrar los datos de las relaciones como claves foráneas o como valores. En caso de ser verdadero, se debe de proporcionar el valor equivalente en el esquema de configuración de la tabla de datos (_table.schema.json_).
 
-- Las propiedades `showView`, `showCreate`, `showEdit` y `showDelete` representan a las acciones relacionadas con la entidad. Son opcionales, si no se definen se tomarán valores por defecto. Pueden representarse con booleanos que determinan si una acción se puede llevar a cabo o no; O pueden represetarse mediante un objeto con dos propiedades. La propiedad `path` representa la ubicación donde buscar el valor, y la propiedad `value` representa a que debe equivaler el valor para poder llevar a cabo la acción.
+- Las propiedades `showView`, `showCreate`, `showEdit` y `showDelete` representan a las acciones relacionadas con la entidad. Son opcionales, si no se definen se tomarán valores por defecto. Pueden representarse con booleanos que determinan si una acción se puede llevar a cabo o no; O pueden representarse mediante un objeto con dos propiedades. La propiedad `path` representa la ubicación donde buscar el valor, y la propiedad `value` representa a que debe equivaler el valor para poder llevar a cabo la acción.
 ```json
 // propiedades (Entidad de Datos) - datasource.schema.json
 {
@@ -74,7 +74,7 @@ Dentro de cada entidad encontramos las siguientes propiedades:
 ```
 
 Dentro de la propiedad `auth` se encuentran dos propiedades que dividen el proceso de autenticación en petición y respuesta. Dentro de estas dos propiedades se encuentran las propiedades que representan a la entidad Usuario en el modelo de datos.
-- La propiedad `request.url` contiene un texto con la dirección web a donde enviar la perición de autenticación.
+- La propiedad `request.url` contiene un texto con la dirección web a donde enviar la petición de autenticación.
 
 - La propiedad `request.user` contiene un valor de texto que representa el nombre de la propiedad que espera el servidor de autenticación como identificador de usuario.
 

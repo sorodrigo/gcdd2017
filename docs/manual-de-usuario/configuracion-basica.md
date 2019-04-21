@@ -16,7 +16,7 @@ Para la configuración de la aplicación debemos definir: el nombre de la aplica
 }
 ```
 
-Ahora debemos configurar las entidades de datos, en total tenemos 5: Tutores, Estudiantes, Compañías, Grados y Prácticas Externas. Para esto utilizaremos el objeto _entities_ dentro del esquema de configuración. Cada clave dentro de este objeto equivale a una entidad de datos y su valor a las opciones de configuración. Las opciones que de momento definiremos son: encabezado y columnas. El encabezado representa el texto que se mostrará como encabezado el la página de entidad y columnas representa las propiedades de la entidad que se mostrarán como columnas en la tabla de consulta de datos.
+Ahora debemos configurar las entidades de datos, en total tenemos 5: Tutores, Estudiantes, Compañías, Grados y Prácticas Externas. Para esto utilizaremos el objeto _entities_ dentro del esquema de configuración. Cada clave dentro de este objeto equivale a una entidad de datos y su valor a las opciones de configuración. Las opciones que de momento definiremos son: encabezado y columnas. El encabezado representa el texto que se mostrará como encabezado en la página de entidad y columnas representa las propiedades de la entidad que se mostrarán como columnas en la tabla de consulta de datos.
 
 ```
 {
@@ -66,6 +66,6 @@ Además si visitamos las páginas de entidades podemos ver que los datos que ant
 
 ![pagina-de-entidad-4](../assets/manual_entity_5a_basic.png)
 
-Sin embargo, si nos fijamos en los datos. Se puede apreciar que en muchos casos no son muy representativos (especialmente en la entidad prácticas externas). Esto es porque las columnas que representan una relación contienen los identificadores únicos que corresponden a otras entidades y no un valor reconocible. En la siguiente sección veremos como se puede mejorar esto.
+Sin embargo, sí nos fijamos en los datos. Se puede apreciar que en muchos casos no son muy representativos (especialmente en la entidad prácticas externas). Esto es porque las columnas que representan una relación contienen los identificadores únicos que corresponden a otras entidades y no un valor reconocible. En la siguiente sección veremos como se puede mejorar esto.
 
 ![pagina-de-entidad-1](../assets/manual_entity_5b_basic.png)
