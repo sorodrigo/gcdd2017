@@ -10,6 +10,8 @@ Facebook Inc., 2014-2015, [Flux: Application Architecture for Building User Inte
 
 Coleman, T., 2017, [Component-Driven Development – Chroma](https://blog.hichroma.com/component-driven-development-ce1109d56c8e) [online] [cited 10/01/2019] <https://blog.hichroma.com/component-driven-development-ce1109d56c8e>
 
+Microsoft, 2017, [Data Binding Overview](https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/data-binding-overview) [online] [cited 10/01/2019] <https://docs.microsoft.com/en-us/dotnet/framework/wpf/data/data-binding-overview>
+
 You, E., 2015, [Reactividad en profundidad – Documentación oficial Vue](https://es-vuejs.github.io/vuejs.org/v2/guide/reactivity.html) [online] [cited 10/01/2019], <https://es-vuejs.github.io/vuejs.org/v2/guide/reactivity.html>
 
 You, E., 2015, [Qué son los componentes? – Documentación oficial Vue](https://es-vuejs.github.io/vuejs.org/v2/guide/components.html#%C2%BFQue-son-los-componentes) [online] [cited 10/01/2019], <https://es-vuejs.github.io/vuejs.org/v2/guide/components.html#%C2%BFQue-son-los-componentes>

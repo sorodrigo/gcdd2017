@@ -1,6 +1,5 @@
 # Summary
 
-* [Indice](README.md)
 * [Introducción](intro.md)
 * [Objetivos](objetivos.md)
 * [Marco Teórico](marco-teorico.md)
