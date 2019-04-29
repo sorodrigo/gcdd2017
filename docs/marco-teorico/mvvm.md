@@ -15,6 +15,6 @@ La vista es la capa que representa la interfaz con la que los usuarios interact�
 #### Vista-Modelo
 La vista-modelo se puede considerar un intermediario entre la vista y el modelo. Una de las principales tareas de la vista-modelo es adaptar la información del modelo a los casos específicos de la vista. El modelo suele contener la información en un formato genérico, mientras que la vista necesita mostrar los datos de distintas maneras dependiendo de la interfaz y el estado interno. Así la vista-modelo se encarga de convertir el modelo en información que la vista puede utilizar.
 La vista-modelo también expone métodos para:
-    - Actualizar el estado de la vista.
-    - Actualizar el modelo a través de acciones en la vista.
-    - Despachar eventos en la vista.
+    1. Actualizar el estado de la vista.
+    2. Actualizar el modelo a través de acciones en la vista.
+    3. Despachar eventos en la vista.
