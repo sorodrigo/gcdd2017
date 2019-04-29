@@ -19,7 +19,9 @@ En Vue, los componentes están formados por 3 partes:
 La programación reactiva es una de las principales características que distinguen a Vue. El estado de los componentes se representa mediante un objeto de Javascript. Cuando el estado cambia, la vista se actualiza. Pero cómo se detectan los cambios?
 
 ### Detección de cambios
-Cuando se inicializa un componente, Vue lee las propiedades del objeto del estado y las reemplaza por _setters_ y _getters_. Estos serán invisibles para el usuario, pero permitirán identificar las dependencias de datos y despachar notificaciones de datos cuando las propiedades del estado sean leídas o modificadas.
+Cuando se inicializa un componente, Vue lee las propiedades del objeto del estado y las reemplaza por _setters_ y _getters_. Un getter es una función que permite leer el valor de una propiedad. Un _setter_ es una función que permite actualizar el valor de una propiedad. Al ser una función además de su objetivo principal, estas funciones pueden utilizarse para otras tareas como validación de la entrada de datos o despachar eventos.
+
+Los _getters_ y _setters_ serán invisibles para el usuario, pero permitirán identificar las dependencias de datos y despachar notificaciones de datos cuando las propiedades del estado sean leídas o modificadas.
 Todo componente tiene una instancia de observador (_watcher_), que registra las propiedades de las que depende la interfaz y cuando estas cambian hace que el componente se actualice.
 
 Vue realiza las actualizaciones de manera asíncrona, es decir que un cambio al estado no implica necesariamente otra actualización. Cuando una propiedad que Vue esta observando cambia, se añade a una cola donde se registrarán todos los cambios realizados en el mismo loop de eventos (_event loop_). Si una misma propiedad cambia varias veces dentro del mismo loop de eventos, esta solo se registrará una vez. Esto es muy importante de cara al rendimiento ya que previene actualizaciones innecesarias.

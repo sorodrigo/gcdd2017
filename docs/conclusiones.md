@@ -5,7 +5,7 @@ Se tomó como caso práctico la gestión de las prácticas universitarias dentro
 
 Al final de este proyecto, hemos alcanzado los objetivos planteados al inicio. Sin embargo, para poder usarse en el día a día dentro de un departamento universitario existen detalles que hay que pulir y funciones que faltan por añadir. Este proyecto marca el camino a seguir para obtener un sistema de gestión de datos que sea útil en más de un dominio, pero como cada dominio tiene requisitos muy específicos a sus necesidades aún queda mucho trabajo por hacer.
 
-## Futuras mejoras
+## Mejoras para el futuro
 Dentro de las cosas a mejorar, se han identificado las siguientes funcionalidades:
 - **GUI de configuración.** Hacer una interfaz gráfica para poder crear los esquemas de configuración sin la necesidad de conocer el formato `.json`.
 - **Versión móvil.** Mejorar los estilos de la aplicación web para soportar no solo computadoras de escritorio y tablets, sino también teléfonos móviles.

@@ -2,3 +2,5 @@
 ## Alumno: Rodrigo Solís Morales
 ## Tutor: Francisco Serradilla García
 ## Departamento: Inteligencia Artificial
+
+![ETSISI](assets/logo_etsisi.png)

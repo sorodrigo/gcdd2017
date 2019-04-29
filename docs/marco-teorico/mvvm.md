@@ -2,7 +2,7 @@
 El _MVVM_ es un patrón de diseño basado en _MVC_ y en _MVP_ que busca separar el desarrollo de interfaces gráficas del desarrollo de la lógica de negocio. Existen distintas implementaciones, pero la base de todas estas es el _data-binding_.
 
 #### Data binding
-"Data binding es el proceso que establece una conexión entre la interfaz gráfica de la aplicación y la lógica de negocio. Si la conexión tiene las opciones correctas y los datos proveen las notificaciones adecuadas, entonces cuando los datos cambien, los elementos que están conectados a esos datos reflejarán los cambios automáticamente. Data binding también significa que si una representación externa de los datos en un elemento cambia, entonces los datos relacionados también pueden actualizarse automáticamente."[2]
+_"Data binding es el proceso que establece una conexión entre la interfaz gráfica de la aplicación y la lógica de negocio. Si la conexión tiene las opciones correctas y los datos proveen las notificaciones adecuadas, entonces cuando los datos cambien, los elementos que están conectados a esos datos reflejarán los cambios automáticamente. Data binding también significa que si una representación externa de los datos en un elemento cambia, entonces los datos relacionados también pueden actualizarse automáticamente."_[2]
 
 El _data-binding_ permite separar la lógica de las vistas del resto de la aplicación.
 

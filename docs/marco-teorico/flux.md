@@ -20,7 +20,7 @@ Además de manejar donde ocurren los cambios al estado, es importante manejar el
 Una condición de carrera se puede definir como un comportamiento anómalo debido a una inesperada dependencia crítica en el orden de ejecución de eventos. [4]
 
 Las condiciones de carrera son problemáticas porque uno de los datos puede depender de otro, y si estos son actualizados en un orden incorrecto el problema se puede propagar en cascada de un componente a otro.
-Flux previene las condiciones de carrera asegurandose de que todos los cambios de estado en el _store_ se hagan de manera síncrona.
+Flux previene las condiciones de carrera asegurándose de que todos los cambios de estado en el _store_ se hagan de manera síncrona.
 
 #### Flujo de datos unidireccional
 En las arquitecturas _MV*_ no existen restricciones respecto a la dirección en la que fluyen los datos. Esto significa que un controlador puede cambiar el estado y propagar ese cambio a otro controlador; este a su vez puede volver a cambiar el estado y propagarlo a otros controladores. En una aplicación pequeña esto puede resultar conveniente, sin embargo cuando los datos fluyen en varias direcciones aumenta la posibilidad de que algún componente se quede desactualizado. Cuando una aplicación crece, esta posibilidad incrementa aún mas y entender el origen de los cambios de estado se vuelve casi imposible.
@@ -39,14 +39,14 @@ Antes de Flux el método de comunicación entre componentes más común era `Pub
 
 De tal manera que el controlador que sufre el cambio de estado original, publica sus cambios y se desentiende. Y los controladores que necesitan actualizarse, deben de gestionar las suscripciones a los datos que le interese.
 
-El principal problema con esto, es que se crea una dependencia de datos entre controladores que no es fácil de crecer. También se dan casos donde el suscriptor solo desea escuchar eventos en ciertos momentos, por lo que debe suscribirse y darse de baja dependiendo de alguna condición; a la larga esto genera problemas de consistencia.
+El principal problema con esto, es que se crea una dependencia de datos entre controladores que no es fácil de hacer crecer. También se dan casos donde el suscriptor solo desea escuchar eventos en ciertos momentos, por lo que debe suscribirse y darse de baja dependiendo de alguna condición; a la larga esto genera problemas de consistencia.
 
 La solución que propone Flux es mantener un canal único de comunicaciones entre componentes. Canal que notificará a todos los componentes del sistema. De forma que no es responsabilidad de un componente decidir que a eventos escuchar, sino que tiene que decidir cuales notificaciones le son relevantes y cuales ignorar.
 
 #### Comunicación entre capas
 Flux separa el sistema en capas (_acciones, stores y vistas_), y establece un sentido único en el que se pueden comunicar las capas. Al asegurarse que una capa solo puede comunicarse con la capa directamente debajo, se eliminan todos los errores causados por hacer algo en un orden incorrecto.
 
-Un detalle muy importante de Flux es que no se preocupa por la manera en la que se representen las vistas. La capa de la vista esta muy poco acoplada al resto de capas. Esto se debe a que si se acopla la vista al resto de las capas. La estructura de la información será influenciada por la manera de representarla en la vista, que en futuro puede resultar poco mantenible.
+Un detalle muy importante de Flux es que no se preocupa por la manera en la que se representen las vistas. La capa de la vista esta muy poco acoplada al resto de capas. Esto se debe a que si se acopla la vista al resto de las capas la estructura de la información será influenciada por la manera de representarla en la vista, que en futuro puede resultar poco mantenible.
 
 ### Flux - Implementación
 #### Acciones

@@ -2,20 +2,25 @@
 Como caso práctico hemos elegido el ejemplo mencionado previamente en la sección de requisitos que habla de la gestión de prácticas externas universitarias. Un departamento universitario se encarga de mantener los datos y relaciones entre tutores, grados, empresas y estudiantes. Los datos se mantienen en archivos Excel y tienen la siguiente estructura:
 
 **Tutores**
+
 ![Tabla de datos - tutores](../assets/manual_csv/tutors.png)
 
 **Grados**
+
 ![Tabla de datos - grados](../assets/manual_csv/degrees.png)
 
 **Empresas**
+
 ![Tabla de datos - tutores](../assets/manual_csv/companies.png)
 
 **Estudiantes**
+
 ![Tabla de datos - tutores](../assets/manual_csv/students.png)
 
 Además de estos datos también se mantiene un archivo con la relación de prácticas externas entre estudiantes, compañías y tutores. En este se registran las prácticas externas con su fecha de inicio y de finalización.
 
 **Prácticas externas**
+
 ![Tabla de datos - tutores](../assets/manual_csv/internships.png)
 
 Como se puede apreciar, el mantenimiento de estos datos es totalmente manual y muy costoso. El departamento está buscando alguna forma de automatizar este proceso en la mayor medida de lo posible. Para esto eligen utilizar el sistema de gestión de datos definido en este proyecto.

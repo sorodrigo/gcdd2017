@@ -1,7 +1,7 @@
 ## Marco Teórico
 
 ### Patrones de Arquitectura Web
-"Un patrón es una solución reusable que se puede aplicar a problemas relacionados con el diseño de software que ocurren frecuentemente."[1]
+_"Un patrón es una solución reusable que se puede aplicar a problemas relacionados con el diseño de software que ocurren frecuentemente."_[1]
 
 La arquitectura de una aplicación web ha ido evolucionando con el tiempo. Al principio las páginas web no necesitaban de un diseño de arquitectura en cliente, el código necesario—de lado del cliente—para conseguir lo que se deseaba era muy sencillo. Esto se debía a que la tecnología no permitía hacer cosas complejas.
 

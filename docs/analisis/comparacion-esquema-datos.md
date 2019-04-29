@@ -23,6 +23,8 @@ A continuación tenemos la representación de la entidad App dentro del esquema.
 - La propiedad `home.content` contiene el contenido a mostrar en la página de inicio en formato markdown.
 
 - La propiedad `home.resolveContent` contiene una dirección web de donde descargará el contenido de la página de inicio en formato markdown. No es necesario declarar ambas, en este caso se hace a modo de ejemplo.
+
+Se ha elegido el formato markdown ya que es fácil para escribir documentos con distintos elementos jerárquicos y es fácil de convertir a HTML.
 ```json
 // propiedades (App) - datasource.schema.json
 {
