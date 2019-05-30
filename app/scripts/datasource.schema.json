@@ -54,7 +54,7 @@
   "auth": {
     "request": {
       "url": "/auth",
-      "user": "username",
+      "user": "email",
       "password": "password"
     },
     "response": {
