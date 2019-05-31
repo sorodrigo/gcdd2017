@@ -36,9 +36,9 @@
       "mapRelations": true,
       "prefetch": ["degrees"],
       "auth": true,
-      "showCreate": { "path": "role", "value": "students" },
-      "showEdit": { "path": "role", "value": "students" },
-      "showDelete": { "path": "role", "value": "students" }
+      "showCreate": { "path": "role", "value": "student" },
+      "showEdit": { "path": "role", "value": "student" },
+      "showDelete": { "path": "role", "value": "student" }
     },
     "internships": {
       "heading": "Gestionar Prácticas Externas",
